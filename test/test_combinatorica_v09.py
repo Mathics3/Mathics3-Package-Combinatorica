@@ -560,6 +560,24 @@ def test_2_1_to_2_3():
     ):
         check_evaluation(str_expr, str_expected, assert_fail_message)
 
+# def test_combinatorica_3_1():
+#     for str_expr, str_expected, message in (
+#         (
+#             "TableForm[ Edges[K[5]] ]",
+#         """ 0   1   1   1   1
+
+#                    1   0   1   1   1
+
+#                    1   1   0   1   1
+
+#                    1   1   1   0   1
+
+#                    1   1   1   1   0
+# """,
+#             "Adjancency Matrices 3.1.1, Page 82",
+#          ),
+#     ):
+#         check_evaluation(str_expr, str_expected, message)
 
 def test_combinatorica_rest():
     for str_expr, str_expected, message in (
