@@ -31,10 +31,11 @@ def reset_and_load_package():
 
 
 # A number of examples from:
-#  * Implementing Discrete Mathematics by Steven Skiena and
-#  * Computation Discrete Mathematics by Sriram Pemmaraju and Steven Skiena.
+# Implementing Discrete Mathematics: Combinatorics and Graph Theory with Mathematica
+# by Steven S. Skiena, Addison-Wesley Publishing Co., Advanced Book Program,
+# 350 Bridge Parkway, Redwood City CA 94065.  ISBN 0-201-50943-1.
 
-# Page numbers below come from the first book
+# Page numbers below come from thise. book
 # Some tests have been altered to speed them up, or to make the intent
 # more clear in a test.
 
