@@ -1602,7 +1602,10 @@ AllPairsShortestPath[g_Graph] :=
                Zap[DP1[p /. {0 -> 0.0, x_Integer -> 1.0 x, Infinity -> m*1.0}, m]] /. m -> Infinity
         ]
 
+(*
 DP1 = Compile[{{p, _Real, 2}, {m, _Integer}},
+ *)
+DP1[p_?NumberQ, m_?IntegerQ] :=
         Module[{np = p, k, n = Length[p]},
                Do[np = Table[If[(np[[i, k]] == 1.0*m) || (np[[k, j]] == 1.0*m),
                                 np[[i,j]], Min[np[[i,k]]+ np[[k,j]], np[[i,j]]]
@@ -1610,7 +1613,7 @@ DP1 = Compile[{{p, _Real, 2}, {m, _Integer}},
                        ], {k, n}];
                np
         ]
-      ]
+(*    ] *)
 AllPairsShortestPath[g_Graph, Parent] := {} /; (V[g] == 0)
 AllPairsShortestPath[g_Graph, Parent] :=
         Module[{q, p = ToAdjacencyMatrix[g,EdgeWeight,Type->Simple], n=V[g], m},
@@ -1624,7 +1627,10 @@ AllPairsShortestPath[g_Graph, Parent] :=
                {p /. m -> Infinity, q}
         ]
 
+(*
 DP2 =Compile[{{p, _Real, 2}, {q, _Integer, 2}, {m, _Real}},
+ *)
+DP2[p_?NumberQ, q_?IntegerQ, m_?NumberQ] :=
         Module[{np = p, nq = q, k = 0, n = Length[p]},
                Do[
                   Do[If[(np[[i, k]] != m*1.0) && (np[[k, j]] != m*1.0),
@@ -1638,7 +1644,7 @@ DP2 =Compile[{{p, _Real, 2}, {q, _Integer, 2}, {m, _Real}},
                ];
                {np, nq}
         ]
-     ]
+(*    ] *)
 AlternatingGroup[l_List] := Select[Permutations[l], (SignaturePermutation[#]===1)&] /; (Length[l] > 0)
 AlternatingGroup[n_Integer?Positive] := Select[Permutations[n], (SignaturePermutation[#]===1)&]
 AlternatingGroupIndex[n_Integer?Positive, x_Symbol] :=
@@ -1811,8 +1817,11 @@ BellmanFord[g_Graph, s_Integer?Positive] :=
                 d[[s]] = 0;
                 {p, d}
          ] /; EmptyQ[g] && (s <= V[g])
+(*
 BF = Compile[{{n, _Integer}, {s, _Integer}, {e1, _Integer, 2},
               {w1, _Real, 1}, {e2, _Integer, 2}, {w2, _Real, 1}},
+*)
+BF[n_?IntegerQ, s_?IntegerQ, e1_?IntegerQ, w1_?NumberQ, e2_?IntegerQ, w2_?NumberQ] :=
              Module[{d, dist, parent = Range[n],
                      m = (Length[e1] + Length[e2])*Max[w1, w2] + 1},
                      dist = Table[m, {n}]; dist[[s]] = 0;
@@ -1831,7 +1840,7 @@ BF = Compile[{{n, _Integer}, {s, _Integer}, {e1, _Integer, 2},
                      ];
                      {parent, dist}
              ]
-     ]
+(*   ] *)
 
 BellmanFord[g_Graph, s_Integer?Positive] :=
          Module[{e = Sort[Edges[g, EdgeWeight]], n = V[g], e1 = {}, w1 = {},
@@ -4030,7 +4039,8 @@ KSubsetGroup[g_List, s:{{_Integer..}...}, type_:Unordered] :=
         ]
 KSubsetGroupIndex[g_, s_, x_Symbol, type_:Unordered] :=
         CycleIndex[KSubsetGroup[g, s, type],x]
-KS = Compile[{{n, _Integer}, {k, _Integer}},
+(* KS = Compile[{{n, _Integer}, {k, _Integer}}, *)
+KS[n_?Integer, k_?Integer] :=
              Module[{h, ss = Range[k], x},
                     Table[(h = Length[ss]; x = n;
                            While[x === ss[[h]], h--; x--];
@@ -4040,7 +4050,7 @@ KS = Compile[{{n, _Integer}, {k, _Integer}},
                           {Binomial[n, k]-1}
                     ]
              ]
-     ]
+(*    ] *)
 
 KSubsets[l_List,0] := { {} }
 KSubsets[l_List,1] := Partition[l,1]
@@ -4134,7 +4144,8 @@ LexicographicPermutations[1] := {{1}}
 
 LexicographicPermutations[n_Integer?Positive] := LP[n]
 LexicographicPermutations[l_List] := Permute[l, LexicographicPermutations[Length[l]] ]
-LP = Compile[{{n, _Integer}},
+(*LP = Compile[{{n, _Integer}},*)
+LP[n_?Integer] :=
              Module[{l = Range[n], i, j, t},
                     NestList[(i = n-1; While[ #[[i]] > #[[i+1]], i--];
                               j = n; While[ #[[j]] < #[[i]], j--];
@@ -4143,7 +4154,7 @@ LP = Compile[{{n, _Integer}},
                               l, n!-1
                     ]
              ]
-     ]
+(*    ] *)
 LexicographicSubsets[{}] := {{ }}
 LexicographicSubsets[l_List] :=
        Block[{$RecursionLimit = Infinity, s = LexicographicSubsets[Rest[l]]},
@@ -4661,14 +4672,15 @@ NextComposition[l_List] :=
 	Append[Table[0,{Length[l]-1}], Apply[Plus, l]] /; First[l]==Apply[Plus,l]
 
 NextComposition[l_List] := NC[l]
-NC = Compile[{{l, _Integer, 1}},
+(*NC = Compile[{{l, _Integer, 1}},*)
+NC[l_?Integer] :=
              Module[{n = Apply[Plus, l], nl = l, t = Length[l]},
                     While[l[[t]] == 0, t--];
                     nl[[t-1]]++;
                     Do[nl[[i]] = 0, {i, t, Length[l]}];
                     nl[[Length[l]]] = Apply[Plus, Take[l, -(Length[l] - t + 1)]] - 1; nl
              ]
-     ]
+(*    ] *)
 NextGrayCodeSubset[l_List, s_List] :=
         If[ MemberQ[s,l[[1]]], Rest[s], Prepend[s,l[[1]] ] ] /; EvenQ[Length[s]]
 
@@ -4676,12 +4688,15 @@ NextGrayCodeSubset[l_List, s_List] :=
         Module[{i = 1},
                While[ ! MemberQ[s, l[[i]] ], i++];
                If[MemberQ[s, l[[i+1]] ], Rest[s], Insert[s, l[[i+1]], 2 ] ]]
+(*
 NKS = Compile[{{n, _Integer}, {ss, _Integer, 1}},
+ *)
+NKS[n_?IntegerQ, ss_?Integer] :=
               Module[{h = Length[ss], x = n},
                      While[x === ss[[h]], h--; x--];
                      Join[Take[ss, h - 1], Range[ss[[h]]+1, ss[[h]]+Length[ss]-h+1]]
               ]
-      ]
+(*      ] *)
 
 NextKSubset[s_List,ss_List] := Take[s,Length[ss]] /; (Take[s,-Length[ss]] === ss)
 NextKSubset[s_List,ss_List] :=
@@ -4704,7 +4719,8 @@ NextPartition[p_List] := {Apply[Plus,p]}  /; (Max[p] == 1)
 
 NextPartition[p_List] := NPT[p];
 
-NPT = Compile[{{p, _Integer, 1}},
+(*NPT = Compile[{{p, _Integer, 1}},*)
+NPT[p_?IntegerQ] :=
               Module[{k = Length[p], q = Table[0, {Length[p] + 2}], j, m, r},
                      j = Position[p, 1][[1, 1]] - 1;
                      Do[q[[i]] = p[[i]], {i, j - 1}];
@@ -4714,7 +4730,7 @@ NPT = Compile[{{p, _Integer, 1}},
                      q[[j + m]] = r;
                      DeleteCases[q, 0]
               ]
-      ]
+(*      ] *)
 NextPermutation[l_List] := Sort[l] /; (l === Reverse[Sort[l]])
 
 NextPermutation[l_List] :=
@@ -4798,9 +4814,10 @@ NormalizeVertices[v:{{_?NumericQ, _?NumericQ}...}] :=
 
 NormalizeVertices[g_Graph] :=
         ChangeVertices[g, NormalizeVertices[Vertices[g]]]
-NthPair = Compile[{{n, _Integer}},
+(*NthPair = Compile[{{n, _Integer}},*)
+NthPair[n_?Integer] :=
              Module[{j}, j = Ceiling[(1 + Sqrt[1 + 8n])/2]; {Round[n - (j-1)(j-2)/2], j}]
-          ]
+(*          ] *)
 NthPermutation[r_Integer, l_List] := UnrankPermutation[r, l]
 NthSubset[x_Integer, y_List] := UnrankGrayCodeSubset[x, y]
 NumberOfPermutationsByInversions[n_Integer?Positive] :=
@@ -5204,7 +5221,8 @@ RGFs[0] := {}
 RGFs[1] := {{1}}
 RGFs[n_Integer?Positive] := RGFs1[n]
 
-RGFs1 = Compile[{{n, _Integer}},
+(* RGFs1 = Compile[{{n, _Integer}}, *)
+RGFs1[n_?Integer] :=
                Module[{r = Table[1, {n}], c = Prepend[Table[2, {n - 1}], 1], i},
                       Transpose[
                          NestList[(i = n;
@@ -5224,7 +5242,7 @@ RGFs1 = Compile[{{n, _Integer}},
                          ]
                       ][[1]]
                ]
-       ]
+(*       ] *)
 RadialEmbedding[g_Graph, ct_Integer] :=
         ChangeVertices[g, Vertices[RadialEmbedding[MakeUndirected[g], ct]]] /; !UndirectedQ[g] && (1 <= ct) && (ct <= V[g])
 
@@ -5311,7 +5329,8 @@ RandomPartition[n_Integer?Positive] :=
     ];
     Reverse[Flatten[Table[Table[j, {mult[[j]]}], {j, Length[mult]}]]]
   ]
-RP = Compile[{{n, _Integer}},
+(*RP = Compile[{{n, _Integer}},*)
+RP[n_?IntegerQ] :=
              Module[{p = Range[n],i,x,t},
 	            Do [x = Random[Integer,{1,i}];
 		        t = p[[i]]; p[[i]] = p[[x]]; p[[x]] = t,
@@ -5319,7 +5338,7 @@ RP = Compile[{{n, _Integer}},
 		    ];
 	            p
 	     ]
-        ]
+(*        ] *)
 
 RandomPermutation[n_Integer] := RP[n]
 RandomPermutation[l_List] := Permute[l, RP[Length[l]]]
@@ -5547,7 +5566,17 @@ RemoveMultipleEdges[g_Graph] :=
         ]
 RemoveSelfLoops[g_Graph] :=
         ChangeEdges[g, Select[Edges[g, All], (First[#][[1]] != First[#][[2]])& ]]
-Options[RenderEdges] := Take[Options[ShowGraph], -7]
+
+(* Options[RenderEdges] := Take[Options[ShowGraph], -7] *)
+Options[RenderEdges] := {
+	VertexLabelPosition :> UpperRight,
+	VertexNumber :> False,
+	VertexNumberColor :> Black,
+	VertexNumberPosition :> LowerLeft,
+	VertexStyle :> Disk[Normal],
+	AspectRatio :> 1,
+	PlotRange :> Normal
+	}
 
 RenderEdges[v_List, e_List, aopts_List, eopts_List] :=
         Module[{fvp, svp,
@@ -5591,7 +5620,17 @@ RenderMultipleEdges[e_List, flag_] :=
                        ], 1
                ]
         ]
-Options[RenderVertices] := Take[Options[ShowGraph], 8]
+(* Options[RenderVertices] := Take[Options[ShowGraph], 8] *)
+Options[RenderVertices] := {
+	EdgeColor :> Black,
+	EdgeDirection :> False,
+	EdgeLabel :> False
+	EdgeLabelColor :> Black,
+	EdgeLabelPosition :> LowerLeft,
+	EdgeStyle :> Normal,
+	LoopPosition :> UpperRight,
+	VertexColor :> Black
+	}
 
 RenderVertices[v_List, opts_List] :=
         Table[ExpandVertexOptions[Merge[opts, Rest[v[[i]]]], First[v[[i]]], i],
@@ -6049,7 +6088,7 @@ Options[ShowGraph] := {VertexColor -> Black,
                        EdgeDirection -> False
                       }
 
-Options[MyPlot] := Options[ShowGraph][[{9, 10}]]
+(*Options[MyPlot] := Options[ShowGraph][[{9, 10}]] *)
 
 SelectOptions[options_List, name_] :=
         Select[options, (MemberQ[Options[name], First[#], 2])&]
@@ -6156,18 +6195,21 @@ SpringEmbedding[g_Graph, step_:10, inc_:0.15] :=
               ChangeVertices[g, new]
        ]
 
-UV = Compile[{{step, _Real}, {inc, _Real}, {m, _Integer, 2},
+(*UV = Compile[{{step, _Real}, {inc, _Real}, {m, _Integer, 2},
               {verts, _Real, 2}},
+ *)
+UV[step_?NumberQ, inc_?NumberQ, m_?IntegerQ, verts_?NumberQ] :=
        Module[{u, i, new = old = verts, n = Length[verts]},
               Do[ Do[new[[u]] = old[[u]] + inc*CF[u, m, old], {u, n}];
                   old = new, {i, step}
               ];
               new
-       ],
-       {{CF[___], _Real, 1}}
-     ]
+       ] (*,
+       {{CF[___], _Real, 1}} *)
+(*     ] *)
 
-CF = Compile[{{u, _Integer}, {m, _Integer, 2}, {em, _Real, 2}},
+(* CF = Compile[{{u, _Integer}, {m, _Integer, 2}, {em, _Real, 2}}, *)
+CF[u,_?IntegerQ, m_?Integer_Q, em_?NumberQ, 2] :=
        Module[{n = Length[m], stc = 0.25, gr = 10.0, f = {0.0, 0.0},
                spl = 1.0, v, dsquared},
               Do[dsquared = Max[0.001, Apply[Plus, (em[[u]] - em[[v]])^2]];
@@ -6177,7 +6219,7 @@ CF = Compile[{{u, _Integer}, {m, _Integer, 2}, {em, _Real, 2}},
               ];
               f
        ]
-     ]
+(*     ] *)
 SquareMatrixQ[{}] = True
 SquareMatrixQ[r_] := MatrixQ[r] && (Length[r] == Length[r[[1]]])
 StableMarriage[mpref_List,fpref_List] :=
@@ -6475,7 +6517,8 @@ TransitiveClosure[g_Graph] :=
                ]
         ]
 
-TC = Compile[{{e, _Integer, 2}},
+(*TC = Compile[{{e, _Integer, 2}},*)
+TC[e_?Integer] :=
              Module[{ne = e, n = Length[e], i, j, k},
                     Do[If[ne[[j, i]] != 0,
                           Do[If[ne[[i, k]] != 0, ne[[j, k]] = 1], {k, n}]
@@ -6483,7 +6526,7 @@ TC = Compile[{{e, _Integer, 2}},
                     ];
                     ne
              ]
-     ]
+(*     ] *)
 TransitiveQ[r_?SquareMatrixQ] :=
         TransitiveQ[FromAdjacencyMatrix[r, Type->Directed]]
 
@@ -6501,7 +6544,8 @@ TransitiveReduction[g_Graph] :=
                ]
 	]
 
-TR = Compile[{{closure, _Integer, 2}},
+(* TR = Compile[{{closure, _Integer, 2}}, *)
+TR[closure_?Integer] :=
         Module[{reduction = closure, n = Length[closure], i, j, k},
                Do[
                   If[reduction[[i,j]]!=0 && reduction[[j,k]]!=0 &&
@@ -6512,8 +6556,9 @@ TR = Compile[{{closure, _Integer, 2}},
                 ];
                 reduction
         ]
-     ]
-TRAcyclic = Compile[{{closure, _Integer, 2}},
+(*     ] *)
+(* TRAcyclic = Compile[{{closure, _Integer, 2}}, *)
+TRAcyclic[closure_?Integer] :=
                Module[{n = Length[closure], reduction = closure, i, j, k},
                       Do[
                          If[closure[[i,j]]!=0 && closure[[j,k]]!=0 &&
@@ -6524,7 +6569,7 @@ TRAcyclic = Compile[{{closure, _Integer, 2}},
                       ];
                       reduction
                ]
-            ]
+(*            ] *)
 TranslateVertices[v:{{{_?NumericQ, _?NumericQ},___?OptionQ}...},
                   {x_?NumericQ, y_?NumericQ}] :=
         Module[{p = Map[First, v], np},
