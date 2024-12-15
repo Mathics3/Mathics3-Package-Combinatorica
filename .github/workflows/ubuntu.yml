@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.12']
+        python-version: ['3.11']
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
@@ -24,6 +24,7 @@ jobs:
     - name: Install Mathics3 with full dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install setuptools "mpmath<1.4,>=1.1.0"
         # We can comment out after next Mathics-Scanner release
         # python -m pip install -e git+https://github.com/Mathics3/mathics-scanner#egg=Mathics-Scanner[full]
         git clone https://github.com/Mathics3/mathics-scanner.git
@@ -32,8 +33,10 @@ jobs:
         cd ..
         git clone https://github.com/Mathics3/mathics-core.git
         cd mathics-core/
+        remake -x develop
         remake -x install
         cd ..
+        pip install -e .[dev]
 
         # python -m pip install Mathics-Scanner[full]
     - name: Test Mathics
