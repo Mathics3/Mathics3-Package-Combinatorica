@@ -1,19 +1,30 @@
-Here we have all the programs from the book, "Computational
-Discrete Mathematics: Combinatorics and Graph Theory in Mathematica",
-by Sriram V. Pemmaraju and Steven S. Skiena, Cambridge University Press,
-2003.
+Here we have all the programs from the two books:
+
+*Implementing Discrete Mathematics: Combinatorics and Graph Theory with Mathematica*
+by Steven S. Skiena, Addison-Wesley Publishing Co., Advanced Book Program,
+350 Bridge Parkway, Redwood City CA 94065.  ISBN 0-201-50943-1.
+
+This is the older two books and we have V0.9 code for that as ``CombinatoricaV0.9.m``
+
+The revised edition of this is:
+
+*Computational Discrete Mathematics: Combinatorics and Graph Theory in
+Mathematica*, by Sriram V. Pemmaraju and Steven S. Skiena, Cambridge
+University Press, 2003.
+
+We have V.2.0 or that as ``CombinatoricaV2.0.0.m``
 
 To run from inside Mathics3::
 
         $ git clone git@github.com:Mathic3/Mathics3-Combinatorica.git
-        $ cd Mathics3-Combinatorica
+        $ cd Mathics3-Combinatorica/Combinatorica
 
         $ mathics
 
         Mathics 7.0.1dev0
         on CPython 3.12.10 ...
         ...
-        In[1]:= << CombinatoricaV2.0.0.m
+        In[1]:= << CombinatoricaV2.0.0.m (* Or CombinatoricaV0.9.m *)
 	...
 
 	In[2]:= Permutations[3]
