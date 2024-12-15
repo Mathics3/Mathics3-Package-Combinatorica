@@ -496,7 +496,7 @@ def test_combinations_1_5():
 
 
 def test_2_1_to_2_3():
-    for str_expr, str_expected, message in (
+    for str_expr, str_expected, assert_fail_message in (
         (
             # 2.1.1 uses Partitions which is broken
             # 2.1.2 Ferrers Diagrams can't be tested easily and robustly here
@@ -514,25 +514,51 @@ def test_2_1_to_2_3():
         (
             "TableauQ[{{1,2,5}, {3,4,5}, {6}}]",
             "True",
-            "Young Tableau 2.3, Page 64",
+            "Young Tableau 2.3.1, Page 64",
         ),
         (
             "TableauQ[{{1,2,5,9,10}, {5,4,7,13}, {4,8,12},{11}}]",
             "False",
-            "Young Tableau 2.3, Page 64",
+            "Young Tableau 2.3.1, Page 64",
         ),
-        # Need to not evaluate expected which reformats \n's
-        #         (
-        #             "TableForm[ {{1,2,5}, {3,4,5}, {6}} ]",
-        #             """{1, 2, 5}
-        #         {3, 4, 5}
-        #         {6}
-        # """
-        #             "False",
-        #             "Young Tableau 2.3, Page 63",
-        #         ),
+        (
+         "TableForm[ {{1,2,5}, {3,4,5}, {6}} ]",
+         """ToString["{1, 2, 5}
+
+{3, 4, 5}
+
+{6}
+"]""",
+         "Young Tableau 2.3, Page 64",
+        ),
+        # (
+        #     "ConstructTableau[{6,4,9,5,7,1,2,8}]",
+        #     "{1, 2, 7, 8}, {4, 5}, {6, 9}}",
+        #     "Construct Tableau 2.3.1, Page 65",
+        # ),
+        # (
+        #     "ConstructTableau[{6,4,9,5,7,8,1,2}]",
+        #     "{1, 2, 7, 8}, {4, 5}, {6, 9}}",
+        #     "Construct Tableau 2.3.1, Page 65",
+        # ),
+        # (
+        #     "TableForm[InsertIntoTableau[3, {{1, 2, 7, 8} "
+        #     "{4, 5}, "
+        #     "{6, 9}}]]",
+        #     "Construct Tableau 2.3.1, Page 66",
+        # ),
+        (
+            "FirstLexicographicTableau[{4, 4, 3, 3}]",
+            "{{1, 5, 9, 13}, {2, 6, 10, 14}, {3, 7, 11}, {4, 8, 12}}",
+            "FirstLexicograpicTableaux 2.3.3, Page 66",
+        ),
+        (
+            "LastLexicographicTableau[{4, 3, 3, 2}]",
+            "{{1, 2, 3, 4}, {5, 6, 7}, {8, 9, 10}, {11, 12}}",
+            "LastLexicograpicTableaux 2.3.3, Page 66",
+        ),
     ):
-        check_evaluation(str_expr, str_expected, message)
+        check_evaluation(str_expr, str_expected, assert_fail_message)
 
 
 def test_combinatorica_rest():
