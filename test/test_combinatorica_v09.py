@@ -497,11 +497,31 @@ def test_combinations_1_5():
 
 def test_2_1_to_2_3():
     for str_expr, str_expected, assert_fail_message in (
+        # 2.1.2 Ferrers Diagrams can't be tested easily and robustly here
+        # easily
+        # 2.1.3 uses Partitions which is broken
         (
-            # 2.1.1 uses Partitions which is broken
-            # 2.1.2 Ferrers Diagrams can't be tested easily and robustly here
-            # easily
-            # 2.1.3 uses Partitions which is broken
+            "Partitions[6]",
+            "{{6}, {5, 1}, {4, 2}, {4, 1, 1}, {3, 3}, "
+            "{3, 2, 1}, {3, 1, 1, 1}, {2, 2, 2}, {2, 2, 1, 1}, "
+            "{2, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}}",
+            ("Eleven partions of 6; note in reverse lexicographic order. "
+            "Counting Partitions 2.1.1, Page 52"),
+        ),
+        (
+            "Partitions[6, 3]",
+            "{{3, 3}, {3, 2, 1}, {3, 1, 1, 1}, {2, 2, 2}, "
+            "{2, 2, 1, 1}, {2, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}}",
+            ("Most of these partitions do not contain a part bigger than "
+             "three. Counting Partitions 2.1.1, Page 52"),
+        ),
+        (
+            "Length[Partitions[20]]",
+            "627",
+            ("Number of partitions grows exponentially but more slowly than "
+             "permutations or subsets. Counting Partitions 2.1.1, Page 52"),
+        ),
+        (
             "PartitionsP[10]",
             "NumberOfPartitions[10]",
             "Counting Partitions 2.1.4, Page 57",
@@ -578,6 +598,32 @@ def test_2_1_to_2_3():
 #          ),
 #     ):
 #         check_evaluation(str_expr, str_expected, message)
+
+def test_4_1():
+    for str_expr, str_expected, message in (
+        (
+            "ConnectedComponents[ ExpandGraph[K[5], 10] ]",
+            "{{1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}}",
+            "Unions and Intersections 4.1.1, Page 130",
+        ),
+        # (
+        #     "IdenticalQ[ GraphIntersection[Wheel[10], K[10]], Wheel[10]]",
+        #     "True",
+        #     "Unions and Intersections 4.1.1, Page 131",
+        # ),
+        (
+            "CompleteQ[ GraphSum[ Cycle[10], GraphComplement[Cycle[10]] ] ]",
+            "True",
+            "Sum and Difference 4.1.2, Page 131",
+        ),
+        (
+            "EmptyQ[ GraphDifference[ Cycle[10], Cycle[10]] ]",
+            "True",
+            "Sum and Difference 4.1.2, Page 131",
+        ),
+    ):
+        check_evaluation(str_expr, str_expected, message)
+
 
 def test_combinatorica_rest():
     for str_expr, str_expected, message in (

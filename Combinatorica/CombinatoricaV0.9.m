@@ -1034,8 +1034,10 @@ GrayCode[l_List,prev_List] :=
 
 (* rocky hacked: is already in Mathics3
 Subsets[l_List] := GrayCode[l]
-Subsets[n_Integer] := GrayCode[Range[n]]
 *)
+Unprotect[Subsets]
+Subsets[n_Integer] := GrayCode[Range[n]]
+Protect[Subsets]
 
 LexicographicSubsets[l_List] := LexicographicSubsets[l,{{}}]
 
@@ -1098,9 +1100,13 @@ Partitions[n_Integer,1] := { Table[1,{n}] }
 Partitions[_,0] := {}
 
 Partitions[n_Integer,maxpart_Integer] :=
-	Join[
-		Map[(Prepend[#,maxpart])&, Partitions[n-maxpart,maxpart]],
-		Partitions[n,maxpart-1]
+	(* rocky hacked pattern match above /; n<0 is not working *)
+	If[n<0,
+	   {},
+	   Join[
+		   Map[(Prepend[#,maxpart])&, Partitions[n-maxpart,maxpart]],
+		   Partitions[n,maxpart-1]
+	   ]
 	]
 
 NextPartition[p_List] := Join[Drop[p,-1],{Last[p]-1,1}]  /; (Last[p] > 1)

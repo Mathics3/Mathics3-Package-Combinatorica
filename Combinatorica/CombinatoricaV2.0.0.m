@@ -4040,7 +4040,7 @@ KSubsetGroup[g_List, s:{{_Integer..}...}, type_:Unordered] :=
 KSubsetGroupIndex[g_, s_, x_Symbol, type_:Unordered] :=
         CycleIndex[KSubsetGroup[g, s, type],x]
 (* KS = Compile[{{n, _Integer}, {k, _Integer}}, *)
-KS[n_?Integer, k_?Integer] :=
+KS[n_Integer, k_Integer] :=
              Module[{h, ss = Range[k], x},
                     Table[(h = Length[ss]; x = n;
                            While[x === ss[[h]], h--; x--];
