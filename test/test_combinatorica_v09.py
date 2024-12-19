@@ -10,9 +10,7 @@ import pytest
 _initialized: bool = False
 
 combinatorica_file = osp.normpath(
-    osp.join(osp.dirname(__file__),
-             "..", "Combinatorica",
-             "CombinatoricaV0.9.m")
+    osp.join(osp.dirname(__file__), "..", "Combinatorica", "CombinatoricaV0.9.m")
 )
 
 
@@ -505,21 +503,27 @@ def test_2_1_to_2_3():
             "{{6}, {5, 1}, {4, 2}, {4, 1, 1}, {3, 3}, "
             "{3, 2, 1}, {3, 1, 1, 1}, {2, 2, 2}, {2, 2, 1, 1}, "
             "{2, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}}",
-            ("Eleven partions of 6; note in reverse lexicographic order. "
-            "Counting Partitions 2.1.1, Page 52"),
+            (
+                "Eleven partions of 6; note in reverse lexicographic order. "
+                "Counting Partitions 2.1.1, Page 52"
+            ),
         ),
         (
             "Partitions[6, 3]",
             "{{3, 3}, {3, 2, 1}, {3, 1, 1, 1}, {2, 2, 2}, "
             "{2, 2, 1, 1}, {2, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}}",
-            ("Most of these partitions do not contain a part bigger than "
-             "three. Counting Partitions 2.1.1, Page 52"),
+            (
+                "Most of these partitions do not contain a part bigger than "
+                "three. Counting Partitions 2.1.1, Page 52"
+            ),
         ),
         (
             "Length[Partitions[20]]",
             "627",
-            ("Number of partitions grows exponentially but more slowly than "
-             "permutations or subsets. Counting Partitions 2.1.1, Page 52"),
+            (
+                "Number of partitions grows exponentially but more slowly than "
+                "permutations or subsets. Counting Partitions 2.1.1, Page 52"
+            ),
         ),
         (
             "PartitionsP[10]",
@@ -542,14 +546,14 @@ def test_2_1_to_2_3():
             "Young Tableau 2.3.1, Page 64",
         ),
         (
-         "TableForm[ {{1,2,5}, {3,4,5}, {6}} ]",
-         """ToString["{1, 2, 5}
+            "TableForm[ {{1,2,5}, {3,4,5}, {6}} ]",
+            """ToString["{1, 2, 5}
 
 {3, 4, 5}
 
 {6}
 "]""",
-         "Young Tableau 2.3, Page 64",
+            "Young Tableau 2.3, Page 64",
         ),
         # (
         #     "ConstructTableau[{6,4,9,5,7,1,2,8}]",
@@ -580,6 +584,7 @@ def test_2_1_to_2_3():
     ):
         check_evaluation(str_expr, str_expected, assert_fail_message)
 
+
 # def test_combinatorica_3_1():
 #     for str_expr, str_expected, message in (
 #         (
@@ -598,6 +603,7 @@ def test_2_1_to_2_3():
 #          ),
 #     ):
 #         check_evaluation(str_expr, str_expected, message)
+
 
 def test_4_1():
     for str_expr, str_expected, message in (
