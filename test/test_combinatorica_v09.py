@@ -281,8 +281,8 @@ def test_permutations_groups_1_2():
             "(4 m + 2 m ^ 2 + m ^ 4 + m ^ 8) / 8",
             "Polya counting resulting in polynomial 1.2.6, Page 25",
         ),
-        # Automorphism is slow. So we reduce Cycle[8] given as the example in the
-        # book to Cycle[3].
+        # Automorphism is slow. So we reduce Cycle[8] given as the
+        # example in the book to Cycle[3].
         (
             "Polya[Automorphisms[Cycle[3]], m]",
             "(2 m + 3 m ^ 2 + m ^ 3) / 6",
@@ -585,41 +585,35 @@ def test_2_1_to_2_3():
         check_evaluation(str_expr, str_expected, assert_fail_message)
 
 
-# def test_combinatorica_3_1():
-#     for str_expr, str_expected, message in (
-#         (
-#             "TableForm[ Edges[K[5]] ]",
-#         """ 0   1   1   1   1
-
-#                    1   0   1   1   1
-
-#                    1   1   0   1   1
-
-#                    1   1   1   0   1
-
-#                    1   1   1   1   0
-# """,
-#             "Adjancency Matrices 3.1.1, Page 82",
-#          ),
-#     ):
-#         check_evaluation(str_expr, str_expected, message)
+def test_combinatorica_3_1():
+    for str_expr, str_expected, message in (
+        (
+         "Edges[K[5]]",
+         "{{0, 1, 1, 1, 1}, "
+         "{1, 0, 1, 1, 1}, "
+         "{1, 1, 0, 1, 1}, "
+         "{1, 1, 1, 0, 1}, "
+         "{1, 1, 1, 1, 0}}",
+         "Adjacency Matrices 3.1.1, Page 82",
+         ),
+    ):
+        check_evaluation(str_expr, str_expected, message)
 
 
 def test_4_1():
     for str_expr, str_expected, message in (
-        # Reinstate these two after MapAt is
 
-        # (
-        #     "ConnectedComponents[ ExpandGraph[K[5], 10] ]",
-        #     "{{1, 2, 3, 4, 5}, {6}, {7}, {8}, {9}, {10}}",
-        #     "Unions and Intersections 4.1.1, Page 130",
-        # ),
+        (
+            "ConnectedComponents[ ExpandGraph[K[5], 10] ]",
+            "{{1, 2, 3, 4, 5}, {6}, {7}, {8}, {9}, {10}}",
+            "Unions and Intersections 4.1.1, Page 130",
+        ),
 
-        # (
-        #     "IdenticalQ[ GraphIntersection[Wheel[10], K[10]], Wheel[10]]",
-        #     "True",
-        #     "Unions and Intersections 4.1.1, Page 131",
-        # ),
+        (
+            "IdenticalQ[ GraphIntersection[Wheel[10], K[10]], Wheel[10]]",
+            "True",
+            "Unions and Intersections 4.1.1, Page 131",
+        ),
         (
             "CompleteQ[ GraphSum[ Cycle[10], GraphComplement[Cycle[10]] ] ]",
             "True",
@@ -677,11 +671,6 @@ def test_combinatorica_rest():
             "2",
             "BinarySearch - find where key is a list",
         ),
-        # (
-        #     "SetPartitions[3]",
-        #     "{{{1, 2, 3}}, {{1}, {2, 3}}, {{1, 2}, {3}}, {{1, 3}, {2}}, {{1}, {2}, {3}}}",
-        #     "SetPartitions"
-        # ),
         (
             "TransposePartition[{8, 6, 4, 4, 3, 1}]",
             "{6, 5, 5, 4, 2, 2, 1, 1}",

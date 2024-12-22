@@ -100,11 +100,13 @@ def test_permutations_and_subsets_1_1_1():
         #     "???",
         #     "Necklace polynomial, 1.1.1 Page 4",
         # ),
-        # (
-        #     "Subsets[{1,2,3,4}]"
-        #     "??",
-        #     "MinimumChangePermuations; 1.1.1, Page 5",
-        # ),
+        (
+            "Subsets[{1,2,3,4}]",
+            "{{}, {4}, {3, 4}, {3}, {2, 3}, {2, 3, 4}, {2, 4}, "
+            "{2}, {1, 2}, {1, 2, 4}, {1, 2, 3, 4}, {1, 2, 3}, "
+            "{1, 3}, {1, 3, 4}, {1, 4}, {1}}",
+            "all 4-element subsets, minimum change order; 1.1.1, Page 5",
+        ),
         # (
         #     "KSubsets[{1,2,3,4,5}, 3]",
         #     "??",
