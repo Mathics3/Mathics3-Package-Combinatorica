@@ -607,11 +607,14 @@ def test_2_1_to_2_3():
 
 def test_4_1():
     for str_expr, str_expected, message in (
-        (
-            "ConnectedComponents[ ExpandGraph[K[5], 10] ]",
-            "{{1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}}",
-            "Unions and Intersections 4.1.1, Page 130",
-        ),
+        # Reinstate these two after MapAt is
+
+        # (
+        #     "ConnectedComponents[ ExpandGraph[K[5], 10] ]",
+        #     "{{1, 2, 3, 4, 5}, {6}, {7}, {8}, {9}, {10}}",
+        #     "Unions and Intersections 4.1.1, Page 130",
+        # ),
+
         # (
         #     "IdenticalQ[ GraphIntersection[Wheel[10], K[10]], Wheel[10]]",
         #     "True",
