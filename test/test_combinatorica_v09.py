@@ -497,7 +497,6 @@ def test_2_1_to_2_3():
     for str_expr, str_expected, assert_fail_message in (
         # 2.1.2 Ferrers Diagrams can't be tested easily and robustly here
         # easily
-        # 2.1.3 uses Partitions which is broken
         (
             "Partitions[6]",
             "{{6}, {5, 1}, {4, 2}, {4, 1, 1}, {3, 3}, "
@@ -525,6 +524,17 @@ def test_2_1_to_2_3():
                 "permutations or subsets. Counting Partitions 2.1.1, Page 52"
             ),
         ),
+        # Both WMA and Mathics3 give different results from the book.
+        # (
+        #     "Select[Partitions[7], (Apply[And,Map[OddQ#]])&]",
+        #     "???",
+        #     "Bijections between Partitions 2.1.3, Page 56",
+        # ),
+        # (
+        #     "Select[Partitions[7], (Length[#] == Lenghth[Union[#]])&]",
+        #     "???",
+        #     "Bijections between Partitions 2.1.3, Page 56",
+        # ),
         (
             "PartitionsP[10]",
             "NumberOfPartitions[10]",
@@ -535,6 +545,12 @@ def test_2_1_to_2_3():
             "28",
             "Random Compositions 2.2.1, Page 60",
         ),
+        # Both WMA and Mathics3 give different results from the book.
+        # (
+        #     "(c = {0, 0, 6); Table[NextComposition[c], {28}])",
+        #     "???",
+        #     "Random Compositions 2.2.1, Page 62",
+        # ),
         (
             "TableauQ[{{1,2,5}, {3,4,5}, {6}}]",
             "True",
@@ -574,12 +590,24 @@ def test_2_1_to_2_3():
         (
             "FirstLexicographicTableau[{4, 4, 3, 3}]",
             "{{1, 5, 9, 13}, {2, 6, 10, 14}, {3, 7, 11}, {4, 8, 12}}",
-            "FirstLexicograpicTableaux 2.3.3, Page 66",
+            "FirstLexicograpicTableaux 2.3.3, Page 68",
         ),
         (
             "LastLexicographicTableau[{4, 3, 3, 2}]",
             "{{1, 2, 3, 4}, {5, 6, 7}, {8, 9, 10}, {11, 12}}",
-            "LastLexicograpicTableaux 2.3.3, Page 66",
+            "LastLexicograpicTableaux 2.3.3, Page 68",
+        ),
+        (
+             "Table[CatalanNumber[i], {i, 2, 20}]",
+            "{2, 5, 14, 42, 132, 429, 1430, 4862, 16796, "
+            "58786, 208012, 742900, 2674440, 9694845, 35357670, "
+            "129644790, 477638700, 1767263190, 6564120420}",
+            "Counting Tableaux by Shape 2.3.4, Page 71",
+        ),
+        (
+             "EncroachingListSet[{6,7,1,8,2,5,9,3,4}]",
+            "{{1, 6, 7, 8, 9}, {2, 5}, {3, 4}}",
+            "Counting Tableaux by Shape 2.3.7, Page 76",
         ),
     ):
         check_evaluation(str_expr, str_expected, assert_fail_message)
@@ -596,6 +624,50 @@ def test_combinatorica_3_1():
          "{1, 1, 1, 1, 0}}",
          "Adjacency Matrices 3.1.1, Page 82",
          ),
+        (
+            "V[ K[5] ]",
+            "5",
+            "Adjacency Matrices 3.1.1, Page 82",
+        ),
+        (
+            "{M[K[5]], M[K[5],Directed]}",
+            "{10, 20}",
+            "Adjacency Matrices 3.1.1, Page 82",
+        ),
+        (
+            "ConnectedComponents[ AddVertex[Star[10]] ]",
+            "{{1, 10, 2, 3, 4, 5, 6, 7, 8, 9}, {11}}",
+            "Adjacency Matrices 3.1.1, Page 84",
+        ),
+        (
+            # WMA and Mathics3 agree, but differ from in
+            # the order of the list from book.
+            "Spectrum[ Star[5] ]",
+            "{-2, 2, 0, 0, 0}",
+            "Eigenvalues 3.1.2, Page 85",
+        ),
+        # WMA and Mathics don't work.
+        # (
+        #     "Spectrum[ GraphUnion[Cycle[4], K[1]] ]",
+        #     "{4, -2, -2, 0, 0, 0}",
+        #     "Eigenvalues 3.1.2, Page 85",
+        # ),
+        (
+            "Spectrum[RealizeDegreeSequence[{4,4,4,4,4,4}]]",
+            "{4, -2, -2, 0, 0, 0}",
+            "Eigenvalues 3.1.2, Page 85",
+        ),
+        (
+            "Spectrum[K[3,4]]",
+            "{-2 Sqrt[3], 2 Sqrt[3], 0, 0, 0, 0, 0}",
+            "Eigenvalues 3.1.2, Page 85",
+        ),
+        (
+            "ToAdjacencyLists[K[5]]",
+            "{{2, 3, 4, 5}, {1, 3, 4, 5}, {1, 2, 4, 5}, {1, 2, 3, 5}, "
+            "{1, 2, 3, 4}}",
+            "Adjacency Lists 3.1.2, Page 86",
+        ),
     ):
         check_evaluation(str_expr, str_expected, message)
 
@@ -608,7 +680,6 @@ def test_4_1():
             "{{1, 2, 3, 4, 5}, {6}, {7}, {8}, {9}, {10}}",
             "Unions and Intersections 4.1.1, Page 130",
         ),
-
         (
             "IdenticalQ[ GraphIntersection[Wheel[10], K[10]], Wheel[10]]",
             "True",

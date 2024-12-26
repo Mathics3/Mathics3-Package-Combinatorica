@@ -139,7 +139,7 @@ def test_partitions_compositions_and_young_tableaux_1_1_2():
             "Set partitions, 1.1.2 Page 7",
         ),
         # (
-        #     "Tableaux[{2,2,1}",
+        #     "Tableaux[{2,2,1}]",
         #     "???",
         #     "Tableaux, 1.1.2 Page 8",
         # ),
