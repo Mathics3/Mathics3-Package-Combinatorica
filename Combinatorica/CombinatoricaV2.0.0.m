@@ -109,7 +109,12 @@ Acknowledgements:
 (* :Mathematica Version: 4.0
 *)
 
-BeginPackage["DiscreteMath`Combinatorica`",
+BeginPackage["DiscreteMath`Combinatorica`" (***,
+rocky
+Original verision included this. First,
+these now would need to be put in {}.
+Second, these packages no longer exist and were merged
+into WMA/Mathics3.
 		"DiscreteMath`CombinatorialFunctions`",
  (* needed for CatalanNumber *)
                 "Graphics`Colors`",
@@ -118,6 +123,7 @@ BeginPackage["DiscreteMath`Combinatorica`",
  (* needed for drawing directed edges *)
                 "Statistics`DiscreteDistributions`"
  (* needed for generating random graph*)
+***)
 ]
 
 Unprotect[
