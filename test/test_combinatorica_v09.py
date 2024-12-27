@@ -668,6 +668,52 @@ def test_combinatorica_3_1():
             "{1, 2, 3, 4}}",
             "Adjacency Lists 3.1.2, Page 86",
         ),
+        (
+            "ToOrderedPairs[ K[5] ]",
+            "{{1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 1}, {2, 3}, "
+            "{2, 4}, {2, 5}, {3, 1}, {3, 2}, {3, 4}, {3, 5}, "
+            "{4, 1}, {4, 2}, {4, 3}, {4, 5}, {5, 1}, {5, 2}, {5, 3}, {5, 4}}",
+            "OrderedPairs 3.1.3, Page 88",
+        ),
+        (
+            "ToUnorderedPairs[ K[5] ]",
+            "{{1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 3}, "
+            "{2, 4}, {2, 5}, {3, 4}, {3, 5}, {4, 5}}",
+            "OrderedPairs 3.1.3, Page 88",
+        ),
+    ):
+        check_evaluation(str_expr, str_expected, message)
+
+
+def test_combinatorica_3_2():
+    for str_expr, str_expected, message in (
+        (
+            "SimpleQ[ K[5] ] && CompleteQ[ K[5] ]",
+            "True",
+            "Classifying Simple Graph 3.2.2, Page 89",
+        ),
+        (
+            "UnweightedQ[ AddEdge[K[5], {1,4}] ]",
+            "False",
+            "Classifying Simple Graph 3.2.2, Page 90",
+        ),
+        (
+            "PseudographQ[ AddEdge[K[5], {3,3}] ]",
+            "True",
+            "Classifying Simple Graph 3.2.2, Page 90",
+        ),
+        (
+            "UndirectedQ[ DeleteEdge[K[20], {1,2}, Directed] ]",
+            "False",
+            "Undirected Graphs 3.2.4, Page 94",
+        ),
+
+        (
+            "UndirectedQ[ K[20] ]",
+            "True",
+            "Undirected Graphs 3.2.4, Page 94",
+        ),
+
     ):
         check_evaluation(str_expr, str_expected, message)
 
