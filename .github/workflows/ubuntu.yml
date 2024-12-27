@@ -31,7 +31,7 @@ jobs:
         cd mathics-scanner/
         pip install -e .
         cd ..
-        git clone https://github.com/Mathics3/mathics-core.git --branch multi-dimensional-MapAt
+        git clone https://github.com/Mathics3/mathics-core.git
         cd mathics-core/
         remake -x develop
         remake -x install
