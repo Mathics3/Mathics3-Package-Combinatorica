@@ -83,7 +83,7 @@ incidental, or consequential damages.
 (* :Mathematica Version: 2.3, Mathics3 version 7.0.0
 *)
 
-BeginPackage["DiscreteMath`CombinatoricaV0.91`"]
+BeginPackage["DiscreteMath`CombinatoricaV091`"]
 
 Graph::usage = "Graph[g,v] is the header for a graph object where g is an adjacency matrix and v is a list of vertices."
 

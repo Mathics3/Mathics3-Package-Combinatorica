@@ -10,7 +10,10 @@ import pytest
 _initialized: bool = False
 
 combinatorica_file = osp.normpath(
-    osp.join(osp.dirname(__file__), "..", "Combinatorica", "CombinatoricaV0.9.m")
+    osp.join(osp.dirname(__file__),
+             "..",
+             "Combinatorica",
+             "CombinatoricaV091.m")
 )
 
 
