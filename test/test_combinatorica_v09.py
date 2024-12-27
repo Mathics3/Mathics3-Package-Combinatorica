@@ -281,8 +281,8 @@ def test_permutations_groups_1_2():
             "(4 m + 2 m ^ 2 + m ^ 4 + m ^ 8) / 8",
             "Polya counting resulting in polynomial 1.2.6, Page 25",
         ),
-        # Automorphism is slow. So we reduce Cycle[8] given as the example in the
-        # book to Cycle[3].
+        # Automorphism is slow. So we reduce Cycle[8] given as the
+        # example in the book to Cycle[3].
         (
             "Polya[Automorphisms[Cycle[3]], m]",
             "(2 m + 3 m ^ 2 + m ^ 3) / 6",
@@ -497,7 +497,6 @@ def test_2_1_to_2_3():
     for str_expr, str_expected, assert_fail_message in (
         # 2.1.2 Ferrers Diagrams can't be tested easily and robustly here
         # easily
-        # 2.1.3 uses Partitions which is broken
         (
             "Partitions[6]",
             "{{6}, {5, 1}, {4, 2}, {4, 1, 1}, {3, 3}, "
@@ -525,16 +524,44 @@ def test_2_1_to_2_3():
                 "permutations or subsets. Counting Partitions 2.1.1, Page 52"
             ),
         ),
+        # Both WMA and Mathics3 give different results from the book.
+        # (
+        #     "Select[Partitions[7], (Apply[And,Map[OddQ#]])&]",
+        #     "???",
+        #     "Bijections between Partitions 2.1.3, Page 56",
+        # ),
+        # (
+        #     "Select[Partitions[7], (Length[#] == Lenghth[Union[#]])&]",
+        #     "???",
+        #     "Bijections between Partitions 2.1.3, Page 56",
+        # ),
         (
             "PartitionsP[10]",
             "NumberOfPartitions[10]",
             "Counting Partitions 2.1.4, Page 57",
         ),
         (
+            "NumberOfPartitions[10] == Length[Partitions[10]]",
+            "True",
+            "Counting Partitions 2.1.4, Page 57",
+        ),
+        (
+            "Select[Partitions[10], (Length[#] == Length[Union[#]])&]",
+            "{{10}, {9, 1}, {8, 2}, {7, 3}, {7, 2, 1}, "
+            "{6, 4}, {6, 3, 1}, {5, 4, 1}, {5, 3, 2}, {4, 3, 2, 1}}",
+            "Counting Partitions 2.1.4, Page 58",
+        ),
+        (
             "NumberOfCompositions[6,3]",
             "28",
             "Random Compositions 2.2.1, Page 60",
         ),
+        # Both WMA and Mathics3 give different results from the book.
+        # (
+        #     "(c = {0, 0, 6); Table[NextComposition[c], {28}])",
+        #     "???",
+        #     "Random Compositions 2.2.1, Page 62",
+        # ),
         (
             "TableauQ[{{1,2,5}, {3,4,5}, {6}}]",
             "True",
@@ -574,52 +601,179 @@ def test_2_1_to_2_3():
         (
             "FirstLexicographicTableau[{4, 4, 3, 3}]",
             "{{1, 5, 9, 13}, {2, 6, 10, 14}, {3, 7, 11}, {4, 8, 12}}",
-            "FirstLexicograpicTableaux 2.3.3, Page 66",
+            "FirstLexicograpicTableaux 2.3.3, Page 68",
         ),
         (
             "LastLexicographicTableau[{4, 3, 3, 2}]",
             "{{1, 2, 3, 4}, {5, 6, 7}, {8, 9, 10}, {11, 12}}",
-            "LastLexicograpicTableaux 2.3.3, Page 66",
+            "LastLexicograpicTableaux 2.3.3, Page 68",
+        ),
+        (
+             "Table[CatalanNumber[i], {i, 2, 20}]",
+            "{2, 5, 14, 42, 132, 429, 1430, 4862, 16796, "
+            "58786, 208012, 742900, 2674440, 9694845, 35357670, "
+            "129644790, 477638700, 1767263190, 6564120420}",
+            "Counting Tableaux by Shape 2.3.4, Page 71",
+        ),
+        (
+             "EncroachingListSet[{6,7,1,8,2,5,9,3,4}]",
+            "{{1, 6, 7, 8, 9}, {2, 5}, {3, 4}}",
+            "Counting Tableaux by Shape 2.3.7, Page 76",
         ),
     ):
         check_evaluation(str_expr, str_expected, assert_fail_message)
 
 
-# def test_combinatorica_3_1():
-#     for str_expr, str_expected, message in (
-#         (
-#             "TableForm[ Edges[K[5]] ]",
-#         """ 0   1   1   1   1
+def test_combinatorica_3_1():
+    for str_expr, str_expected, message in (
+        (
+         "Edges[K[5]]",
+         "{{0, 1, 1, 1, 1}, "
+         "{1, 0, 1, 1, 1}, "
+         "{1, 1, 0, 1, 1}, "
+         "{1, 1, 1, 0, 1}, "
+         "{1, 1, 1, 1, 0}}",
+         "Adjacency Matrices 3.1.1, Page 82",
+         ),
+        (
+            "V[ K[5] ]",
+            "5",
+            "Adjacency Matrices 3.1.1, Page 82",
+        ),
+        (
+            "{M[K[5]], M[K[5],Directed]}",
+            "{10, 20}",
+            "Adjacency Matrices 3.1.1, Page 82",
+        ),
+        (
+            "ConnectedComponents[ AddVertex[Star[10]] ]",
+            "{{1, 10, 2, 3, 4, 5, 6, 7, 8, 9}, {11}}",
+            "Adjacency Matrices 3.1.1, Page 84",
+        ),
+        (
+            # WMA and Mathics3 agree, but differ from in
+            # the order of the list from book.
+            "Spectrum[ Star[5] ]",
+            "{-2, 2, 0, 0, 0}",
+            "Eigenvalues 3.1.2, Page 85",
+        ),
+        # WMA and Mathics don't work.
+        # (
+        #     "Spectrum[ GraphUnion[Cycle[4], K[1]] ]",
+        #     "{4, -2, -2, 0, 0, 0}",
+        #     "Eigenvalues 3.1.2, Page 85",
+        # ),
+        (
+            "Spectrum[RealizeDegreeSequence[{4,4,4,4,4,4}]]",
+            "{4, -2, -2, 0, 0, 0}",
+            "Eigenvalues 3.1.2, Page 85",
+        ),
+        (
+            "Spectrum[K[3,4]]",
+            "{-2 Sqrt[3], 2 Sqrt[3], 0, 0, 0, 0, 0}",
+            "Eigenvalues 3.1.2, Page 85",
+        ),
+        (
+            "ToAdjacencyLists[K[5]]",
+            "{{2, 3, 4, 5}, {1, 3, 4, 5}, {1, 2, 4, 5}, {1, 2, 3, 5}, "
+            "{1, 2, 3, 4}}",
+            "Adjacency Lists 3.1.2, Page 86",
+        ),
+        (
+            "ToOrderedPairs[ K[5] ]",
+            "{{1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 1}, {2, 3}, "
+            "{2, 4}, {2, 5}, {3, 1}, {3, 2}, {3, 4}, {3, 5}, "
+            "{4, 1}, {4, 2}, {4, 3}, {4, 5}, {5, 1}, {5, 2}, {5, 3}, {5, 4}}",
+            "OrderedPairs 3.1.3, Page 88",
+        ),
+        (
+            "ToUnorderedPairs[ K[5] ]",
+            "{{1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 3}, "
+            "{2, 4}, {2, 5}, {3, 4}, {3, 5}, {4, 5}}",
+            "OrderedPairs 3.1.3, Page 88",
+        ),
+    ):
+        check_evaluation(str_expr, str_expected, message)
 
-#                    1   0   1   1   1
 
-#                    1   1   0   1   1
+def test_combinatorica_3_2():
+    for str_expr, str_expected, message in (
+        (
+            "SimpleQ[ K[5] ] && CompleteQ[ K[5] ]",
+            "True",
+            "Classifying Simple Graph 3.2.2, Page 89",
+        ),
+        (
+            "UnweightedQ[ AddEdge[K[5], {1,4}] ]",
+            "False",
+            "Classifying Simple Graph 3.2.2, Page 90",
+        ),
+        (
+            "PseudographQ[ AddEdge[K[5], {3,3}] ]",
+            "True",
+            "Classifying Simple Graph 3.2.2, Page 90",
+        ),
+        (
+            "UndirectedQ[ DeleteEdge[K[20], {1,2}, Directed] ]",
+            "False",
+            "Undirected Graphs 3.2.4, Page 94",
+        ),
 
-#                    1   1   1   0   1
+        (
+            "UndirectedQ[ K[20] ]",
+            "True",
+            "Undirected Graphs 3.2.4, Page 94",
+        ),
+        (
+            "BreadthFirstTraversal[Cycle[20], 1]",
+            "{1, 2, 20, 3, 19, 4, 18, 5, 17, 6, 16, 7, 15, 8, "
+            "14, 9, 13, 10, 12, 11}",
+            "BreadthfirstTraversal Graphs 3.2.5, Page 95",
+        ),
+        (
+            "BreadthFirstTraversal[K[2,2,2], 1, Edge]",
+            "{{1, 3}, {1, 4}, {1, 5}, {1, 6}, {3, 2}}",
+            "BreadthfirstTraversal Graphs 3.2.5, Page 96",
+        ),
+        (
+            "BreadthFirstTraversal[Star[9], 9]",
+            "{9, 1, 2, 3, 4, 5, 6, 7, 8}",
+            "BreadthfirstTraversal Graphs 3.2.5, Page 96",
+        ),
+        (
+            "DepthFirstTraversal[GraphUnion[K[3],K[4]], 1]",
+            "{1, 2, 3}",
+            "DepthfirstTraversal Graphs 3.2.6, Page 96",
+        ),
+        (
+            "DepthFirstTraversal[Cycle[20], 1]",
+            "{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, "
+            "15, 16, 17, 18, 19, 20}",
+            "DepthfirstTraversal Graphs 3.2.6, Page 96",
+        ),
+        (
+            "DepthFirstTraversal[K[2,2,2], 1, Edge]",
+            "{{1, 3}, {3, 2}, {2, 4}, {4, 5}, {4, 6}}",
+            "DepthfirstTraversal Graphs 3.2.6, Page 97",
+        ),
 
-#                    1   1   1   1   0
-# """,
-#             "Adjancency Matrices 3.1.1, Page 82",
-#          ),
-#     ):
-#         check_evaluation(str_expr, str_expected, message)
+    ):
+        check_evaluation(str_expr, str_expected, message)
 
 
 def test_4_1():
     for str_expr, str_expected, message in (
-        # Reinstate these two after MapAt is
 
-        # (
-        #     "ConnectedComponents[ ExpandGraph[K[5], 10] ]",
-        #     "{{1, 2, 3, 4, 5}, {6}, {7}, {8}, {9}, {10}}",
-        #     "Unions and Intersections 4.1.1, Page 130",
-        # ),
-
-        # (
-        #     "IdenticalQ[ GraphIntersection[Wheel[10], K[10]], Wheel[10]]",
-        #     "True",
-        #     "Unions and Intersections 4.1.1, Page 131",
-        # ),
+        (
+            "ConnectedComponents[ ExpandGraph[K[5], 10] ]",
+            "{{1, 2, 3, 4, 5}, {6}, {7}, {8}, {9}, {10}}",
+            "Unions and Intersections 4.1.1, Page 130",
+        ),
+        (
+            "IdenticalQ[ GraphIntersection[Wheel[10], K[10]], Wheel[10]]",
+            "True",
+            "Unions and Intersections 4.1.1, Page 131",
+        ),
         (
             "CompleteQ[ GraphSum[ Cycle[10], GraphComplement[Cycle[10]] ] ]",
             "True",
@@ -677,11 +831,6 @@ def test_combinatorica_rest():
             "2",
             "BinarySearch - find where key is a list",
         ),
-        # (
-        #     "SetPartitions[3]",
-        #     "{{{1, 2, 3}}, {{1}, {2, 3}}, {{1, 2}, {3}}, {{1, 3}, {2}}, {{1}, {2}, {3}}}",
-        #     "SetPartitions"
-        # ),
         (
             "TransposePartition[{8, 6, 4, 4, 3, 1}]",
             "{6, 5, 5, 4, 2, 2, 1, 1}",
