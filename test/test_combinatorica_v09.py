@@ -541,6 +541,17 @@ def test_2_1_to_2_3():
             "Counting Partitions 2.1.4, Page 57",
         ),
         (
+            "NumberOfPartitions[10] == Length[Partitions[10]]",
+            "True",
+            "Counting Partitions 2.1.4, Page 57",
+        ),
+        (
+            "Select[Partitions[10], (Length[#] == Length[Union[#]])&]",
+            "{{10}, {9, 1}, {8, 2}, {7, 3}, {7, 2, 1}, "
+            "{6, 4}, {6, 3, 1}, {5, 4, 1}, {5, 3, 2}, {4, 3, 2, 1}}",
+            "Counting Partitions 2.1.4, Page 58",
+        ),
+        (
             "NumberOfCompositions[6,3]",
             "28",
             "Random Compositions 2.2.1, Page 60",
