@@ -713,6 +713,38 @@ def test_combinatorica_3_2():
             "True",
             "Undirected Graphs 3.2.4, Page 94",
         ),
+        (
+            "BreadthFirstTraversal[Cycle[20], 1]",
+            "{1, 2, 20, 3, 19, 4, 18, 5, 17, 6, 16, 7, 15, 8, "
+            "14, 9, 13, 10, 12, 11}",
+            "BreadthfirstTraversal Graphs 3.2.5, Page 95",
+        ),
+        (
+            "BreadthFirstTraversal[K[2,2,2], 1, Edge]",
+            "{{1, 3}, {1, 4}, {1, 5}, {1, 6}, {3, 2}}",
+            "BreadthfirstTraversal Graphs 3.2.5, Page 96",
+        ),
+        (
+            "BreadthFirstTraversal[Star[9], 9]",
+            "{9, 1, 2, 3, 4, 5, 6, 7, 8}",
+            "BreadthfirstTraversal Graphs 3.2.5, Page 96",
+        ),
+        (
+            "DepthFirstTraversal[GraphUnion[K[3],K[4]], 1]",
+            "{1, 2, 3}",
+            "DepthfirstTraversal Graphs 3.2.6, Page 96",
+        ),
+        (
+            "DepthFirstTraversal[Cycle[20], 1]",
+            "{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, "
+            "15, 16, 17, 18, 19, 20}",
+            "DepthfirstTraversal Graphs 3.2.6, Page 96",
+        ),
+        (
+            "DepthFirstTraversal[K[2,2,2], 1, Edge]",
+            "{{1, 3}, {3, 2}, {2, 4}, {4, 5}, {4, 6}}",
+            "DepthfirstTraversal Graphs 3.2.6, Page 97",
+        ),
 
     ):
         check_evaluation(str_expr, str_expected, message)
