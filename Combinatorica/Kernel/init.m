@@ -26,4 +26,4 @@ by Sriram V. Pemmaraju and Steven S. Skiena, Cambridge University Press,
 The programs from the book are also available at www.combinatorica.com.
 *)
 
-Get[ "Combinatorica`CombinatoricaV200" ]
+Get[ "Combinatorica`CombinatoricaV201" ]
