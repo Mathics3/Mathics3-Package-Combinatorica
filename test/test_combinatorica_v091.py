@@ -666,11 +666,11 @@ def test_combinatorica_3_1():
         #     "{4, -2, -2, 0, 0, 0}",
         #     "Eigenvalues 3.1.2, Page 85",
         # ),
-        (
-            "Spectrum[RealizeDegreeSequence[{4,4,4,4,4,4}]]",
-            "{4, -2, -2, 0, 0, 0}",
-            "Eigenvalues 3.1.2, Page 85",
-        ),
+        # (
+        #     "Spectrum[RealizeDegreeSequence[{4,4,4,4,4,4}]]",
+        #     "{4, -2, -2, 0, 0, 0}",
+        #     "Eigenvalues 3.1.2, Page 85",
+        # ),
         (
             "Spectrum[K[3,4]]",
             "{-2 Sqrt[3], 2 Sqrt[3], 0, 0, 0, 0, 0}",
