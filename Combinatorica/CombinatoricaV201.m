@@ -38,7 +38,7 @@ Any comments or bug reports should be forwarded to one of the following:
 *)
 (* :Context: DiscreteMath`Combinatorica`
 *)
-(* :Package Version: 2.0.0
+(* :Package Version: 2.0.1  (Bumped from 2.0.0 to 2.0.1 by rocky)
 *)
 (* :Copyright: Copyright 2000-2003 by Sriram V. Pemmaraju and Steven S. Skiena
 *)
@@ -109,9 +109,9 @@ Acknowledgements:
 (* :Mathematica Version: 4.0
 *)
 
-BeginPackage["DiscreteMath`Combinatorica`" (***,
+BeginPackage["DiscreteMath`CombinatoricaV201`" (***,
 rocky
-Original verision included this. First,
+Original version was omitted version number V201 above and included the below. First,
 these now would need to be put in {}.
 Second, these packages no longer exist and were merged
 into WMA/Mathics3.
