@@ -34,7 +34,8 @@ mailing list should be forwarded to:
 *)
 (* :Context: DiscreteMath`Combinatorica`
 *)
-(* :Package Version: .91	(3/23/95 Beta Release)
+(* :Package Version: 0.9.1	(3/23/95 Beta Release)
+   (Bumped from 0.9 to 0.9.1 by rocky)
  *)
 
 (**** Note: some very small changes have been made to make this
