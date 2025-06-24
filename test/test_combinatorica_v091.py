@@ -764,6 +764,28 @@ def test_combinatorica_3_2():
         check_evaluation(str_expr, str_expected, message)
 
 
+def test_combinatorica_3_3_1_to_3_3_4():
+    for str_expr, str_expected, message in (
+        (
+            "PointsAndLines[K[3]]",
+            "{PointSize[0.025], Point[{-0.5, 0.866025}], Point[{-0.5, -0.866025}], Point[{1., 0}], "
+            "Line[{{-0.5, 0.866025}, {-0.5, -0.866025}}], "
+            "Line[{{-0.5, 0.866025}, {1., 0}}], "
+            "Line[{{-0.5, -0.866025}, {-0.5, 0.866025}}], "
+            "Line[{{-0.5, -0.866025}, {1., 0}}], "
+            "Line[{{1., 0}, {-0.5, 0.866025}}], "
+            "Line[{{1., 0}, {-0.5, -0.866025}}]}",
+            "DisplayingGraphs 3.3.1, Page 101",
+        ),
+        (
+            "RankGraph[ GridGraph[5, 4], {1, 2, 3, 4} ]",
+            "{1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5}",
+            "GraphEmbeddings 3.3.4, Page 106",
+        ),
+    ):
+        check_evaluation(str_expr, str_expected, message)
+
+
 def test_4_1():
     for str_expr, str_expected, message in (
 
