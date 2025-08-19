@@ -348,44 +348,44 @@ def test_inversions_and_inversion_vectors_1_3():
 #         check_evaluation(str_expr, str_expected, message)
 
 
-# def test_2_1_to_2_3():
-#     for str_expr, str_expected, message in (
-#         (
-#             # 2.1.1 uses Partitions which is broken
-#             # 2.1.2 Ferrers Diagrams can't be tested easily and robustly here
-#             # easily
-#             # 2.1.3 uses Partitions which is broken
-#             "PartitionsP[10]",
-#             "NumberOfPartitions[10]",
-#             "Counting Partitions 2.1.4, Page 57",
-#         ),
-#         (
-#             "NumberOfCompositions[6,3]",
-#             "28",
-#             "Random Compositions 2.2.1, Page 60",
-#         ),
-#         (
-#             "TableauQ[{{1,2,5}, {3,4,5}, {6}}]",
-#             "True",
-#             "Young Tableau 2.3, Page 64",
-#         ),
-#         (
-#             "TableauQ[{{1,2,5,9,10}, {5,4,7,13}, {4,8,12},{11}}]",
-#             "False",
-#             "Young Tableau 2.3, Page 64",
-#         ),
-#         # Need to not evaluate expected which reformats \n's
-#         #         (
-#         #             "TableForm[ {{1,2,5}, {3,4,5}, {6}} ]",
-#         #             """{1, 2, 5}
-#         #         {3, 4, 5}
-#         #         {6}
-#         # """
-#         #             "False",
-#         #             "Young Tableau 2.3, Page 63",
-#         #         ),
-#     ):
-#         check_evaluation(str_expr, str_expected, message)
+def test_2_1_to_2_3():
+    for str_expr, str_expected, failure_message, hold_expected in (
+        (
+            # 2.1.1 uses Partitions which is broken
+            # 2.1.2 Ferrers Diagrams can't be tested easily and robustly here
+            # easily
+            # 2.1.3 uses Partitions which is broken
+            "PartitionsP[10]",
+            "NumberOfPartitions[10]",
+            "Counting Partitions 2.1.4, Page 57",
+            False,
+        ),
+        (
+            "NumberOfCompositions[6,3]",
+            "28",
+            "Random Compositions 2.2.1, Page 60",
+            False,
+        ),
+        (
+            "TableauQ[{{1,2,5}, {3,4,5}, {6}}]",
+            "True",
+            "Young Tableau 2.3, Page 64",
+            False,
+        ),
+        (
+            "TableauQ[{{1,2,5,9,10}, {5,4,7,13}, {4,8,12},{11}}]",
+            "False",
+            "Young Tableau 2.3, Page 64",
+            False,
+        ),
+        (
+         "TableForm[ {{1,2,5}, {3,4,5}, {6}} ]",
+         """{1, 2, 5}\n\n{3, 4, 5}\n\n{6}\n""",
+        "Young Tableau 2.3, Page 63",
+         True,
+         ),
+    ):
+        check_evaluation(str_expr, str_expected,  failure_message, hold_expected)
 
 
 def test_combinatorica_rest():
