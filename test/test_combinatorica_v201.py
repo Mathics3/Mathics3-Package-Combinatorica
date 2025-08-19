@@ -95,11 +95,17 @@ def test_permutations_and_subsets_1_1_1():
             "True",
             "inversions, 1.1.1, Page 4",
         ),
-        # (
-        #     "NecklacePolynomial[6, {a, b, c}, Cyclic]"
-        #     "???",
-        #     "Necklace polynomial, 1.1.1 Page 4",
-        # ),
+        (
+            "NecklacePolynomial[6, {a, b, c}, Cyclic]",
+            "a ^ 6 + a ^ 5 b + a ^ 5 c + 3 a ^ 4 b ^ 2 + 5 a ^ 4 b c + "
+            "3 a ^ 4 c ^ 2 + 4 a ^ 3 b ^ 3 + 10 a ^ 3 b ^ 2 c + "
+            "10 a ^ 3 b c ^ 2 + 4 a ^ 3 c ^ 3 + 3 a ^ 2 b ^ 4 + 10 a ^ 2 b ^ 3 c + "
+            "16 a ^ 2 b ^ 2 c ^ 2 + 10 a ^ 2 b c ^ 3 + 3 a ^ 2 c ^ 4 + a b ^ 5 + "
+            "5 a b ^ 4 c + 10 a b ^ 3 c ^ 2 + 10 a b ^ 2 c ^ 3 + 5 a b c ^ 4 + "
+            "a c ^ 5 + b ^ 6 + b ^ 5 c + 3 b ^ 4 c ^ 2 + 4 b ^ 3 c ^ 3 + "
+            "3 b ^ 2 c ^ 4 + b c ^ 5 + c ^ 6",
+            "Necklace polynomial, 1.1.1 Page 4",
+        ),
         (
             "Subsets[{1,2,3,4}]",
             "{{}, {4}, {3, 4}, {3}, {2, 3}, {2, 3, 4}, {2, 4}, "
@@ -107,22 +113,26 @@ def test_permutations_and_subsets_1_1_1():
             "{1, 3}, {1, 3, 4}, {1, 4}, {1}}",
             "all 4-element subsets, minimum change order; 1.1.1, Page 5",
         ),
-        # (
-        #     "KSubsets[{1,2,3,4,5}, 3]",
-        #     "??",
-        #     "k subsets, 1.1.1, Page 5",
-        # ),
+        (
+            "KSubsets[{1,2,3,4,5}, 3]",
+            "{{1, 2, 3}, {1, 2, 4}, {1, 2, 5}, {1, 3, 4}, {1, 3, 5}, "
+            "{1, 4, 5}, {2, 3, 4}, {2, 3, 5}, {2, 4, 5}, {3, 4, 5}}",
+            "k subsets, 1.1.1, Page 5",
+        ),
     ):
         check_evaluation(str_expr, str_expected, message)
 
 
 def test_partitions_compositions_and_young_tableaux_1_1_2():
     for str_expr, str_expected, message in (
-        # (
-        #     "Partitions[6]",
-        #     "???"
-        #     "partitions, 1.1.2 Page 7",
-        # ),
+        (
+            "Partitions[6]",
+            " {{6}, {5, 1}, {4, 2}, {4, 1, 1}, "
+            "{3, 3}, {3, 2, 1}, {3, 1, 1, 1}, "
+            "{2, 2, 2}, {2, 2, 1, 1}, {2, 1, 1, 1, 1}, "
+            "{1, 1, 1, 1, 1, 1}}",
+            "partitions, 1.1.2 Page 7",
+        ),
         (
             "Compositions[5, 3]",
             "{{0, 0, 5}, {0, 1, 4}, {0, 2, 3}, {0, 3, 2}, "
@@ -147,65 +157,65 @@ def test_partitions_compositions_and_young_tableaux_1_1_2():
         check_evaluation(str_expr, str_expected, message, to_string_expr=True)
 
 
-# def test_inversions_and_inversion_vectors_1_3():
-#     for str_expr, str_expected, message in (
-#         (
-#             "p = {5,9,1,8,2,6,4,7,3}; ToInversionVector[p]",
-#             "{2, 3, 6, 4, 0, 2, 2, 1}",
-#             "ToInversionVector 1.3.1, Page 27",
-#         ),
-#         (
-#             "FromInversionVector[ToInversionVector[p]]",
-#             "p",
-#             "FromInversionVector 1.3.1, Page 28",
-#         ),
-#         (
-#             "h = InversePermutation[p]; "
-#             "g = MakeGraph[Range[Length[p]], ((#1<#2 && h[[#1]]>h[[#2]]) || (#1>#2 && h[[#1]]<h[[#2]]))&]; "
-#             "Inversions[p]",
-#             "M[g]",
-#             "Edges equals # of inversions 1.3.1, Page 28",
-#         ),
-#         (
-#             "Inversions[p]",
-#             "Inversions[InversePermutation[p]]",
-#             "[Knu73b] 1.3.2, Page 29",
-#         ),
-#         (
-#             "Inversions[Reverse[Range[8]]]",
-#             "Binomial[8, 2]",
-#             "# permutations is [0 .. Binomial(n 2)]; largest is reverse 1.3.2, Page 29",
-#         ),
-#         (
-#             "Union [ Map[Inversions, Permutations[Range[4]]] ]",
-#             "Range[0, 6]",
-#             "Every one is realizable as ... 1.3.2, Page 29",
-#         ),
-#         (
-#             "p = RandomPermutation[6]; Inversions[p] + Inversions[Reverse[p]]",
-#             "Binomial[Length[p], 2]",
-#             "A neat proof that ... 1.3.2, Page 29",
-#         ),
-#         (
-#             "Select[Permutations[Range[4]], (Inversions[#]==3)&]",
-#             "{{1, 4, 3, 2}, {2, 3, 4, 1}, {2, 4, 1, 3},"
-#             " {3, 1, 4, 2}, {3, 2, 1, 4}, {4, 1, 2, 3}}",
-#             "MacMahon theorem, 1.3.3 Page 30",
-#         ),
-#         (
-#             "Select[Permutations[Range[4]], (Length[Runs[#]]==2)&]",
-#             "{{1, 2, 4, 3}, {1, 3, 2, 4}, {1, 3, 4, 2}, {1, 4, 2, 3},"
-#             " {2, 1, 3, 4}, {2, 3, 1, 4}, {2, 3, 4, 1}, {2, 4, 1, 3},"
-#             " {3, 1, 2, 4}, {3, 4, 1, 2}, {4, 1, 2, 3}}",
-#             "11 permutations of length 4 with 2 runs, 1.3.4, Page 31",
-#         ),
-#         (
-#             "Eulerian[4,2]",
-#             "11",
-#             "Eulerian from [Knu73b], 1.3.4 Page 31",
-#         ),
-#     ):
-#         check_evaluation(str_expr, str_expected, message)
+def test_inversions_and_inversion_vectors_1_3():
+    for str_expr, str_expected, message in (
+        (
+            "p = {5,9,1,8,2,6,4,7,3}; ToInversionVector[p]",
+            "{2, 3, 6, 4, 0, 2, 2, 1}",
+            "ToInversionVector 1.3.1, Page 27",
+        ),
+        (
+            "FromInversionVector[ToInversionVector[p]]",
+            "p",
+            "FromInversionVector 1.3.1, Page 28",
+        ),
+        # (
+        #     "h = InversePermutation[p]; "
+        #     "g = MakeGraph[Range[Length[p]], ((#1<#2 && h[[#1]]>h[[#2]]) || (#1>#2 && h[[#1]]<h[[#2]]))&]; "
+        #     "Inversions[p]",
+        #     "M[g]",
+        #     "Edges equals # of inversions 1.3.1, Page 28",
+        # ),
+        (
+            "Inversions[p]",
+            "Inversions[InversePermutation[p]]",
+            "[Knu73b] 1.3.2, Page 29",
+        ),
+        (
+            "Inversions[Reverse[Range[8]]]",
+            "Binomial[8, 2]",
+            "# permutations is [0 .. Binomial(n 2)]; largest is reverse 1.3.2, Page 29",
+        ),
+        (
+            "Union [ Map[Inversions, Permutations[Range[4]]] ]",
+            "Range[0, 6]",
+            "Every one is realizable as ... 1.3.2, Page 29",
+        ),
+        (
+            "p = RandomPermutation[6]; Inversions[p] + Inversions[Reverse[p]]",
+            "Binomial[Length[p], 2]",
+            "A neat proof that ... 1.3.2, Page 29",
+        ),
+        (
+            "Select[Permutations[Range[4]], (Inversions[#]==3)&]",
+            "{{1, 4, 3, 2}, {2, 3, 4, 1}, {2, 4, 1, 3},"
+            " {3, 1, 4, 2}, {3, 2, 1, 4}, {4, 1, 2, 3}}",
+            "MacMahon theorem, 1.3.3 Page 30",
+        ),
+        (
+            "Select[Permutations[Range[4]], (Length[Runs[#]]==2)&]",
+            "{{1, 2, 4, 3}, {1, 3, 2, 4}, {1, 3, 4, 2}, {1, 4, 2, 3},"
+            " {2, 1, 3, 4}, {2, 3, 1, 4}, {2, 3, 4, 1}, {2, 4, 1, 3},"
+            " {3, 1, 2, 4}, {3, 4, 1, 2}, {4, 1, 2, 3}}",
+            "11 permutations of length 4 with 2 runs, 1.3.4, Page 31",
+        ),
+        (
+            "Eulerian[4,2]",
+            "11",
+            "Eulerian from [Knu73b], 1.3.4 Page 31",
+        ),
+    ):
+        check_evaluation(str_expr, str_expected, message)
 
 
 # def test_special_classes_of_permutations_1_4():
@@ -378,58 +388,58 @@ def test_partitions_compositions_and_young_tableaux_1_1_2():
 #         check_evaluation(str_expr, str_expected, message)
 
 
-# def test_combinatorica_rest():
-#     for str_expr, str_expected, message in (
-#         (
-#             "Permute[{A, B, C, D}, Permutations[Range[3]]]",
-#             "{{A, B, C}, {A, C, B}, {B, A, C}, {B, C, A}, {C, A, B}, {C, B, A}}",
-#             "Permute",
-#         ),
-#         (
-#             "Subsets[Range[3]]",
-#             "{{}, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}}",
-#             "Subsets",
-#         ),
-#         (
-#             "BinarySearch[{2, 3, 9}, 7] // N",
-#             "2.5",
-#             "BinarySearch - mid-way insertion point",
-#         ),
-#         ("BinarySearch[{3, 4, 10, 100, 123}, 100]", "4", "BinarySearch find item"),
-#         (
-#             "BinarySearch[{2, 3, 9}, 7] // N",
-#             "2.5",
-#             "BinarySearch - mid-way insertion point",
-#         ),
-#         (
-#             "BinarySearch[{2, 7, 9, 10}, 3] // N",
-#             "1.5",
-#             "BinarySearch - insertion point after 1st item",
-#         ),
-#         (
-#             "BinarySearch[{-10, 5, 8, 10}, -100] // N",
-#             "0.5",
-#             "BinarySearch find before first item",
-#         ),
-#         (
-#             "BinarySearch[{-10, 5, 8, 10}, 20] // N",
-#             "4.5",
-#             "BinarySearch find after last item",
-#         ),
-#         (
-#             "BinarySearch[{{a, 1}, {b, 7}}, 7, #[[2]]&]",
-#             "2",
-#             "BinarySearch - find where key is a list",
-#         ),
-#         # (
-#         #     "SetPartitions[3]",
-#         #     "{{{1, 2, 3}}, {{1}, {2, 3}}, {{1, 2}, {3}}, {{1, 3}, {2}}, {{1}, {2}, {3}}}",
-#         #     "SetPartitions"
-#         # ),
-#         (
-#             "TransposePartition[{8, 6, 4, 4, 3, 1}]",
-#             "{6, 5, 5, 4, 2, 2, 1, 1}",
-#             "TransposePartition",
-#         ),
-#     ):
-#         check_evaluation(str_expr, str_expected, message)
+def test_combinatorica_rest():
+    for str_expr, str_expected, message in (
+        # (
+        #     "Permute[{A, B, C, D}, Permutations[Range[3]]]",
+        #     "{{A, B, C}, {A, C, B}, {B, A, C}, {B, C, A}, {C, A, B}, {C, B, A}}",
+        #     "Permute",
+        # ),
+        # (
+        #     "Subsets[Range[3]]",
+        #     "{{}, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}}",
+        #     "Subsets",
+        # ),
+        # (
+        #     "BinarySearch[{2, 3, 9}, 7] // N",
+        #     "2.5",
+        #     "BinarySearch - mid-way insertion point",
+        # ),
+        # ("BinarySearch[{3, 4, 10, 100, 123}, 100]", "4", "BinarySearch find item"),
+        # (
+        #     "BinarySearch[{2, 3, 9}, 7] // N",
+        #     "2.5",
+        #     "BinarySearch - mid-way insertion point",
+        # ),
+        # (
+        #     "BinarySearch[{2, 7, 9, 10}, 3] // N",
+        #     "1.5",
+        #     "BinarySearch - insertion point after 1st item",
+        # ),
+        # (
+        #     "BinarySearch[{-10, 5, 8, 10}, -100] // N",
+        #     "0.5",
+        #     "BinarySearch find before first item",
+        # ),
+        # (
+        #     "BinarySearch[{-10, 5, 8, 10}, 20] // N",
+        #     "4.5",
+        #     "BinarySearch find after last item",
+        # ),
+        # (
+        #     "BinarySearch[{{a, 1}, {b, 7}}, 7, #[[2]]&]",
+        #     "2",
+        #     "BinarySearch - find where key is a list",
+        # ),
+        (
+            "SetPartitions[3]",
+            "{{{1, 2, 3}}, {{1}, {2, 3}}, {{1, 2}, {3}}, {{1, 3}, {2}}, {{1}, {2}, {3}}}",
+            "SetPartitions"
+        ),
+        (
+            "TransposePartition[{8, 6, 4, 4, 3, 1}]",
+            "{6, 5, 5, 4, 2, 2, 1, 1}",
+            "TransposePartition",
+        ),
+    ):
+        check_evaluation(str_expr, str_expected, message)
