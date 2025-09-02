@@ -16,8 +16,8 @@ We have V.2.0 or that as ``CombinatoricaV201.m``
 
 To run from inside Mathics3::
 
-        $ git clone git@github.com:Mathic3/Mathics3-Combinatorica.git
-        $ cd Mathics3-Combinatorica/Combinatorica
+        $ git clone git@github.com:Mathic3/Mathics3-Package-Combinatorica.git
+        $ cd Mathics3-Package-Combinatorica/Combinatorica
 
         $ mathics
 

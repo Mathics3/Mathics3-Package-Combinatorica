@@ -1,4 +1,4 @@
-name: Mathics3 Combinatorica (ubuntu)
+name: Mathics3 Package Combinatorica (ubuntu)
 
 on:
   push:
@@ -27,18 +27,18 @@ jobs:
         pip install setuptools "mpmath<1.4,>=1.1.0"
         # We can comment out after next Mathics-Scanner release
         # python -m pip install -e git+https://github.com/Mathics3/mathics-scanner#egg=Mathics-Scanner[full]
-        git clone https://github.com/Mathics3/mathics-scanner.git
-        cd mathics-scanner/
-        pip install -e .
-        cd ..
-        git clone https://github.com/Mathics3/mathics-core.git
-        cd mathics-core/
-        remake -x develop
-        remake -x install
-        cd ..
+        # git clone https://github.com/Mathics3/mathics-scanner.git
+        # cd mathics-scanner/
+        # pip install -e .
+        # cd ..
+        # git clone https://github.com/Mathics3/mathics-core.git
+        # cd mathics-core/
+        # remake -x develop
+        # remake -x install
+        # cd ..
         pip install -e .[dev]
 
         # python -m pip install Mathics-Scanner[full]
-    - name: Test Mathics
+    - name: Test Mathics3 Package Combinatorica
       run: |
         make check

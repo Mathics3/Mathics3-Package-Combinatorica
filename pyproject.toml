@@ -5,13 +5,13 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-description = "A general-purpose computer algebra system."
+description = "Implementing Discrete Mathematics: Combinatorics and Graph Theory with Mathematica"
 dependencies = [
-    "Mathics3 >= 7.0.0",
+    "Mathics3 >= 9.0.0",
 ]
 license = {text = "GPL"}
-name = "Mathics3-Combinatorica"
-requires-python = ">=3.8" # Sympy 1.11 is supported only down to 3.8
+name = "Mathics3-Package-Combinatorica"
+requires-python = ">=3.10"
 readme = "README.rst"
 keywords = ["Mathematica", "Wolfram", "Interpreter", "Shell", "Math", "CAS"]
 maintainers = [
@@ -22,8 +22,6 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -38,7 +36,7 @@ dynamic = ["version"]
 
 [project.urls]
 Homepage = "https://mathics.org/"
-Downloads = "https://github.com/Mathics3/mathics-core/releases"
+Downloads = "https://github.com/Mathics3/Mathics3-Packages-Combinatorica/releases"
 
 [project.optional-dependencies]
 dev = [
