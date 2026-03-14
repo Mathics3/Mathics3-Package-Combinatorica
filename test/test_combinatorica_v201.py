@@ -218,134 +218,135 @@ def test_inversions_and_inversion_vectors_1_3():
         check_evaluation(str_expr, str_expected, message)
 
 
-# def test_special_classes_of_permutations_1_4():
-#     # We include this earlier since the above in fact rely on KSubsets
-#     for str_expr, str_expected, message in (
-#         (
-#             "Map[ ToCycles, Select[ Permutations[Range[4]], InvolutionQ ] ]",
-#             "{{{1}, {2}, {3}, {4}}, {{1}, {2}, {4, 3}}, "
-#             "{{1}, {3, 2}, {4}}, {{1}, {4, 2}, {3}}, "
-#             "{{2, 1}, {3}, {4}}, {{2, 1}, {4, 3}}, "
-#             "{{3, 1}, {2}, {4}}, {{3, 1}, {4, 2}}, "
-#             "{{4, 1}, {2}, {3}}, {{4, 1}, {3, 2}}}",
-#             "Involutions; 1.4.1, Page 33",
-#         ),
-#         (
-#             "NumberOfInvolutions[4]",
-#             "10",
-#             "NumberOfInvolutions; 1.4.1, Page 33",
-#         ),
-#         (
-#             "Table[NumberOfDerangements[i], {i, 1, 10}]",
-#             "{0, 1, 2, 9, 44, 265, 1854, 14833, 133496, 1334961}",
-#             "NumberOfDerangements; 1.4.2, Page 33",
-#         ),
-#         (
-#             "Table[ N[ NumberOfDerangements[i]/(i!) ], {i, 1, 10} ]",
-#             "{0., 0.5, 0.333333, 0.375, 0.366667, 0.368056, 0.367857, 0.367882, 0.367879, 0.367879}",
-#             "Confused Secretary 1.4.2, Page 34",
-#         ),
-#         (
-#             "Table[Round[n!/N[E]], {n, 1, 10}]",
-#             "{0, 1, 2, 9, 44, 265, 1854, 14833, 133496, 1334961}",
-#             "Rounding as a nicer way to get derangmeants; 1.4.2, Page 34",
-#         ),
-#         (
-#             "Josephus[17, 7]",
-#             "{16, 17, 5, 3, 14, 7, 1, 11, 10, 12, 9, 4, 6, 2, 15, 13, 8}",
-#             "Josephus; 1.4.3, Page 35",
-#         ),
-#         # FIXME: Note RandomPermutation1 for large numbers isn't random
-#         # Therefore in combinatorica we use RandomPermutation2.
-#         (
-#             "HeapSort[Reverse[Range[10]]]",
-#             "Range[10]",
-#             "Heapsort test 1; 1.4.4, Page 38",
-#         ),
-#         (
-#             "HeapSort[RandomPermutation[10]]",
-#             "Range[10]",
-#             "Heapsort test 2; 1.4.4, Page 38",
-#         ),
-#     ):
-#         check_evaluation(str_expr, str_expected, message)
+def test_special_classes_of_permutations_1_4():
+    # We include this earlier since the above in fact rely on KSubsets
+    for str_expr, str_expected, message in (
+        (
+            "Map[ ToCycles, Select[ Permutations[Range[4]], InvolutionQ ] ]",
+            "{{{1}, {2}, {3}, {4}}, {{1}, {2}, {4, 3}}, "
+            "{{1}, {3, 2}, {4}}, {{1}, {4, 2}, {3}}, "
+            "{{2, 1}, {3}, {4}}, {{2, 1}, {4, 3}}, "
+            "{{3, 1}, {2}, {4}}, {{3, 1}, {4, 2}}, "
+            "{{4, 1}, {2}, {3}}, {{4, 1}, {3, 2}}}",
+            "Involutions; 1.4.1, Page 33",
+        ),
+        (
+            "NumberOfInvolutions[4]",
+            "10",
+            "NumberOfInvolutions; 1.4.1, Page 33",
+        ),
+        (
+            "Table[NumberOfDerangements[i], {i, 1, 10}]",
+            "{0, 1, 2, 9, 44, 265, 1854, 14833, 133496, 1334961}",
+            "NumberOfDerangements; 1.4.2, Page 33",
+        ),
+        (
+            "Table[ N[ NumberOfDerangements[i]/(i!) ], {i, 1, 10} ]",
+            "{0., 0.5, 0.333333, 0.375, 0.366667, 0.368056, 0.367857, 0.367882, 0.367879, 0.367879}",
+            "Confused Secretary 1.4.2, Page 34",
+        ),
+        (
+            "Table[Round[n!/N[E]], {n, 1, 10}]",
+            "{0, 1, 2, 9, 44, 265, 1854, 14833, 133496, 1334961}",
+            "Rounding as a nicer way to get derangmeants; 1.4.2, Page 34",
+        ),
+        (
+            "Josephus[17, 7]",
+            "{16, 17, 5, 3, 14, 7, 1, 11, 10, 12, 9, 4, 6, 2, 15, 13, 8}",
+            "Josephus; 1.4.3, Page 35",
+        ),
+        # FIXME: Note RandomPermutation1 for large numbers isn't random
+        # Therefore in combinatorica we use RandomPermutation2.
+        (
+            "HeapSort[Reverse[Range[10]]]",
+            "Range[10]",
+            "Heapsort test 1; 1.4.4, Page 38",
+        ),
+        (
+            "HeapSort[RandomPermutation[10]]",
+            "Range[10]",
+            "Heapsort test 2; 1.4.4, Page 38",
+        ),
+    ):
+        check_evaluation(str_expr, str_expected, message)
 
 
-# def test_combinations_1_5():
-#     # We include this earlier since the above in fact rely on KSubsets
-#     for str_expr, str_expected, message in (
-#         (
-#             "Strings[Range[3], 3]",
-#             "{{1, 1, 1}, {1, 1, 2}, {1, 1, 3}, {1, 2, 1}, "
-#             " {1, 2, 2}, {1, 2, 3}, {1, 3, 1}, {1, 3, 2}, {1, 3, 3}, "
-#             " {2, 1, 1}, {2, 1, 2}, {2, 1, 3}, {2, 2, 1}, {2, 2, 2}, "
-#             " {2, 2, 3}, {2, 3, 1}, {2, 3, 2}, {2, 3, 3}, {3, 1, 1}, "
-#             " {3, 1, 2}, {3, 1, 3}, {3, 2, 1}, {3, 2, 2}, {3, 2, 3}, "
-#             " {3, 3, 1}, {3, 3, 2}, {3, 3, 3}}",
-#             "String 1.5.1, Page 40",
-#         ),
-#         (
-#             "BinarySubsets[{a,b,c,d}]",
-#             "{{}, {a}, {b}, {a, b}, {c}, {a, c}, {b, c}, "
-#             "{a, b, c}, {d}, {a, d}, {b, d}, {a, b, d}, {c, d}, "
-#             "{a, c, d}, {b, c, d}, {a, b, c, d}}",
-#             "BinarySubsets 1.5.2, Page 41",
-#         ),
-#         (
-#             "Table[NthSubset[n, {a,b,c,d}], {n, 0, 15}]",
-#             "{{}, {a}, {b}, {a, b}, {c}, {a, c}, {b, c}, "
-#             "{a, b, c}, {d}, {a, d}, {b, d}, {a, b, d}, {c, d}, "
-#             "{a, c, d}, {b, c, d}, {a, b, c, d}}",
-#             "NthSubset 1.5.2, Page 451",
-#         ),
-#         (
-#             "NthSubset[-10, {a, b, c, d}]",
-#             "{b, c}",
-#             "NthSubset 1.5.2, Page 41",
-#         ),
-#         (
-#             "Map[ (RankSubset[Range[4], #])&, BinarySubsets[Range[4]] ]",
-#             "Range[0, 15]",
-#             "RankSubset 1.5.2, Page 42",
-#         ),
-#         (
-#             "GrayCode[Range[4]]",
-#             "{{}, {1}, {1, 2}, {2}, {2, 3}, {1, 2, 3}, "
-#             "{1, 3}, {3}, {3, 4}, {1, 3, 4}, {1, 2, 3, 4}, "
-#             "{2, 3, 4}, {2, 4}, {1, 2, 4}, {1, 4}, {4}}",
-#             "GrayCode 1.5.3, Page 43",
-#         ),
-#         (
-#             "LexicographicSubsets[Range[4]]",
-#             "{{}, {1}, {1, 2}, {1, 2, 3}, {1, 2, 3, 4}, "
-#             "{1, 2, 4}, {1, 3}, {1, 3, 4}, {1, 4}, {2}, {2, 3}, "
-#             "{2, 3, 4}, {2, 4}, {3}, {3, 4}, {4}}",
-#             "LexicographicSubsets 1.5.4, Page 44",
-#         ),
-#         (
-#             "KSubsets[Range[3], 0]",
-#             "{ {} } ",
-#             "KSubsets[0] == { {} }",
-#         ),
-#         (
-#             "KSubsets[Range[5], 1]",
-#             "{{1}, {2}, {3}, {4}, {5}}",
-#             "KSubsets[Range[n, 1] == Partition[n]",
-#         ),
-#         (
-#             "KSubsets[Range[5], 3]",
-#             "{{1, 2, 3}, {1, 2, 4}, {1, 2, 5}, {1, 3, 4}, "
-#             "{1, 3, 5}, {1, 4, 5}, {2, 3, 4}, {2, 3, 5}, {2, 4, 5}, "
-#             "{3, 4, 5}}",
-#             "KSubsets 1.5.5, Page 44",
-#         ),
-#         (
-#             "KSubsets[Range[5], 5]",
-#             "{Range[5]} ",
-#             "KSubsets[l, k] == Length(l)",
-#         ),
-#     ):
-#         check_evaluation(str_expr, str_expected, message)
+def test_combinations_1_5():
+    # Some of the below needs the built-in function Distribute[] to be implemented.
+    # We include this earlier since the above in fact rely on KSubsets
+    for str_expr, str_expected, message in (
+        # (
+        #     "Strings[Range[3], 3]",
+        #     "{{1, 1, 1}, {1, 1, 2}, {1, 1, 3}, {1, 2, 1}, "
+        #     " {1, 2, 2}, {1, 2, 3}, {1, 3, 1}, {1, 3, 2}, {1, 3, 3}, "
+        #     " {2, 1, 1}, {2, 1, 2}, {2, 1, 3}, {2, 2, 1}, {2, 2, 2}, "
+        #     " {2, 2, 3}, {2, 3, 1}, {2, 3, 2}, {2, 3, 3}, {3, 1, 1}, "
+        #     " {3, 1, 2}, {3, 1, 3}, {3, 2, 1}, {3, 2, 2}, {3, 2, 3}, "
+        #     " {3, 3, 1}, {3, 3, 2}, {3, 3, 3}}",
+        #     "String 1.5.1, Page 40",
+        # ),
+        # (
+        #     "BinarySubsets[{a,b,c,d}]",
+        #     "{{}, {a}, {b}, {a, b}, {c}, {a, c}, {b, c}, "
+        #     "{a, b, c}, {d}, {a, d}, {b, d}, {a, b, d}, {c, d}, "
+        #     "{a, c, d}, {b, c, d}, {a, b, c, d}}",
+        #     "BinarySubsets 1.5.2, Page 41",
+        # ),
+        # (
+        #     "Table[NthSubset[n, {a,b,c,d}], {n, 0, 15}]",
+        #     "{{}, {a}, {b}, {a, b}, {c}, {a, c}, {b, c}, "
+        #     "{a, b, c}, {d}, {a, d}, {b, d}, {a, b, d}, {c, d}, "
+        #     "{a, c, d}, {b, c, d}, {a, b, c, d}}",
+        #     "NthSubset 1.5.2, Page 451",
+        # ),
+        # (
+        #     "NthSubset[-10, {a, b, c, d}]",
+        #     "{b, c}",
+        #     "NthSubset 1.5.2, Page 41",
+        # ),
+        # (
+        #     "Map[ (RankSubset[Range[4], #])&, BinarySubsets[Range[4]] ]",
+        #     "Range[0, 15]",
+        #     "RankSubset 1.5.2, Page 42",
+        # ),
+        # (
+        #     "GrayCode[Range[4]]",
+        #     "{{}, {1}, {1, 2}, {2}, {2, 3}, {1, 2, 3}, "
+        #     "{1, 3}, {3}, {3, 4}, {1, 3, 4}, {1, 2, 3, 4}, "
+        #     "{2, 3, 4}, {2, 4}, {1, 2, 4}, {1, 4}, {4}}",
+        #     "GrayCode 1.5.3, Page 43",
+        # ),
+        (
+            "LexicographicSubsets[Range[4]]",
+            "{{}, {1}, {1, 2}, {1, 2, 3}, {1, 2, 3, 4}, "
+            "{1, 2, 4}, {1, 3}, {1, 3, 4}, {1, 4}, {2}, {2, 3}, "
+            "{2, 3, 4}, {2, 4}, {3}, {3, 4}, {4}}",
+            "LexicographicSubsets 1.5.4, Page 44",
+        ),
+        (
+            "KSubsets[Range[3], 0]",
+            "{ {} } ",
+            "KSubsets[0] == { {} }",
+        ),
+        (
+            "KSubsets[Range[5], 1]",
+            "{{1}, {2}, {3}, {4}, {5}}",
+            "KSubsets[Range[n, 1] == Partition[n]",
+        ),
+        (
+            "KSubsets[Range[5], 3]",
+            "{{1, 2, 3}, {1, 2, 4}, {1, 2, 5}, {1, 3, 4}, "
+            "{1, 3, 5}, {1, 4, 5}, {2, 3, 4}, {2, 3, 5}, {2, 4, 5}, "
+            "{3, 4, 5}}",
+            "KSubsets 1.5.5, Page 44",
+        ),
+        (
+            "KSubsets[Range[5], 5]",
+            "{Range[5]} ",
+            "KSubsets[l, k] == Length(l)",
+        ),
+    ):
+        check_evaluation(str_expr, str_expected, message)
 
 
 def test_2_1_to_2_3():
@@ -390,11 +391,11 @@ def test_2_1_to_2_3():
 
 def test_combinatorica_rest():
     for str_expr, str_expected, message in (
-        # (
-        #     "Permute[{A, B, C, D}, Permutations[Range[3]]]",
-        #     "{{A, B, C}, {A, C, B}, {B, A, C}, {B, C, A}, {C, A, B}, {C, B, A}}",
-        #     "Permute",
-        # ),
+        (
+            "Permute[{A, B, C, D}, Permutations[Range[3]]]",
+            "{{A, B, C}, {A, C, B}, {B, A, C}, {B, C, A}, {C, A, B}, {C, B, A}}",
+            "Permute",
+        ),
         # (
         #     "Subsets[Range[3]]",
         #     "{{}, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}}",

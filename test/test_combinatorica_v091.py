@@ -81,6 +81,21 @@ def test_permutations_1_1():
             "Permutations uses lexographic order; 1.1.2, Page 6",
         ),
         (
+            "Table[RandomPermutation[1], 4]",
+            "{{1}, {1}, {1}, {1}}",
+            "Degenerate case where we can test RandomPermutation",
+        ),
+        (
+            "Table[RandomPermutation1[1], 5]",
+            "{{1}, {1}, {1}, {1}, {1}}",
+            "Degenerate case where we can test RandomPermutation1",
+        ),
+        (
+            "Table[RandomPermutation2[1], 6]",
+            "{{1}, {1}, {1}, {1}, {1}, {1}}",
+            "Degenerate case where we can test RandomPermutation2",
+        ),
+        (
             "RandomPermutation1[20] === RandomPermutation2[20]",
             "False",
             "Not likely two of the 20! permutations will be the same, 1.1.3, Page 7",

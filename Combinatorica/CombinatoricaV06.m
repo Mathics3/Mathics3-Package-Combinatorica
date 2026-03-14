@@ -428,7 +428,6 @@ RandomHeap::usage = "RandomHeap[n] constructs a random heap on n elements."
 
 RandomKSubset::usage = "RandomKSubset[l,k] returns a random subset of set l with exactly k elements."
 
-(* Not yet...
 RandomPartition::usage = "RandomPartition[n] constructs a random partition of integer n."
 
 RandomPermutation1::usage = "RandomPermutation1[n] sorts random numbers to generate a random permutation."
@@ -437,7 +436,6 @@ RandomPermutation2::usage = "RandomPermutation2[n] uses random transpositions to
 
 
 RandomPermutation::usage = "RandomPermutation[n] returns a random permutation of length n."
- *)
 
 RandomSubset::usage = "RandomSubset[l] creates a random subset of set l."
 
