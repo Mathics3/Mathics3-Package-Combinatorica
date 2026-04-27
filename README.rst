@@ -19,10 +19,10 @@ To run from inside Mathics3::
         $ git clone git@github.com:Mathic3/Mathics3-Package-Combinatorica.git
         $ cd Mathics3-Package-Combinatorica/Combinatorica
 
-        $ mathics
+        $ mathics3
 
-        Mathics 7.0.1dev0
-        on CPython 3.12.10 ...
+        Mathics3 10.0.0
+        Running on linux CPython 3.13.12 (main, Feb  7 2026, 20:16:33) [GCC 13.3.0]
         ...
 
         In[1]:= << "CombinatoricaV201"
@@ -34,7 +34,7 @@ To run from inside Mathics3::
 	In[3]:= Permute[{A,B,C,D}, Permutations[3]]
 	Out[3]= {{A, B, C}, {A, C, B}, {B, A, C}, {B, C, A}, {C, A, B}, {C, B, A}}
 
-Although this version is newer, Mathics3 does hasn't yet caught up to the richer language that it uses. To use the version of the older book which handles graphics more completely::
+Although this version is newer, Mathics3 hasn't yet caught up to the richer language that it uses. To use the version of the older book which handles graphics more completely::
 
 
         In[1]:= << "CombinatoricaV091"
