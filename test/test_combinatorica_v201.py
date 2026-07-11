@@ -273,18 +273,19 @@ def test_special_classes_of_permutations_1_4():
 
 def test_combinations_1_5():
     # Some of the below needs the built-in function Distribute[] to be implemented.
+    # Note: Current Mathics3 Distribute[], apparently needs more work.
     # We include this earlier since the above in fact rely on KSubsets
     for str_expr, str_expected, message in (
-        # (
-        #     "Strings[Range[3], 3]",
-        #     "{{1, 1, 1}, {1, 1, 2}, {1, 1, 3}, {1, 2, 1}, "
-        #     " {1, 2, 2}, {1, 2, 3}, {1, 3, 1}, {1, 3, 2}, {1, 3, 3}, "
-        #     " {2, 1, 1}, {2, 1, 2}, {2, 1, 3}, {2, 2, 1}, {2, 2, 2}, "
-        #     " {2, 2, 3}, {2, 3, 1}, {2, 3, 2}, {2, 3, 3}, {3, 1, 1}, "
-        #     " {3, 1, 2}, {3, 1, 3}, {3, 2, 1}, {3, 2, 2}, {3, 2, 3}, "
-        #     " {3, 3, 1}, {3, 3, 2}, {3, 3, 3}}",
-        #     "String 1.5.1, Page 40",
-        # ),
+        (
+            "Strings[Range[3], 3]",
+            "{{1, 1, 1}, {1, 1, 2}, {1, 1, 3}, {1, 2, 1}, "
+            " {1, 2, 2}, {1, 2, 3}, {1, 3, 1}, {1, 3, 2}, {1, 3, 3}, "
+            " {2, 1, 1}, {2, 1, 2}, {2, 1, 3}, {2, 2, 1}, {2, 2, 2}, "
+            " {2, 2, 3}, {2, 3, 1}, {2, 3, 2}, {2, 3, 3}, {3, 1, 1}, "
+            " {3, 1, 2}, {3, 1, 3}, {3, 2, 1}, {3, 2, 2}, {3, 2, 3}, "
+            " {3, 3, 1}, {3, 3, 2}, {3, 3, 3}}",
+            "String 1.5.1, Page 40",
+        ),
         # (
         #     "BinarySubsets[{a,b,c,d}]",
         #     "{{}, {a}, {b}, {a, b}, {c}, {a, c}, {b, c}, "

@@ -6266,8 +6266,17 @@ StirlingSecond[n_Integer?Positive, k_Integer?Positive] :=
         Sum [ (-1)^(k-i)*Binomial [k, i]*(i^n), {i, 1, k}]/k!
 Strings[l_List,0] := { {} }
 
+
+(* For now, we'll go with what is plublished in V1 *)
+Strings[l_List, k_Integer?Positive] :=
+	Block[{oneless = Strings[l,k-1], i, n=Length[l]},
+	      Apply[Join, Table[ Map[(Prepend[#,l[[i]]])&, oneless], {i, n}] ]
+	]
+(* Both of these give the wrong values in Mathics3!
 Strings[l_List, k_Integer] := Strings[Union[l], k] /; (Length[l] =!= Length[Union[l]])
 Strings[l_List,k_Integer] := Distribute[Table[l, {k}], List]
+*)
+
 StronglyConnectedComponents[g_Graph] :=
 	Block[{e=ToAdjacencyLists[g],s,c=1,i,cur={},
                low=dfs=Table[0,{V[g]}],scc={}
