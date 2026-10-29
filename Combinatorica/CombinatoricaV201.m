@@ -5574,14 +5574,16 @@ RemoveSelfLoops[g_Graph] :=
         ChangeEdges[g, Select[Edges[g, All], (First[#][[1]] != First[#][[2]])& ]]
 
 (* Options[RenderEdges] := Take[Options[ShowGraph], -7] *)
+(* The last 7 options of ShowGraph, written out: Mathics3 does not keep
+   Options[f] := expr delayed. *)
 Options[RenderEdges] := {
-	VertexLabelPosition :> UpperRight,
-	VertexNumber :> False,
-	VertexNumberColor :> Black,
-	VertexNumberPosition :> LowerLeft,
-	VertexStyle :> Disk[Normal],
-	AspectRatio :> 1,
-	PlotRange :> Normal
+	EdgeColor -> Black,
+	EdgeStyle -> Normal,
+	EdgeLabel -> False,
+	EdgeLabelColor -> Black,
+	EdgeLabelPosition -> LowerLeft,
+	LoopPosition -> UpperRight,
+	EdgeDirection -> False
 	}
 
 RenderEdges[v_List, e_List, aopts_List, eopts_List] :=
@@ -5627,15 +5629,16 @@ RenderMultipleEdges[e_List, flag_] :=
                ]
         ]
 (* Options[RenderVertices] := Take[Options[ShowGraph], 8] *)
+(* The first 8 options of ShowGraph, written out as for RenderEdges. *)
 Options[RenderVertices] := {
-	EdgeColor :> Black,
-	EdgeDirection :> False,
-	EdgeLabel :> False
-	EdgeLabelColor :> Black,
-	EdgeLabelPosition :> LowerLeft,
-	EdgeStyle :> Normal,
-	LoopPosition :> UpperRight,
-	VertexColor :> Black
+	VertexColor -> Black,
+	VertexStyle -> Disk[Normal],
+	VertexNumber -> False,
+	VertexNumberColor -> Black,
+	VertexNumberPosition -> LowerLeft,
+	VertexLabel -> False,
+	VertexLabelColor -> Black,
+	VertexLabelPosition -> UpperRight
 	}
 
 RenderVertices[v_List, opts_List] :=
