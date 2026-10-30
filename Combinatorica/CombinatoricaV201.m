@@ -1611,7 +1611,7 @@ AllPairsShortestPath[g_Graph] :=
 (*
 DP1 = Compile[{{p, _Real, 2}, {m, _Integer}},
  *)
-DP1[p_?NumberQ, m_?IntegerQ] :=
+DP1[p_List, m_?IntegerQ] :=
         Module[{np = p, k, n = Length[p]},
                Do[np = Table[If[(np[[i, k]] == 1.0*m) || (np[[k, j]] == 1.0*m),
                                 np[[i,j]], Min[np[[i,k]]+ np[[k,j]], np[[i,j]]]
@@ -1636,7 +1636,7 @@ AllPairsShortestPath[g_Graph, Parent] :=
 (*
 DP2 =Compile[{{p, _Real, 2}, {q, _Integer, 2}, {m, _Real}},
  *)
-DP2[p_?NumberQ, q_?IntegerQ, m_?NumberQ] :=
+DP2[p_List, q_List, m_?NumberQ] :=
         Module[{np = p, nq = q, k = 0, n = Length[p]},
                Do[
                   Do[If[(np[[i, k]] != m*1.0) && (np[[k, j]] != m*1.0),
@@ -1827,7 +1827,7 @@ BellmanFord[g_Graph, s_Integer?Positive] :=
 BF = Compile[{{n, _Integer}, {s, _Integer}, {e1, _Integer, 2},
               {w1, _Real, 1}, {e2, _Integer, 2}, {w2, _Real, 1}},
 *)
-BF[n_?IntegerQ, s_?IntegerQ, e1_?IntegerQ, w1_?NumberQ, e2_?IntegerQ, w2_?NumberQ] :=
+BF[n_?IntegerQ, s_?IntegerQ, e1_List, w1_List, e2_List, w2_List] :=
              Module[{d, dist, parent = Range[n],
                      m = (Length[e1] + Length[e2])*Max[w1, w2] + 1},
                      dist = Table[m, {n}]; dist[[s]] = 0;
