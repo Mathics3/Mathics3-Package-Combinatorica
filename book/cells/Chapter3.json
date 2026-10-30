@@ -1,0 +1,1410 @@
+[
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[t = Wheel[10]; ShowGraph[t, Background -> Yellow]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"Edges\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Edges[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Edges[t1 = SetGraphOptions[t, {{{1, 9}, {2, 3}, EdgeStyle -> Fat}}], All]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[t1]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Edges[t2 = SetGraphOptions[t, {{{1, 9}, {2, 3}, EdgeStyle -> Fat}}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Edges[t, EdgeWeight]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"SetEdgeWeights\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[k = SetEdgeWeights[t, WeightingFunction -> RandomInteger, WeightRange -> {10, 20}]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Edges[k, EdgeWeight]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"Vertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Vertices[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Vertices[t3 = SetGraphOptions[t, {{2, 5, 9, VertexStyle -> Disc[Large]}}], All]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[t3]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Vertices[t4 = SetGraphOptions[t, {{2, 5, 9, VertexStyle -> Disc[Large]}}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[t4]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"V\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[V[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[V[DeleteVertices[t, {1}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[V[RandomGraph[20, 0.4]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"M\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[M[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[M[AddEdges[t, {{{1, 2}}}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"ChangeVertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = SetGraphOptions[t, {{1, VertexColor -> Red, VertexStyle -> Disc[Large]}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = ChangeVertices[t, Vertices[CompleteGraph[5, 5], All]]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = ChangeVertices[t, Vertices[CompleteGraph[5, 5]]]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"ChangeEdges\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = ChangeEdges[t, Edges[CompleteGraph[10], All]]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = ChangeEdges[t, Edges[CompleteGraph[5, 5], All]]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"AddEdges\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = AddEdges[t, {{{1, 3}, EdgeStyle -> Fat, EdgeColor -> Red}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = AddEdges[t, {{1, 2}, {2, 1}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s, VertexNumber -> On, VertexNumberColor -> Blue]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[AddEdges[t, {1, 3}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"DeleteEdges\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[DeleteEdges[s, {{1, 2}}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[DeleteEdges[s, {{1, 2}}, All]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = SetGraphOptions[t, EdgeDirection -> On]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s, VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[DeleteEdges[s, {{1, 2}}], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[DeleteEdges[s, {{2, 1}}], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[DeleteEdges[s, {1, 2}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"ExactRandomGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[gt = Table[ExactRandomGraph[50, 100 + 10*i], {i, 25}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[et = Table[Edges[gt[[i]]][[RandomKSubset[Range[100 + 10*i], 50 + 5*i]]], {i, 25}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[rt = Table[Timing[DeleteEdges[gt[[i]], et[[i]]]; ][[1]], {i, 25}]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ListPlot[First \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Fit[First \/@ rt, {1, x, x^2}, x]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"AddVertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[AddVertices[t, {0.2, 0.4}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[AddVertices[t, {{{0.2, 0.4}}}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[AddVertices[t, {{{0.2, 0.4}, VertexColor -> Red}, {{0.3, 0.4}, VertexColor -> Green}}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[AddVertices[t, 1]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[AddVertices[t, 10]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[AddVertices[t, Vertices[CompleteGraph[5, 5], All]]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"DeleteVertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = DeleteVertices[t, {1, 3, 10}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[p1 = ShowGraph[t, VertexNumber -> On, Graphics]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[p2 = ShowGraph[s, VertexNumber -> On, Graphics]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Show[GraphicsArray[{p1, p2}], Background -> LightBlue, ImageSize -> 500]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[DeleteVertices[DeleteVertices[DeleteVertices[t, {1}], {3}], {10}], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"Spectrum\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Spectrum[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Spectrum[GraphUnion[Cycle[4], CompleteGraph[1]]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Spectrum[Star[5]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Spectrum[CompleteGraph[3, 4]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"ToAdjacencyLists\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[t = AddEdges[t, {{{1, 1}}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[t = AddEdges[t, {{{1, 9}}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[t = AddEdges[t, {{{2, 3}}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[t, VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[l0 = ToAdjacencyLists[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ToAdjacencyLists[t, EdgeWeight]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ToAdjacencyLists[SetEdgeWeights[t, WeightingFunction -> Random, WeightRange -> {2, 3}], EdgeWeight]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = SetGraphOptions[t, EdgeDirection -> On]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s, VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ToAdjacencyLists[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[l3 = ToAdjacencyLists[t, Type -> Simple]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"FromAdjacencyLists\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s = FromAdjacencyLists[l0, Vertices[t]]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Edges[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[FromAdjacencyLists[l0]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[FromAdjacencyLists[ToAdjacencyLists[Star[10]], Type -> Directed]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"ToOrderedPairs\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[l0 = ToOrderedPairs[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[l1 = ToOrderedPairs[t, Type -> Simple]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = SetGraphOptions[t, EdgeDirection -> On]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ToOrderedPairs[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"FromOrderedPairs\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = FromOrderedPairs[l0]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = FromOrderedPairs[l0, Type -> Undirected]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[l0]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[FromOrderedPairs[l0, Vertices[CompleteGraph[5, 5]]]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"ToUnorderedPairs\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[t]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ToUnorderedPairs[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ToUnorderedPairs[t, Type -> NoSelfLoops]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ToUnorderedPairs[t, Type -> NoMultipleEdges]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ToUnorderedPairs[t, Type -> Simple]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = SetGraphOptions[t, EdgeDirection -> On]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ToUnorderedPairs[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"FromUnorderedPairs\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[l0 = ToUnorderedPairs[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[FromUnorderedPairs[l0]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[FromUnorderedPairs[l0, Type -> Directed]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"ToAdjacencyMatrix\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[MatrixForm[ToAdjacencyMatrix[t]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[MatrixForm[ToAdjacencyMatrix[t, Type -> Simple]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[k = SetEdgeWeights[RandomGraph[10, 0.3], WeightingFunction -> Euclidean]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[TableForm[ToAdjacencyMatrix[k, EdgeWeight]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g = GraphUnion[CompleteGraph[2], CompleteGraph[2], CompleteGraph[2]]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ToAdjacencyMatrix[g, EdgeWeight]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[MatrixForm[ToAdjacencyMatrix[g]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"FromAdjacencyMatrix\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[tg = FromAdjacencyMatrix[ToAdjacencyMatrix[t]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[tg]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"PseudographQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[PseudographQ[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[PseudographQ[DeleteEdges[t, {{1, 1}}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"UnweightedQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[UnweightedQ[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[UnweightedQ[SetEdgeWeights[t, WeightingFunction -> Random]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"SimpleQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[SimpleQ[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = RemoveSelfLoops[t]; SimpleQ[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = RemoveMultipleEdges[s]; SimpleQ[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"RemoveSelfLoops\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = AddEdges[t, {{{2, 2}}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[PseudographQ[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[PseudographQ[RemoveSelfLoops[s]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"RemoveMultipleEdges\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = SetGraphOptions[Wheel[10], {{{1, 10}, {2, 10}, EdgeStyle -> Fat, EdgeColor -> Green}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = AddEdges[s, {{{1, 10}}, {{1, 10}}, {{2, 10}}, {{3, 4}}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[M[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ss = RemoveMultipleEdges[s]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[M[ss]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[ss]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"EmptyQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[EmptyQ[DeleteEdges[CompleteGraph[2], {{1, 2}}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[EmptyQ[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"CompleteQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[CompleteQ[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[CompleteQ[CompleteGraph[10]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[CompleteQ[s = DeleteEdges[CompleteGraph[3], {{1, 2}}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = AddEdges[EmptyGraph[3], {{{1, 2}}, {{1, 3}}, {{2, 3}}, {{2, 1}}, {{3, 1}}, {{3, 2}}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[CompleteQ[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = SetGraphOptions[s, EdgeDirection -> On]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[CompleteQ[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = AddEdges[SetGraphOptions[EmptyGraph[3], EdgeDirection -> On], {{{1, 2}}, {{1, 3}}, {{2, 3}}, {{2, 1}}, {{3, 1}}, {{3, 2}}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[CompleteQ[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"MultipleEdgesQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Sort[Edges[t]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[MultipleEdgesQ[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[MultipleEdgesQ[DeleteEdges[t, {{2, 3}, {1, 9}}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = AddEdges[t, {{{2, 3}}}]; MultipleEdgesQ[DeleteEdges[s, {{2, 3}, {1, 9}}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[MultipleEdgesQ[DeleteEdges[s, {{2, 3}, {1, 9}}, All]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"InduceSubgraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[p1 = ShowGraph[t, Background -> HotPink, VertexNumber -> Text[{0.02, 0.02}, TextStyle -> {FontSize -> 12}], Graphics]; p2 = ShowGraph[InduceSubgraph[t, {1, 9, 8, 10}], Background -> HotPink, VertexNumber -> Text[{0.02, 0.02}, TextStyle -> {FontSize -> 12}], Graphics]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Show[GraphicsArray[{p1, p2}], Background -> Yellow, ImageSize -> 600]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[InduceSubgraph[t, {1, 9, 8, 10, 5}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[InduceSubgraph[t, {1, 9, 8, 10, 5, 4, 6}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[InduceSubgraph[t, {1, 2, 4, 3, 5, 6, 7, 8, 9}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g1 = DiscreteMath`OldCombinatorica`GridGraph[30, 30]; g2 = GridGraph[30, 30]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = RandomSubset[Range[900]]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`InduceSubgraph[g1, s]; ], Timing[InduceSubgraph[g2, s]; ]}]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[InduceSubgraph[GridGraph[50, 50], RandomSubset[Range[2500]]], VertexStyle -> Disc[0]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[r = RandomSubset[Range[100]]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[rp = Permute[r, RandomPermutation[Length[r]]]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[DiscreteMath`OldCombinatorica`ShowGraph[DiscreteMath`OldCombinatorica`InduceSubgraph[DiscreteMath`OldCombinatorica`GridGraph[10, 10], r]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[InduceSubgraph[GridGraph[10, 10], rp]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"PermuteSubgraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[t, VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[PermuteSubgraph[t, {2, 10, 3, 4, 5, 6, 7, 8, 9, 1}], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[PermuteSubgraph[t, {2, 10, 3, 4, 5, 9, 1}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Length[rp]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[PermuteSubgraph[GridGraph[10, 10], rp]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[PermuteSubgraph[GridGraph[4, 4], RandomPermutation[16]]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"Contract\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s = Contract[t, {5, 6}], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s = Contract[s, {5, 8}], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"GraphComplement\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = Graph[{}, {}]; GraphComplement[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[GraphComplement[t]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[p1 = ShowGraph[s = SetGraphOptions[t, EdgeDirection -> On], Graphics]; , Null, p2 = ShowGraph[GraphComplement[s], Graphics]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Show[GraphicsArray[{p1, p2}], ImageSize -> 500]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[GraphComplement[CompleteGraph[10, Type -> Directed]]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s = GraphComplement[GridGraph[4, 4]], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"MakeUndirected\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = MakeUndirected[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = SetGraphOptions[CompleteGraph[3], EdgeDirection -> On]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s, ImageSize -> 200]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = AddEdges[s, {{{2, 1}}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s, ImageSize -> 200]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[MakeUndirected[s]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[SetGraphOptions[s, EdgeDirection -> Off]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"UndirectedQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[UndirectedQ[t]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[UndirectedQ[s = SetGraphOptions[t, EdgeDirection -> On]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[UndirectedQ[MakeUndirected[s = SetGraphOptions[t, EdgeDirection -> On]]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"MakeSimple\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[tt = MakeSimple[t]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[M[tt]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[SimpleQ[tt]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[tt]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"DepthFirstTraversal\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = DeleteEdges[t, {{2, 3}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s, VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[DepthFirstTraversal[s, 2]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = DeleteEdges[s, {{1, 2}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s, VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[DepthFirstTraversal[s, 2]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = DeleteEdges[s, {{2, 3}}]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s, VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[DepthFirstTraversal[s, 2]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[Highlight[t, {Sort \/@ DepthFirstTraversal[t, 2, Edge]}, HighlightedEdgeColors -> {Blue}], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[$RecursionLimit = 20000; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = GridGraph[20, 20]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[Highlight[s, {Sort \/@ DepthFirstTraversal[s, 2, Edge]}, HighlightedEdgeColors -> {Blue}], VertexStyle -> Disc[0]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[DepthFirstTraversal[s = SetGraphOptions[t, EdgeDirection -> On], 1, Edge]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[p1 = ShowGraph[s, Graphics]; p2 = ShowGraph[Highlight[s, {DepthFirstTraversal[s, 1, Edge]}, HighlightedEdgeColors -> {Green}], Graphics]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Show[GraphicsArray[{p1, p2}], ImageSize -> 500]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[DepthFirstTraversal[s = SetGraphOptions[t, EdgeDirection -> On], 10, Edge]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[gt = Table[GridGraph[20, 10*i], {i, 20}]; rt = Table[Timing[DepthFirstTraversal[gt[[i]], 1]; ], {i, 20}]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[NewDepthFirstTraversal[g_Graph, start_Integer, flag_:Vertex] := Block[{visit = {}, e = ToAdjacencyLists[g], edges = {}, dfi = Table[0, {V[g]}], cnt = 1}, NewDFS[start]; If[flag === Edge, edges, visit]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[NewDFS[v_Integer] := (dfi[[v]] = cnt++; Scan[If[dfi[[#1]] == 0, NewDFS[#1]] & , e[[v]]])]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[gt = Table[GridGraph[20, 10*i], {i, 20}]; rt = Table[Timing[NewDepthFirstTraversal[gt[[i]], 1]; ], {i, 20}]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[gt = Table[DiscreteMath`OldCombinatorica`GridGraph[20, 10*i], {i, 5}]; rt = Table[Timing[DiscreteMath`OldCombinatorica`DepthFirstTraversal[gt[[i]], 1]; ], {i, 5}]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"BreadthFirstTraversal\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s = DeleteEdges[t, {{2, 3}}], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s = DeleteEdges[s, {{2, 10}}], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[BreadthFirstTraversal[s, 1, Tree], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[BreadthFirstTraversal[s, 1, Edge]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[BreadthFirstTraversal[s, 1, Level]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[BreadthFirstTraversal[s, 10, Tree], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[BreadthFirstTraversal[s, 10, Edge]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[BreadthFirstTraversal[s, 10, Level]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[BreadthFirstTraversal[s, 5, Tree], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[BreadthFirstTraversal[s, 5, Edge]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[BreadthFirstTraversal[s, 5, Level]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[Highlight[s, {Sort \/@ BreadthFirstTraversal[s, 2, Edge]}, HighlightedEdgeColors -> {Blue}], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = GridGraph[30, 30]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[Highlight[s, {Sort \/@ BreadthFirstTraversal[s, 2, Edge]}, HighlightedEdgeColors -> {Blue}], VertexStyle -> Disc[0]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = InduceSubgraph[s, RandomSubset[Range[900]]]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s, VertexStyle -> Disc[0]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[BreadthFirstTraversal[s, 2, Edge]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[Highlight[s, {Sort \/@ BreadthFirstTraversal[s, 2, Edge]}, HighlightedEdgeColors -> {Blue}], VertexStyle -> Disc[0]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"CircularVertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = CircularVertices[t]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[CircularVertices[CompleteGraph[10, 10]]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"RankGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = GridGraph[5, 4]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[r = RankGraph[s, {1, 2, 3, 4}]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s1 = SetGraphOptions[s, Table[{i, VertexLabel -> {r[[i]]}}, {i, Length[r]}]]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s1, PlotRange -> Large[0.2]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"RankedEmbedding\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = GridGraph[5, 5]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[RankedEmbedding[s, {13}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[RankedEmbedding[t, {1}]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"Eccentricity\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g = Wheel[10]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Eccentricity[g]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g = GridGraph[10, 10]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Eccentricity[g]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Timing[Eccentricity[g]; ]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g = SetEdgeWeights[g]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Timing[Eccentricity[g]; ]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g = DiscreteMath`OldCombinatorica`GridGraph[10, 10]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Timing[DiscreteMath`OldCombinatorica`Eccentricity[g]; ]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"Diameter\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g = CompleteGraph[20]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Diameter[g]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g = RandomGraph[25, 0.3]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Diameter[g]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g = RandomGraph[50, 0.3]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Diameter[g]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g = RandomGraph[100, 0.3]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Diameter[g]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"Radius\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g = Wheel[100]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Radius[g]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"GraphCenter\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[g = Wheel[100]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[GraphCenter[g]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"RadialEmbedding\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = RandomTree[20]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[RadialEmbedding[s, 11], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[RadialEmbedding[RandomTree[20], 11], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[RadialEmbedding[RandomTree[20], 11], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[RadialEmbedding[GridGraph[3, 3]]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"RootedEmbedding\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = RandomTree[20]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[RootedEmbedding[s, 1], VertexNumber -> On, PlotRange -> Large[0.05]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[RootedEmbedding[s, 3], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[RootedEmbedding[s, 19], VertexNumber -> Center, VertexNumberColor -> White, VertexStyle -> Disc[Large], PlotRange -> Large[0.03], Background -> LightBlue]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"TranslateVertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[t]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[TranslateVertices[t, {0.001, 0.002}]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"DilateVertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[t]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[DilateVertices[t, 2]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"RotateVertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s = CompleteGraph[3, 2, 2, 4]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[RotateVertices[s, Pi\/2]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[RotateVertices[s, Pi\/4]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"NormalizeVertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = CompleteGraph[7]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Vertices[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = TranslateVertices[s, {0.5, 0.3}]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Vertices[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Vertices[NormalizeVertices[s]]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"ShakeGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = RankedEmbedding[Wheel[10], {1, 2, 3, 4, 5, 6, 7, 8, 9}]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ss = ShakeGraph[s]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[ss]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ss = ShakeGraph[s, 0.3]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[ss]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[CompleteGraph[2, 2, 2], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[ShakeGraph[CompleteGraph[2, 2, 2], 0.3], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"GraphOptions\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[GraphOptions[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[r = SetGraphOptions[CompleteGraph[5, 5], VertexColor -> Red, EdgeColor -> Green]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[r]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[GraphOptions[r]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Information[\"SpringEmbedding\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[s = MakeGraph[Permutations[{1, 2, 3, 4}], Count[#1 - #2, 0] == 0 & ]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[oldS = DiscreteMath`OldCombinatorica`MakeGraph[Permutations[{1, 2, 3, 4}], Count[#1 - #2, 0] == 0 & ]; ]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[V[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[M[s]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Timing[r = SpringEmbedding[s]; ]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[ShowGraph[r]]"
+	},
+	{
+		"sec":"\n3. Representing Graphs",
+		"in":"HoldComplete[Timing[r = DiscreteMath`OldCombinatorica`SpringEmbedding[oldS]; ]]"
+	}
+]

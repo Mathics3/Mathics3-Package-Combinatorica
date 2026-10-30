@@ -1,0 +1,1182 @@
+[
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[t = GridGraph[7, 9]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[t = SetGraphOptions[t, {{1, 10, 20, VertexStyle -> Disc[Large], VertexColor -> HotPink}, {{8, 9}, {32, 39}, EdgeStyle -> Fat}}]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[t = AddEdges[t, {{{29, 30}}}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[t, VertexNumber -> On, PlotRange -> Large[0.02]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"GraphUnion\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphUnion[t, t], PlotRange -> Large[0.02]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphUnion[CompleteGraph[3], CompleteGraph[5, 5], Star[4]], PlotRange -> Large[0.1]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphUnion[6, CompleteGraph[3]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[gt = Table[GridGraph[20, 10*i], {i, 20}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[GraphUnion[gt[[i]], gt[[i]]]; ], {i, 20}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[a = DiscreteMath`OldCombinatorica`Wheel[200]; aa = Wheel[200]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[b = DiscreteMath`OldCombinatorica`CompleteGraph[75]; bb = CompleteGraph[75]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`GraphUnion[a, b]; ], Timing[GraphUnion[aa, bb]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[cc = Star[1000]; c = DiscreteMath`OldCombinatorica`Star[1000]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[GraphUnion[aa, cc]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[DiscreteMath`OldCombinatorica`GraphUnion[a, c]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"ExpandGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"AddVertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[ExpandGraph[Wheel[10], 20]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"GraphIntersection\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p1 = ShowGraph[s = Wheel[20], VertexColor -> Red, EdgeColor -> Red, VertexNumber -> On, Graphics]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p2 = ShowGraph[r = GridGraph[4, 5], VertexColor -> Blue, EdgeColor -> Blue, VertexNumber -> On, Graphics]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p3 = ShowGraph[GraphIntersection[s, r], VertexColor -> Green, EdgeColor -> Green, VertexNumber -> On, Graphics]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Show[GraphicsArray[{p1, p2, p3}], ImageSize -> 600]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p4 = ShowGraph[GraphIntersection[r, s], VertexColor -> Green, EdgeColor -> Green, VertexNumber -> On, Graphics]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Show[GraphicsArray[{p1, p2, p4}], ImageSize -> 600]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphIntersection[t, CompleteGraph[63]], VertexNumber -> On, PlotRange -> Large[0.1]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[g = SetGraphOptions[Star[5], VertexColor -> Red]; ShowGraph[g]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphIntersection[g, CompleteGraph[5]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[gt = Table[GridGraph[20, 10*i], {i, 20}]; rt = Table[Timing[GraphIntersection[gt[[i]], gt[[i]]]; ], {i, 20}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[a = DiscreteMath`OldCombinatorica`CompleteGraph[80]; aa = CompleteGraph[80]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[b = DiscreteMath`OldCombinatorica`GridGraph[8, 10]; bb = GridGraph[8, 10]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`GraphIntersection[a, b]; ], Timing[GraphIntersection[aa, bb]; ], Timing[GraphIntersection[bb, aa]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[a = DiscreteMath`OldCombinatorica`RandomTree[100]; aa = RandomTree[100]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[b = DiscreteMath`OldCombinatorica`GridGraph[10, 10]; bb = GridGraph[10, 10]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`GraphIntersection[a, b]; ], Timing[GraphIntersection[aa, bb]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"GraphDifference\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Edges[GraphDifference[t, t]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[s = EmptyGraph[V[t]], VertexStyle -> Disc[Small]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphDifference[t, s]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[a = DiscreteMath`OldCombinatorica`CompleteGraph[100]; aa = CompleteGraph[100]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[b = DiscreteMath`OldCombinatorica`RandomTree[100]; bb = RandomTree[100]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`GraphDifference[a, a]; ], Timing[GraphDifference[aa, aa]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`GraphDifference[b, b]; ], Timing[GraphDifference[bb, bb]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"GraphSum\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphSum[t, Path[63]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[g = SetGraphOptions[Wheel[10], EdgeStyle -> Fat, EdgeColor -> Purple]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[h = SetGraphOptions[Star[10], EdgeColor -> Green]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphSum[g, Star[10]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p1 = ShowGraph[a = SetGraphOptions[GridGraph[3, 3], EdgeColor -> LightBlue, VertexColor -> Red, VertexStyle -> Disc[Large]], Graphics]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p2 = ShowGraph[b = SetGraphOptions[Wheel[9], EdgeColor -> Yellow, VertexColor -> LightBlue, VertexStyle -> Disc[Large]], Graphics]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Show[GraphicsArray[{p1, p2}], ImageSize -> 500, Background -> Black]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphSum[a, b], Background -> Black, PlotRange -> Large[0.01]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[b = Wheel[9]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[b]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p2 = ShowGraph[b = SetGraphOptions[b, Append[Edges[b], EdgeColor -> Yellow], VertexColor -> LightBlue, VertexStyle -> Disc[Large]], Background -> Black, PlotRange -> Large[0.01]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphSum[a, b], Background -> Black, PlotRange -> Large[0.01]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[gt = Table[GridGraph[20, 10*i], {i, 20}]; , Null, rt = Table[Timing[GraphSum[gt[[i]], gt[[i]]]; ], {i, 20}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[aa = Table[DiscreteMath`OldCombinatorica`RandomTree[i^2], {i, 10, 30, 10}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[bb = Table[DiscreteMath`OldCombinatorica`GridGraph[i, i], {i, 10, 30, 10}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`GraphSum[aa[[i]], bb[[i]]]; ], {i, 3}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"GraphJoin\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[l = r = EmptyGraph[5]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphUnion[l, r]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphJoin[l, r]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[g1 = SetGraphOptions[Cycle[10], VertexStyle -> Disc[Large], VertexColor -> Blue]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[g2 = SetGraphOptions[CompleteGraph[1], VertexColor -> Green, VertexStyle -> Disc[Large]]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[g3 = SetGraphOptions[CompleteGraph[1], {1, VertexColor -> Green}, VertexStyle -> Disc[Large]]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphJoin[g1, g2], PlotRange -> Large[0.1]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphJoin[g1, g3], PlotRange -> Large[0.1]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"GraphJoin\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[gt = Table[GridGraph[5, 5*i], {i, 5}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[GraphJoin[gt[[i]], gt[[i]]]; ], {i, 5}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[a = Table[DiscreteMath`OldCombinatorica`RandomTree[i], {i, 50, 70, 10}]; aa = Table[RandomTree[i], {i, 50, 70, 10}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[b = Table[DiscreteMath`OldCombinatorica`GridGraph[i, i], {i, 10, 30, 10}]; bb = Table[GridGraph[i, i], {i, 10, 30, 10}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`GraphJoin[a[[i]], b[[i]]]; ], {i, 3}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Table[Timing[GraphJoin[aa[[i]], bb[[i]]]; ], {i, 2}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"GraphProduct\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[l = Wheel[5]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[r = GridGraph[3, 3]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphProduct[l, r], VertexStyle -> Disc[Small]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphProduct[CompleteGraph[3], CompleteGraph[5]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphProduct[CompleteGraph[5], CompleteGraph[3]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphProduct[CompleteGraph[3], Star[3], CompleteGraph[3]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[l = SetGraphOptions[l, VertexColor -> Green, EdgeColor -> Green], Background -> Black]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[r = SetGraphOptions[r, VertexColor -> Orange, EdgeColor -> Orange], Background -> Black]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphProduct[l, r]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[l1 = SetGraphOptions[l, VertexColor -> Red, EdgeColor -> Orange], Background -> Black]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[r1 = SetGraphOptions[r, VertexColor -> Orange, EdgeColor -> Orange], Background -> Black]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GraphProduct[l, r]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[gt = Table[GridGraph[5, 5*i], {i, 10}]; , Null, rt = Table[Timing[GraphProduct[gt[[i]], gt[[i]]]; ], {i, 10}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[g = GraphProduct[gt[[10]], gt[[10]]]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[M[g]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[V[g]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[aa = Cycle[100]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[bb = RandomTree[100]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[ans = GraphProduct[aa, bb]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[V[ans]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[M[ans]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[a = DiscreteMath`OldCombinatorica`Cycle[30]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[aa = Cycle[30]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[b = DiscreteMath`OldCombinatorica`RandomTree[30]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[bb = RandomTree[30]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`GraphProduct[a, b]; ], Timing[GraphProduct[aa, bb]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"IncidenceMatrix\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[MatrixForm[IncidenceMatrix[Star[10]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[g = SetGraphOptions[Star[10], EdgeDirection -> On]; ShowGraph[g, VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[MatrixForm[IncidenceMatrix[g]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"LineGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[LineGraph[CompleteGraph[5]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[LineGraph[Cycle[10]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[LineGraph[GridGraph[7, 7]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[a = DiscreteMath`OldCombinatorica`GridGraph[25, 25]; aa = GridGraph[25, 25]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`LineGraph[a]; ], Timing[LineGraph[aa]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[gt = Table[GridGraph[20, 10*i], {i, 15}]; , Null, rt = Table[Timing[LineGraph[gt[[i]]]; ], {i, 15}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"CirculantGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[CirculantGraph[21, RandomKSubset[Range[10], 3]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[CirculantGraph[21, RandomKSubset[Range[10], 3]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[CirculantGraph[21, RandomKSubset[Range[10], 3]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ne = Edges[CirculantGraph[5, {1, 2}]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Length[ne]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ne = Edges[CirculantGraph[4, {1, 2}]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Length[ne]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`CirculantGraph[2000, {1, 2, 3, 4, 5}]; ], Timing[CirculantGraph[2000, {1, 2, 3, 4, 5}]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p = Table[RandomKSubset[Range[200*i], 5], {i, 20}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[CirculantGraph[200*i, p[[i]]]; ], {i, 20}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"CompleteGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[CompleteGraph[10]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[CompleteGraph[100 + 10*i]; ], {i, 30}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[Table[{(50 + 5*i)*(99 + 10*i), rt[[i,1,1]]}, {i, 30}], PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`CompleteGraph[250]; ], Timing[CompleteGraph[250]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`CompleteGraph[500]; ], Timing[CompleteGraph[500]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[CompleteGraph[10, Type -> Directed]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[CompleteGraph[3, 4, 3]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"ShakeGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[ShakeGraph[CompleteGraph[3, 3, 3, 3], 0.3], VertexStyle -> Disc[Small], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[CompleteGraph[100, 100, 100, 100]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[DiscreteMath`OldCombinatorica`CompleteGraph[100, 100, 100, 100]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"EmptyGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[EmptyGraph[10]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[DiscreteMath`OldCombinatorica`ShowGraph[DiscreteMath`OldCombinatorica`EmptyGraph[10]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"Turan\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[Turan[10, 4]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[Turan[10, 2]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[gt[[i]] = Turan[i*100, 50]; ], {i, 5, 10}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"PARSEFAIL:BoxData[RowBox[{\"ListPlot\", \"[\", \" \", RowBox[{\"Table\", \"[\", RowBox[{RowBox[{\"{\", RowBox[{RowBox[{\"M\", \"[\", \" \", RowBox[{\"gt\", \"[\", RowBox[{\"[\", \"i\", \"]\"}], \"]\"}], \" \", \"]\"}], \",\", \" \", RowBox[{\"rt\", \"[\", RowBox[{\"[\", \" \", \"i\", \"-\", \"4\", \",\", \" \", \"1\", \",\", \" \", \"1\", \" \", \"]\"}], \"]\"}], \" \"}], \"}\"}], \",\", \" \", RowBox[{\"{\", RowBox[{\"i\", \",\", \" \", \"5\", \",\", \" \", \"10\"}], \"}\"}]}], \"]\"}], \",\", \" \", RowBox[{\"PlotJoined\", \"->\", \"True\"}], \",\", \" \", RowBox[{\"ImageSize\", \"->\", \"400\"}], \"]\"}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`Turan[i*100, 50]; ], {i, 5, 10}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Clear[gt]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"Cycle\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[Cycle[20]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`Cycle[2000]; ], Timing[Cycle[2000]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[Cycle[50000]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[Cycle[500*i]; ], {i, 20}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"Star\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[Star[20]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`Star[1000]; ], Timing[Star[1000]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`Star[2000]; ], Timing[Star[2000]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[Star[100*i]; ], {i, 100}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"Wheel\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[Wheel[20]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`Wheel[1000]; ], Timing[Wheel[1000]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`Wheel[2000]; ], Timing[Wheel[2000]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[Wheel[100*i]; ], {i, 200}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"Path\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[Path[20]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[DiscreteMath`OldCombinatorica`Path[2000]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[Path[100*i]; ], {i, 500}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"GridGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GridGraph[3, 4]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[GridGraph[25, 25], VertexStyle -> Disc[Small]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[DiscreteMath`OldCombinatorica`GridGraph[40, 40]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[DiscreteMath`OldCombinatorica`GridGraph[30, 30]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p = Table[Timing[GridGraph[20, 10*i]; ], {i, 15}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ p, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"Hypercube\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[Hypercube[6]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[Hypercube[6], PlotRange -> Zoom[{1, 2, 3, 4, 5, 6, 7, 8}], VertexNumber -> On, ImageSize -> 400]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[DiscreteMath`OldCombinatorica`Hypercube[10]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[Hypercube[10]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Table[Timing[Hypercube[n]; ], {n, 15}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Hypercube[15]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"LabeledTreeToCode\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[LabeledTreeToCode[RandomTree[20]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[LabeledTreeToCode[CodeToLabeledTree[Table[10, {20}]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[LabeledTreeToCode[Path[100]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[g = Table[RandomTree[i], {i, 500, 1000, 100}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[LabeledTreeToCode[g[[i]]]; ], {i, 6}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[gg = Table[DiscreteMath`OldCombinatorica`RandomTree[i], {i, 500, 1000, 500}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`LabeledTreeToCode[gg[[i]]]; ], {i, 2}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"CodeToLabeledTree\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[CodeToLabeledTree[Table[10, {20}]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[RadialEmbedding[CodeToLabeledTree[Table[10, {20}]], 1]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[s = Table[Table[Random[Integer, {1, i*100}], {i*100 - 2}], {i, 10}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[CodeToLabeledTree[s[[i]]]; ], {i, 10}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`CodeToLabeledTree[s[[i]]]; ], {i, 3}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"RandomTree\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[RadialEmbedding[RandomTree[20], 1], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`RandomTree[i]; ], {i, 100, 800, 100}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p = Table[Timing[RandomTree[i]; ], {i, 100, 800, 100}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ p, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"RandomGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[s = RandomGraph[50, 0.3], VertexStyle -> Disc[0.01]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[Highlight[s, {Sort \/@ DepthFirstTraversal[s, 1, Edge]}, HighlightedEdgeColors -> {Blue}], VertexStyle -> Disc[0]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[Highlight[s, {Sort \/@ BreadthFirstTraversal[s, 1, Edge]}, HighlightedEdgeColors -> {Blue}], VertexStyle -> Disc[0]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[RandomGraph[100, p]; ], {p, 0.1, 0.9, 0.1}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[RandomGraph[20*i, N[1\/(20*i)]]; ], {i, 20}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`RandomGraph[100, 0.5]; ], Timing[RandomGraph[100, 0.5]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`RandomGraph[300, 0.5]; ], Timing[RandomGraph[300, 0.5]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`RandomGraph[300, 0.8]; ], Timing[RandomGraph[300, 0.8]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"ExactRandomGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[ExactRandomGraph[10, 5], Background -> LightBlue]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[ExactRandomGraph[20, 30], Background -> Pink]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[s = ExactRandomGraph[100, 100], VertexStyle -> Disc[0.02]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[Highlight[s, {Sort \/@ DepthFirstTraversal[s, 1, Edge]}, HighlightedEdgeColors -> {Blue}], VertexStyle -> Disc[0]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[ExactRandomGraph[100, m]; ], {m, 100, 1000, 100}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[ExactRandomGraph[n, 5*n]; ], {n, 50, 250, 50}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`ExactRandomGraph[100, 100]; ], Timing[ExactRandomGraph[100, 100]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`ExactRandomGraph[500, 500]; ], Timing[ExactRandomGraph[500, 500]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[({NthPair[#1]} & ) \/@ Take[RandomPermutation[500*((500 - 1)\/2)], 500]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[CircularVertices[1000]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"RandomVertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[RandomVertices[Cycle[10]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[g = GridGraph[50, 50]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[RandomVertices[g]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"DegreeSequence\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[DegreeSequence[CompleteGraph[10]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[DegreeSequence[Path[100]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[g = GridGraph[40, 40]; h = DiscreteMath`OldCombinatorica`GridGraph[40, 40]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[DegreeSequence[g]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Timing[DiscreteMath`OldCombinatorica`DegreeSequence[h]; ]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[gt = Table[GridGraph[20, 10*i], {i, 20}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[DegreeSequence[gt[[i]]]; ], {i, 20}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[gt = Table[DiscreteMath`OldCombinatorica`GridGraph[20, 10*i], {i, 5}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[DiscreteMath`OldCombinatorica`DegreeSequence[gt[[i]]]; ], {i, 5}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"GraphicQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[GraphicQ[DegreeSequence[RandomGraph[100, 0.2]]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[GraphicQ[Range[100]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[a = DiscreteMath`OldCombinatorica`RandomTree[400]; aa = RandomTree[400]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[$RecursionLimit = 10000; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[GraphicQ[DegreeSequence[aa]]; ], Timing[DiscreteMath`OldCombinatorica`GraphicQ[DiscreteMath`OldCombinatorica`DegreeSequence[a]]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[gt = Table[DegreeSequence[RandomTree[20*i]], {i, 20}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[GraphicQ[gt[[i]]]; ], {i, 20}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"RealizeDegreeSequence\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[s = RandomTree[15], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[seq = DegreeSequence[s]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[g = RealizeDegreeSequence[seq], VertexNumber -> On]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[DegreeSequence[g]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[IsomorphicQ[s, g]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[st = Table[DegreeSequence[GridGraph[10, 5*i]], {i, 5}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[rt = Table[Timing[RealizeDegreeSequence[st[[i]]]; ], {i, 5}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[st = Table[DiscreteMath`OldCombinatorica`DegreeSequence[DiscreteMath`OldCombinatorica`GridGraph[10, 5*i]], {i, 5}]; rt = Table[Timing[DiscreteMath`OldCombinatorica`RealizeDegreeSequence[st[[i]]]; ], {i, 5}]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"RegularQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[RegularQ[CompleteGraph[10]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[RegularQ[CompleteGraph[10, 10]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[RegularQ[RandomTree[10]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[RegularQ[Cycle[10]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"RegularGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[RegularGraph[1, 30], VertexStyle -> Disc[Small]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[RealizeDegreeSequence[{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}], VertexStyle -> Disc[Small]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[RegularGraph[2, 30], VertexStyle -> Disc[Small]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[{Timing[DiscreteMath`OldCombinatorica`RegularGraph[10, 100]; ], Timing[RegularGraph[10, 100]; ]}]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"MakeGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[g = MakeGraph[Permutations[{1, 2, 3, 4}], Count[#1 - #2, 0] == 2 && Inversions[#1] > Inversions[#2] & ]]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p = Permutations[{1, 2, 3, 4}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[p1 = (Text[#1, {0.05, 0.02}] & ) \/@ Cases[p, {1, ___}]; p2 = (Text[#1, {-0.05, 0.02}] & ) \/@ Cases[p, {2, ___}]; , Null, p3 = (Text[#1, {-0.05, -0.02}] & ) \/@ Cases[p, {3, ___}]; , Null, p4 = (Text[#1, {0.05, -0.02}] & ) \/@ Cases[p, {4, ___}]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[g = SetVertexLabels[g, Join[p1, p2, p3, p4]]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[g, ImageSize -> 600, VertexLabelColor -> Red, PlotRange -> Large[0.2]]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"IntervalGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[l = {{1, 10}, {2, 3}, {4, 5}, {6, 7}, {8, 9}}; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[s = IntervalGraph[l]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[s = SetVertexLabels[s, (Text[#1, {-0.09, 0.02}] & ) \/@ l]; ]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[s, PlotRange -> Large[0.4], ImageSize -> 400]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[Information[\"FunctionalGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"\n4. Generating Graphs",
+		"in":"HoldComplete[ShowGraph[FunctionalGraph[Mod[#1^2 + 2*#1, 20] & , Table[i, {i, 0, 19}]]]]"
+	}
+]

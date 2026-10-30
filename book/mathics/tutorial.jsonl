@@ -1,0 +1,61 @@
+{"i": 1, "in": "HoldComplete[BFS[g_Graph, start_Integer] := Module[{e = ToAdjacencyLists[g], bfi = Table[0, {V[g]}], cnt = 1, queue = {start}, parent = Table[i, {i, V[g]}], lvl = Table[Infinity, {V[g]}]}, bfi[[start]] = cnt++; lvl[[start]] = 0; While[queue != {}, {v, queue} = {First[queue], Rest[queue]}; Scan[If[bfi[[#1]] == 0, bfi[[#1]] = cnt++; parent[[#1]] = v; lvl[[#1]] = lvl[[v]] + 1; AppendTo[queue, #1]] & , e[[v]]]]; {bfi, parent, lvl}] /; 1 <= start && start <= V[g]]", "status": "ok", "out": "Null", "msgs": [], "secs": 0.008, "tmo": 120}
+{"i": 2, "in": "HoldComplete[g = Wheel[7]]", "status": "ok", "out": "Graph[{{{1, 7}}, {{2, 7}}, {{3, 7}}, {{4, 7}}, {{5, 7}}, {{6, 7}}, {{1, 2}}, {{2, 3}}, {{3, 4}}, {{4, 5}}, {{5, 6}}, {{1, 6}}}, {{{50000, 86603}}, {{-50000, 86603}}, {{-100000, 0}}, {{-50000, -86603}}, {{50000, -86603}}, {{100000, 0}}, {{0, 0}}}]", "msgs": [], "secs": 0.044, "tmo": 120}
+{"i": 3, "in": "HoldComplete[ShowGraph[g, VertexNumber -> On]]", "status": "ok", "out": "<Graphics>", "msgs": [], "secs": 0.88, "tmo": 120}
+{"i": 4, "in": "HoldComplete[BFS[g, 1]]", "status": "ok", "out": "{{1, 2, 5, 7, 6, 3, 4}, {1, 1, 2, 7, 6, 1, 1}, {0, 1, 2, 2, 2, 1, 1}}", "msgs": [], "secs": 0.118, "tmo": 120}
+{"i": 5, "in": "HoldComplete[F[x_] := x^2]", "status": "ok", "out": "Null", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 6, "in": "HoldComplete[F[10]]", "status": "ok", "out": "100", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 7, "in": "HoldComplete[G[y_Integer] := y^2]", "status": "ok", "out": "Null", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 8, "in": "HoldComplete[G[10]]", "status": "ok", "out": "100", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 9, "in": "HoldComplete[G[10.1]]", "status": "ok", "out": "1020100000000", "msgs": [], "secs": 0.005, "tmo": 120}
+{"i": 10, "in": "HoldComplete[F[10.1]]", "status": "ok", "out": "10201000", "msgs": [], "secs": 0.005, "tmo": 120}
+{"i": 11, "in": "HoldComplete[BFS[10, 10]]", "status": "ok", "out": "BFS[10, 10]", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 12, "in": "HoldComplete[BFS[g, 10.1]]", "status": "ok", "out": "BFS[Graph[{{{1, 7}}, {{2, 7}}, {{3, 7}}, {{4, 7}}, {{5, 7}}, {{6, 7}}, {{1, 2}}, {{2, 3}}, {{3, 4}}, {{4, 5}}, {{5, 6}}, {{1, 6}}}, {{{50000, 86603}}, {{-50000, 86603}}, {{-100000, 0}}, {{-50000, -86603}}, {{50000, -86603}}, {{100000, 0}}, {{0, 0}}}], 1010000]", "msgs": [], "secs": 0.018, "tmo": 120}
+{"i": 13, "in": "HoldComplete[Information[\"Module\", LongForm -> False]]", "status": "ok", "out": "InformationData[<|System`Usage \\[Rule] \"Local variable specification contains `1`, which is not a symbol or an assignment to a symbol.\", System`FullName \\[Rule] \"System`Module\", System`Attributes \\[Rule] {System`Protected}, System`Options \\[Rule] System`None, System`DownValues \\[Rule] System`None, System`OwnValues \\[Rule] System`None|>]", "msgs": [], "secs": 0.006, "tmo": 120}
+{"i": 14, "in": "HoldComplete[Module[{i, j}, i = 10; j = 20]]", "status": "ok", "out": "20", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 15, "in": "HoldComplete[i]", "status": "ok", "out": "i", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 16, "in": "HoldComplete[j]", "status": "ok", "out": "j", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 17, "in": "HoldComplete[Information[\"Table\", LongForm -> False]]", "status": "ok", "out": "InformationData[<|System`Usage \\[Rule] \"make a table of values of an expression\", System`FullName \\[Rule] \"System`Table\", System`Attributes \\[Rule] {System`Protected}, System`Options \\[Rule] System`None, System`DownValues \\[Rule] System`None, System`OwnValues \\[Rule] System`None|>]", "msgs": [], "secs": 0.005, "tmo": 120}
+{"i": 18, "in": "HoldComplete[Table[1, {10}]]", "status": "ok", "out": "{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 19, "in": "HoldComplete[Table[1, {i, 10}]]", "status": "ok", "out": "{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}", "msgs": [], "secs": 0.01, "tmo": 120}
+{"i": 20, "in": "HoldComplete[Table[i, {i, 10}]]", "status": "ok", "out": "{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}", "msgs": [], "secs": 0.011, "tmo": 120}
+{"i": 21, "in": "HoldComplete[Table[i, {i, 3, 10}]]", "status": "ok", "out": "{3, 4, 5, 6, 7, 8, 9, 10}", "msgs": [], "secs": 0.008, "tmo": 120}
+{"i": 22, "in": "HoldComplete[Table[i*j, {i, 10}, {j, 10}]]", "status": "ok", "out": "{{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}, {3, 6, 9, 12, 15, 18, 21, 24, 27, 30}, {4, 8, 12, 16, 20, 24, 28, 32, 36, 40}, {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}, {6, 12, 18, 24, 30, 36, 42, 48, 54, 60}, {7, 14, 21, 28, 35, 42, 49, 56, 63, 70}, {8, 16, 24, 32, 40, 48, 56, 64, 72, 80}, {9, 18, 27, 36, 45, 54, 63, 72, 81, 90}, {10, 20, 30, 40, 50, 60, 70, 80, 90, 100}}", "msgs": [], "secs": 0.064, "tmo": 120}
+{"i": 23, "in": "HoldComplete[t = Table[i*j, {i, 10}, {j, 1, i}]]", "status": "ok", "out": "{{1}, {2, 4}, {3, 6, 9}, {4, 8, 12, 16}, {5, 10, 15, 20, 25}, {6, 12, 18, 24, 30, 36}, {7, 14, 21, 28, 35, 42, 49}, {8, 16, 24, 32, 40, 48, 56, 64}, {9, 18, 27, 36, 45, 54, 63, 72, 81}, {10, 20, 30, 40, 50, 60, 70, 80, 90, 100}}", "msgs": [], "secs": 0.049, "tmo": 120}
+{"i": 24, "in": "PARSEFAIL:BoxData[RowBox[{\"t\", \"//\", \"ColumnForm\"}]]", "status": "ok", "out": "BoxData[RowBox[{\"t\", \"//\", \"ColumnForm\"}]]", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 25, "in": "HoldComplete[e = ToAdjacencyLists[g]]", "status": "ok", "out": "{{2, 6, 7}, {1, 3, 7}, {2, 4, 7}, {3, 5, 7}, {4, 6, 7}, {1, 5, 7}, {1, 2, 3, 4, 5, 6}}", "msgs": [], "secs": 0.056, "tmo": 120}
+{"i": 26, "in": "HoldComplete[l = Range[10]]", "status": "ok", "out": "{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 27, "in": "HoldComplete[l[[{2, 5, 6}]] = {-1, -2, -3}]", "status": "ok", "out": "{-1, -2, -3}", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 28, "in": "HoldComplete[l]", "status": "ok", "out": "{1, -1, 3, 4, -2, -3, 7, 8, 9, 10}", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 29, "in": "HoldComplete[Information[\"While\", LongForm -> False]]", "status": "ok", "out": "InformationData[<|System`Usage \\[Rule] \"evaluate an expression while a criterion is true\", System`FullName \\[Rule] \"System`While\", System`Attributes \\[Rule] {System`Protected}, System`Options \\[Rule] System`None, System`DownValues \\[Rule] System`None, System`OwnValues \\[Rule] System`None|>]", "msgs": [], "secs": 0.006, "tmo": 120}
+{"i": 30, "in": "HoldComplete[sum = 0]", "status": "ok", "out": "0", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 31, "in": "HoldComplete[i = 0]", "status": "ok", "out": "0", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 32, "in": "HoldComplete[While[i < 10, sum = sum + 10; i++]]", "status": "ok", "out": "Null", "msgs": [], "secs": 0.011, "tmo": 120}
+{"i": 33, "in": "HoldComplete[sum]", "status": "ok", "out": "100", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 34, "in": "HoldComplete[Information[\"Do\", LongForm -> False]]", "status": "ok", "out": "InformationData[<|System`Usage \\[Rule] \"evaluate an expression looping over a variable\", System`FullName \\[Rule] \"System`Do\", System`Attributes \\[Rule] {System`Protected}, System`Options \\[Rule] System`None, System`DownValues \\[Rule] System`None, System`OwnValues \\[Rule] System`None|>]", "msgs": [], "secs": 0.005, "tmo": 120}
+{"i": 35, "in": "HoldComplete[Information[\"For\", LongForm -> False]]", "status": "ok", "out": "InformationData[<|System`Usage \\[Rule] \"a 'For' loop\", System`FullName \\[Rule] \"System`For\", System`Attributes \\[Rule] {System`Protected}, System`Options \\[Rule] System`None, System`DownValues \\[Rule] System`None, System`OwnValues \\[Rule] System`None|>]", "msgs": [], "secs": 0.005, "tmo": 120}
+{"i": 36, "in": "HoldComplete[l = {1, 3, 8, -1, 11, 12}]", "status": "ok", "out": "{1, 3, 8, -1, 11, 12}", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 37, "in": "HoldComplete[{v, l} = {First[l], Rest[l]}]", "status": "ok", "out": "{1, {3, 8, -1, 11, 12}}", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 38, "in": "HoldComplete[{v, l}]", "status": "ok", "out": "{1, {3, 8, -1, 11, 12}}", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 39, "in": "HoldComplete[Information[\"Scan\", LongForm -> False]]", "status": "ok", "out": "InformationData[<|System`Usage \\[Rule] \"scan over every element of a list, applying a function\", System`FullName \\[Rule] \"System`Scan\", System`Attributes \\[Rule] {System`Protected}, System`Options \\[Rule] {System`Rule[System`Heads, System`False]}, System`DownValues \\[Rule] System`None, System`OwnValues \\[Rule] System`None|>]", "msgs": [], "secs": 0.005, "tmo": 120}
+{"i": 40, "in": "HoldComplete[Acc[x_] := m = m + x]", "status": "ok", "out": "Null", "msgs": [], "secs": 0.005, "tmo": 120}
+{"i": 41, "in": "HoldComplete[l]", "status": "ok", "out": "{3, 8, -1, 11, 12}", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 42, "in": "HoldComplete[m = 0]", "status": "ok", "out": "0", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 43, "in": "HoldComplete[Scan[Acc, l]]", "status": "ok", "out": "Null", "msgs": [], "secs": 0.006, "tmo": 120}
+{"i": 44, "in": "HoldComplete[m]", "status": "ok", "out": "33", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 45, "in": "HoldComplete[m = 0]", "status": "ok", "out": "0", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 46, "in": "HoldComplete[Scan[Function[x, m = m + x], l]]", "status": "ok", "out": "Null", "msgs": [], "secs": 0.007, "tmo": 120}
+{"i": 47, "in": "HoldComplete[m]", "status": "ok", "out": "33", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 48, "in": "HoldComplete[Information[\"Function\", LongForm -> False]]", "status": "ok", "out": "InformationData[<|System`Usage \\[Rule] \"`1` should contain a positive integer.\", System`FullName \\[Rule] \"System`Function\", System`Attributes \\[Rule] {System`Protected}, System`Options \\[Rule] System`None, System`DownValues \\[Rule] System`None, System`OwnValues \\[Rule] System`None|>]", "msgs": [], "secs": 0.005, "tmo": 120}
+{"i": 49, "in": "HoldComplete[m = 0]", "status": "ok", "out": "0", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 50, "in": "HoldComplete[Scan[(m = m + #1) & , l]]", "status": "ok", "out": "Null", "msgs": [], "secs": 0.007, "tmo": 120}
+{"i": 51, "in": "HoldComplete[m]", "status": "ok", "out": "33", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 52, "in": "HoldComplete[l = Range[1000]; ]", "status": "ok", "out": "Null", "msgs": [], "secs": 0.006, "tmo": 120}
+{"i": 53, "in": "HoldComplete[Information[\"PrimeQ\", LongForm -> False]]", "status": "ok", "out": "InformationData[<|System`Usage \\[Rule] \"test whether elements are prime numbers\", System`FullName \\[Rule] \"System`PrimeQ\", System`Attributes \\[Rule] {System`Protected}, System`Options \\[Rule] System`None, System`DownValues \\[Rule] System`None, System`OwnValues \\[Rule] System`None|>]", "msgs": [], "secs": 0.005, "tmo": 120}
+{"i": 54, "in": "HoldComplete[s = 0]", "status": "ok", "out": "0", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 55, "in": "HoldComplete[Scan[If[PrimeQ[#1], s++] & , l]]", "status": "ok", "out": "Null", "msgs": [], "secs": 0.684, "tmo": 120}
+{"i": 56, "in": "HoldComplete[s]", "status": "ok", "out": "168", "msgs": [], "secs": 0.003, "tmo": 120}
+{"i": 57, "in": "HoldComplete[Information[\"Map\", LongForm -> False]]", "status": "ok", "out": "InformationData[<|System`Usage \\[Rule] \"map a function over a list, at specified levels\", System`FullName \\[Rule] \"System`Map\", System`Attributes \\[Rule] {System`Protected}, System`Options \\[Rule] {System`Rule[System`Heads, System`False]}, System`DownValues \\[Rule] System`None, System`OwnValues \\[Rule] System`None|>]", "msgs": [], "secs": 0.005, "tmo": 120}
+{"i": 58, "in": "HoldComplete[l = {1, 2, 10, 4}]", "status": "ok", "out": "{1, 2, 10, 4}", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 59, "in": "HoldComplete[(#1^2 & ) /@ l]", "status": "ok", "out": "{1, 4, 100, 16}", "msgs": [], "secs": 0.005, "tmo": 120}
+{"i": 60, "in": "HoldComplete[f /@ {1, 3, 4}]", "status": "ok", "out": "{f[1], f[3], f[4]}", "msgs": [], "secs": 0.004, "tmo": 120}
+{"i": 61, "in": "HoldComplete[Information[\"/;\", LongForm -> False]]", "status": "ok", "out": "Missing[UnknownSymbol, \"/;\"]", "msgs": [], "secs": 0.004, "tmo": 120}
