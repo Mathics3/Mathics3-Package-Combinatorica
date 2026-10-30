@@ -1,0 +1,246 @@
+[
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users",
+		"in":"HoldComplete[BFS[g_Graph, start_Integer] := Module[{e = ToAdjacencyLists[g], bfi = Table[0, {V[g]}], cnt = 1, queue = {start}, parent = Table[i, {i, V[g]}], lvl = Table[Infinity, {V[g]}]}, bfi[[start]] = cnt++; lvl[[start]] = 0; While[queue != {}, {v, queue} = {First[queue], Rest[queue]}; Scan[If[bfi[[#1]] == 0, bfi[[#1]] = cnt++; parent[[#1]] = v; lvl[[#1]] = lvl[[v]] + 1; AppendTo[queue, #1]] & , e[[v]]]]; {bfi, parent, lvl}] \/; 1 <= start && start <= V[g]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users",
+		"in":"HoldComplete[g = Wheel[7]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users",
+		"in":"HoldComplete[ShowGraph[g, VertexNumber -> On]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users",
+		"in":"HoldComplete[BFS[g, 1]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Function Definition",
+		"in":"HoldComplete[F[x_] := x^2]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Function Definition",
+		"in":"HoldComplete[F[10]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Function Definition",
+		"in":"HoldComplete[G[y_Integer] := y^2]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Function Definition",
+		"in":"HoldComplete[G[10]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Function Definition",
+		"in":"HoldComplete[G[10.1]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Function Definition",
+		"in":"HoldComplete[F[10.1]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Function Definition",
+		"in":"HoldComplete[BFS[10, 10]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Function Definition",
+		"in":"HoldComplete[BFS[g, 10.1]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Defining Local Variables",
+		"in":"HoldComplete[Information[\"Module\", LongForm -> False]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Defining Local Variables",
+		"in":"HoldComplete[Module[{i, j}, i = 10; j = 20]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Defining Local Variables",
+		"in":"HoldComplete[i]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Defining Local Variables",
+		"in":"HoldComplete[j]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"HoldComplete[Information[\"Table\", LongForm -> False]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"HoldComplete[Table[1, {10}]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"HoldComplete[Table[1, {i, 10}]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"HoldComplete[Table[i, {i, 10}]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"HoldComplete[Table[i, {i, 3, 10}]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"HoldComplete[Table[i*j, {i, 10}, {j, 10}]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"HoldComplete[t = Table[i*j, {i, 10}, {j, 1, i}]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"PARSEFAIL:BoxData[RowBox[{\"t\", \"\/\/\", \"ColumnForm\"}]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"HoldComplete[e = ToAdjacencyLists[g]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"HoldComplete[l = Range[10]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"HoldComplete[l[[{2, 5, 6}]] = {-1, -2, -3}]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ List Manipulation",
+		"in":"HoldComplete[l]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Loops",
+		"in":"HoldComplete[Information[\"While\", LongForm -> False]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Loops",
+		"in":"HoldComplete[sum = 0]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Loops",
+		"in":"HoldComplete[i = 0]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Loops",
+		"in":"HoldComplete[While[i < 10, sum = sum + 10; i++]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Loops",
+		"in":"HoldComplete[sum]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Loops",
+		"in":"HoldComplete[Information[\"Do\", LongForm -> False]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Loops",
+		"in":"HoldComplete[Information[\"For\", LongForm -> False]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Loops",
+		"in":"HoldComplete[l = {1, 3, 8, -1, 11, 12}]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Loops",
+		"in":"HoldComplete[{v, l} = {First[l], Rest[l]}]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Loops",
+		"in":"HoldComplete[{v, l}]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[Information[\"Scan\", LongForm -> False]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[Acc[x_] := m = m + x]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[l]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[m = 0]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[Scan[Acc, l]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[m]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[m = 0]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[Scan[Function[x, m = m + x], l]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[m]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[Information[\"Function\", LongForm -> False]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[m = 0]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[Scan[(m = m + #1) & , l]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[m]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[l = Range[1000]; ]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[Information[\"PrimeQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[s = 0]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[Scan[If[PrimeQ[#1], s++] & , l]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[s]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[Information[\"Map\", LongForm -> False]]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[l = {1, 2, 10, 4}]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[(#1^2 & ) \/@ l]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Functional Operations",
+		"in":"HoldComplete[f \/@ {1, 3, 4}]"
+	},
+	{
+		"sec":"A Mathematica Tutorial for Combinatorica Users \/ Final Words",
+		"in":"HoldComplete[Information[\"\/;\", LongForm -> False]]"
+	}
+]

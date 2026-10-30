@@ -1,0 +1,2074 @@
+[
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"ConnectedComponents\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedComponents[s = RegularGraph[1, 10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[s, VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[c = ConnectedComponents[s = RegularGraph[2, 20]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[s, VertexNumber -> On, VertexNumberColor -> Purple, Background -> Yellow]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[InduceSubgraph[s, c[[1]]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[a = GraphUnion[Wheel[5], Star[10]]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedComponents[a]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[a = GraphUnion[10, Star[10]]; ConnectedComponents[a]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[$RecursionLimit = 100000; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = Table[DiscreteMath`OldCombinatorica`RandomGraph[i*100, 0.01], {i, 5}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = Table[RandomGraph[i*100, 0.01], {i, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[{Length[DiscreteMath`OldCombinatorica`ConnectedComponents[g[[i]]]], Length[ConnectedComponents[h[[i]]]]}, {i, 5}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ort = Table[Timing[DiscreteMath`OldCombinatorica`ConnectedComponents[g[[i]]]; ], {i, 5}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[ConnectedComponents[h[[i]]]; ], {i, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[p1 = ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[gt = Table[InduceSubgraph[GridGraph[20, 10*i], RandomKSubset[Range[200*i], 100*i]], {i, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[V \/@ gt]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[M \/@ gt]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[ConnectedComponents[gt[[i]]]; ], {i, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Clear[gt]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[s = GridGraph[50, 50]; {Timing[DepthFirstTraversal[s, 1]; ], Timing[BreadthFirstTraversal[s, 1]; ]}]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[s = InduceSubgraph[GridGraph[70, 70], RandomSubset[Range[4900]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[V[s]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[M[s]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[s, VertexStyle -> Disc[0]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[c = ConnectedComponents[s]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Length[c]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Max[Length \/@ c]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[100, 100]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = InduceSubgraph[g, RandomSubset[Range[10000]]]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[h, VertexStyle -> Disc[0]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[V[h]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[M[h]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[c = ConnectedComponents[h]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[{Length[c], Max[Length \/@ c]}]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"ConnectedQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[Wheel[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[DeleteVertices[Star[10], {10}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[Wheel[10], Weak]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[OrientGraph[Wheel[10]], Strong]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[SetGraphOptions[RandomTree[20], EdgeDirection -> On], Strong]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[SetGraphOptions[RandomTree[20], EdgeDirection -> On], Weak]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[Wheel[10], Weak]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[Wheel[10], Strong]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = SetGraphOptions[Wheel[10], EdgeDirection -> On]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g, VertexNumber -> Text[{0.03, 0}, TextStyle -> {FontSize -> 14, FontColor -> Blue, FontWeight -> Bold}], PlotRange -> Large[0.05]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[g, Weak]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[g, Strong]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = AddEdges[g, {{{9, 1}}, {{10, 1}}}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[h, Strong]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ConnectedQ[h, Weak]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[h]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"WeaklyConnectedComponents\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"StronglyConnectedComponents\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[s = SetGraphOptions[GridGraph[5, 6], EdgeDirection -> On]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[s, VertexNumber -> Text[{-0.04, -0.04}], PlotRange -> Large[0.05]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[WeaklyConnectedComponents[s]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[StronglyConnectedComponents[s]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[s = AddEdges[s, {{{30, 1}}}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[StronglyConnectedComponents[s]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[gt = Table[RandomGraph[100*i, N[(1\/100)*i], Directed], {i, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[StronglyConnectedComponents[gt[[i]]]; ], {i, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[V \/@ gt]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[M \/@ gt]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ogt = Table[DiscreteMath`OldCombinatorica`RandomGraph[100*i, N[(1\/100)*i], {0, 1}], {i, 5}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ort = Table[Timing[DiscreteMath`OldCombinatorica`StronglyConnectedComponents[ogt[[i]]]; ], {i, 5}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Clear[MultipleListPlot]; Remove[MultipleListPlot]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Get[\"Graphics`MultipleListPlot`\"]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[MultipleListPlot[(#1[[1,1]] & ) \/@ rt, (#1[[1,1]] & ) \/@ ort, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = SetGraphOptions[GridGraph[70, 70], EdgeDirection -> On]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[{Timing[cw = WeaklyConnectedComponents[g]; ], Timing[cs = StronglyConnectedComponents[g]; ], Length[cw], Length[cs]}]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"OrientGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[10, 10]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[h = OrientGraph[GridGraph[10, 10]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Length[StronglyConnectedComponents[h]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = RandomGraph[20, 0.6]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Bridges[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Length[StronglyConnectedComponents[SetGraphOptions[g, EdgeDirection -> On]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = OrientGraph[g]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Length[StronglyConnectedComponents[g]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[20, 20]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[OrientGraph[g]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[ExtractCycles[g]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = DiscreteMath`OldCombinatorica`GridGraph[20, 20]; Timing[DiscreteMath`OldCombinatorica`OrientGraph[h]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"BiconnectedComponents\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[BiconnectedComponents[RandomTree[100]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Length[%]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[BiconnectedComponents[Cycle[100]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g = Contract[Cycle[50], {1, 30}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[BiconnectedComponents[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[gt = Table[RandomGraph[i*10, N[1\/(10*i)]], {i, 20}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[BiconnectedComponents[gt[[i]]]; ], {i, 20}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[gt = Table[DiscreteMath`OldCombinatorica`RandomGraph[i*10, 1\/(10*i)], {i, 20}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ort = Table[Timing[DiscreteMath`OldCombinatorica`BiconnectedComponents[gt[[i]]]; ], {i, 20}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[MultipleListPlot[(#1[[1,1]] & ) \/@ rt, (#1[[1,1]] & ) \/@ ort, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"BiconnectedQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[4, 4]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[BiconnectedQ[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[BiconnectedQ[CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[BiconnectedQ[GraphUnion[CompleteGraph[10], CompleteGraph[10]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[BiconnectedQ[g = Contract[GraphUnion[CompleteGraph[10], CompleteGraph[10]], {10, 14}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g, VertexNumber -> Text[{-0.03, -0.03}, TextStyle -> {FontSize -> 14, FontWeight -> Bold, FontColor -> Red}], Background -> Yellow, EdgeColor -> Orange, ImageSize -> 400, PlotRange -> Large[0.05]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"ArticulationVertices\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = Star[20]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ArticulationVertices[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ArticulationVertices[CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"Bridges\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Bridges[RandomTree[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[10, 10]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Bridges[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Bridges[s = AddEdges[GraphUnion[Wheel[5], Wheel[7]], {{{5, 6}}}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[s, VertexNumber -> On, PlotRange -> Large[0.05]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"EdgeConnectivity\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EdgeConnectivity[GridGraph[20, 5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EdgeConnectivity[s = AddEdges[GraphUnion[Wheel[5], Wheel[7]], {{{5, 6}}}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EdgeConnectivity[RandomGraph[20, 0.3]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EdgeConnectivity[RandomGraph[20, 0.5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EdgeConnectivity[RandomGraph[20, 0.7]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EdgeConnectivity[CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[gt = Table[RandomGraph[5*i, N[1\/(5*i)]], {i, 15}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[EdgeConnectivity[gt[[i]]]; ], {i, 15}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[V \/@ gt]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[M \/@ gt]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[gt = Table[GridGraph[5, 5*i], {i, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[EdgeConnectivity[gt[[i]]]; ], {i, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = Table[DiscreteMath`OldCombinatorica`RandomGraph[i*5, N[(1\/5)*i]], {i, 5}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`EdgeConnectivity[h[[i]]]; ], {i, 5}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"VertexConnectivity\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[VertexConnectivity[GridGraph[10, 3]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[VertexConnectivity[Star[30]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[VertexConnectivity[CompleteGraph[4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[DiscreteMath`OldCombinatorica`VertexConnectivity[DiscreteMath`OldCombinatorica`CompleteGraph[4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[10, 4]; h = DiscreteMath`OldCombinatorica`GridGraph[10, 4]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[VertexConnectivity[g]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[DiscreteMath`OldCombinatorica`VertexConnectivity[h]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"VertexConnectivityGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g = VertexConnectivityGraph[Wheel[10]], VertexStyle -> Disc[0.025], ImageSize -> 400]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g = RandomTree[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[VertexConnectivityGraph[g], HeadScaling -> Relative, ImageSize -> 400, VertexStyle -> Disc[0.015]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[10, 4]; Timing[VertexConnectivityGraph[g]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"Harary\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[Harary[3, 10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[Harary[7, 13]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[CompleteQ[Harary[8, 9]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[CompleteQ[Harary[10, 9]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[Harary[5, i*10]; ], {i, 20}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`Harary[5, i*10]; ], {i, 20}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[Harary[5, i*10]; ], {i, 20}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`Harary[i*5, 10]; ], {i, 3, 20}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"IdenticalQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = CompleteGraph[10]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IdenticalQ[g, CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IdenticalQ[g, Wheel[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = AddEdges[g, {{{1, 2}}}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IdenticalQ[g, CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IdenticalQ[CirculantGraph[10, Range[5]], CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IdenticalQ[RemoveMultipleEdges[CirculantGraph[10, Range[5]]], CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IdenticalQ[GraphDifference[Wheel[11], AddVertices[Cycle[10], 1]], Star[11]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[100, 100]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[IdenticalQ[g, g]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"IsomorphismQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IsomorphismQ[CompleteGraph[10], CompleteGraph[10], RandomPermutation[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[tf = (IsomorphismQ[Cycle[4], Cycle[4], #1] & ) \/@ Permutations[Range[4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Length[Select[tf, #1 == True & ]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[gt = Table[GridGraph[20, 10*i], {i, 8}]; pt = Table[RandomPermutation[200*i], {i, 8}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[IsomorphismQ[gt[[i]], gt[[i]], pt[[i]]]; ], {i, 8}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ht = Table[DiscreteMath`OldCombinatorica`GridGraph[20, 10*i], {i, 8}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[DiscreteMath`OldCombinatorica`IsomorphismQ[gt[[i]], gt[[i]], pt[[i]]]; ], {i, 8}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"Isomorphism\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Isomorphism[Wheel[10], CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Isomorphism[Wheel[5], Wheel[5], All]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Isomorphism[Star[5], Star[5], All]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Isomorphism[Wheel[10], Star[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Isomorphism[Cycle[10], Cycle[10], All]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = Table[Cycle[i], {i, 10, 20, 2}]; h = Table[Cycle[i], {i, 10, 20, 2}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[Isomorphism[g[[i]], g[[i]], All]; ], {i, 6}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`Isomorphism[h[[i]], h[[i]], All]; ], {i, 6}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Isomorphism[Cycle[5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Isomorphism[Path[5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Isomorphism[t = RandomTree[7]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t, VertexNumber -> On, PlotRange -> Large[0.1]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"IsomorphicQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IsomorphicQ[Wheel[10], Wheel[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IsomorphicQ[CompleteGraph[8], GraphJoin[CompleteGraph[4], CompleteGraph[4]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IsomorphicQ[RandomTree[20], CompleteGraph[20]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"Equivalences\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Equivalences[Wheel[10], CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Equivalences[Path[10], CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Equivalences[Path[10], Path[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GraphUnion[Cycle[4], Cycle[4]]; ShowGraph[g, VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = AddEdges[g, {{{1, 5}}, {{2, 4}}, {{6, 8}}, {{3, 7}}}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g, VertexNumber -> On, PlotRange -> Large[0.1]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[DegreeSequence[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[h = Hypercube[3]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[DegreeSequence[h]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Equivalences[g, h]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Isomorphism[g, h, All]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Equivalences[GraphPower[g, 2], GraphPower[h, 2]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[gm = Path[10]; gm2 = GraphPower[gm, 2]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Equivalences[gm2, gm2]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Equivalences[gm3 = GraphPower[gm, 3], gm3]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Equivalences[gm5 = GraphPower[gm, 5], gm5]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Equivalences[Wheel[5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Equivalences[CompleteGraph[4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"Automorphisms\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Automorphisms[Star[4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"SelfComplementaryQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[SelfComplementaryQ[Path[4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[SelfComplementaryQ[Cycle[5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[SelfComplementaryQ[Path[5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"FindCycle\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = RandomGraph[10, 0.4], VertexNumber -> On, VertexNumberColor -> Red, PlotRange -> Large[0.1], Background -> LightBlue]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[FindCycle[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = AddEdges[RandomTree[10], {{{1, 10}}}], VertexNumber -> On, PlotRange -> Large[0.05]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[FindCycle[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[HighlightCycle[t_Graph] := Highlight[t, c = FindCycle[t]; {Table[Sort[{c[[i]], c[[i + 1]]}], {i, Length[c] - 1}]}, HighlightedEdgeColors -> {Red}] \/; UndirectedQ[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[HighlightCycle[t_Graph] := Highlight[t, c = FindCycle[t]; {Table[{c[[i]], c[[i + 1]]}, {i, Length[c] - 1}]}, HighlightedEdgeColors -> {Red}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[HighlightCycle[t], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[HighlightCycle[RandomGraph[10, 0.4]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = SetGraphOptions[GridGraph[5, 5], EdgeDirection -> On, VertexNumber -> Text[{-0.03, -0.03}]], PlotRange -> Large[0.07]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = AddEdges[DeleteEdges[t, {{16, 17}, {17, 22}}], {{{17, 16}}, {{22, 17}}}], VertexNumber -> On, PlotRange -> Large[0.1]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[HighlightCycle[t]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[t = AddEdges[Path[4], {{{1, 2}}}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Edges[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[FindCycle[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[t = AddEdges[Path[4], {{{1, 1}}}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[FindCycle[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[gt = Table[RandomGraph[50*i, N[1\/(50*i)]], {i, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[FindCycle[gt[[i]]]; ], {i, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[gt = Table[GridGraph[20, 10*i], {i, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ct = Table[0, {10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[ct[[i]] = FindCycle[gt[[i]]]; ], {i, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ct]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ht = Table[DiscreteMath`OldCombinatorica`RandomGraph[50*i, N[1\/(50*i)]], {i, 5}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[DiscreteMath`OldCombinatorica`FindCycle[ht[[i]]]; ], {i, 5}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"AcyclicQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[AcyclicQ[RandomTree[100]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[AcyclicQ[GridGraph[10, 10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[AcyclicQ[SetGraphOptions[GridGraph[10, 10], EdgeDirection -> On]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"TreeQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TreeQ[Star[100]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[$RecursionLimit = 10000; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TreeQ[Path[100]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TreeQ[RandomTree[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TreeQ[CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TreeQ[Wheel[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"ExtractCycles\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ExtractCycles[Wheel[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[cl = ExtractCycles[CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[cl = (Sort \/@ Partition[#1, 2, 1] & ) \/@ cl]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[Highlight[CompleteGraph[10], cl]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = Table[GridGraph[i*5, 5], {i, 5}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[ExtractCycles[g[[i]]]; ], {i, 5}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = Table[DiscreteMath`OldCombinatorica`GridGraph[i*5, 5], {i, 5}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`ExtractCycles[h[[i]]]; ], {i, 5}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"DeleteCycle\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[DeleteCycle[CompleteGraph[10], {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IdenticalQ[DeleteCycle[Wheel[10], {1, 2, 3, 4, 5, 6, 7, 8, 9, 1}], Star[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[30, 30]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[DeleteCycle[g, {1, 2, 3, 33, 32, 31, 1}]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = DiscreteMath`OldCombinatorica`GridGraph[30, 30]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[DiscreteMath`OldCombinatorica`DeleteCycle[g, {1, 2, 3, 33, 32, 31, 1}]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"Girth\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Girth[Wheel[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Girth[GridGraph[5, 5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Girth[Cycle[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = AddEdges[Cycle[10], {{{1, 6}}}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Girth[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Girth[CompleteGraph[4, 4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Girth[RandomTree[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[gt = Table[RandomGraph[i*10, 0.4], {i, 1, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[Girth[gt[[i]]]; ], {i, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ListPlot[(#1[[1,1]] & ) \/@ rt, PlotJoined -> True]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ht = Table[DiscreteMath`OldCombinatorica`RandomGraph[i*10, 0.4], {i, 1, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[rt = Table[Timing[DiscreteMath`OldCombinatorica`Girth[ht[[i]]]; ], {i, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"OutDegree\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[OutDegree[t = SetGraphOptions[GridGraph[5, 7], EdgeDirection -> On]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t, VertexNumber -> On, PlotRange -> Large[0.07]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[OutDegree[SetGraphOptions[GraphUnion[10, CompleteGraph[1]], EdgeDirection -> On]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"InDegree\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[InDegree[SetGraphOptions[GridGraph[5, 5], EdgeDirection -> On]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"ReverseEdges\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = SetGraphOptions[GridGraph[5, 5], EdgeDirection -> On]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[ReverseEdges[t]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"EulerianQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EulerianQ[CompleteGraph[9]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EulerianQ[Cycle[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EulerianQ[t = GridGraph[5, 5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t, VertexNumber -> On, PlotRange -> Large[0.05]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = DeleteVertices[t, {1, 5, 21, 25}], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EulerianQ[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = DeleteEdges[t, {{9, 10}, {16, 20}, {12, 13}, {2, 6}}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EulerianQ[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[$RecursionLimit = 100000000000]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[70, 70]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[EulerianQ[g]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[ConnectedQ[g]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[30, 30]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[EulerianQ[g]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = DiscreteMath`OldCombinatorica`GridGraph[30, 30]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[DiscreteMath`OldCombinatorica`EulerianQ[h]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"EulerianCycle\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EulerianCycle[CompleteGraph[4, 4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EulerianCycle[Hypercube[4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = Table[Hypercube[i], {i, 3, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[EulerianCycle[g[[i]]]; ], {i, 5}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[ExtractCycles[g[[i]]]; ], {i, 5}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = Table[DiscreteMath`OldCombinatorica`Hypercube[i], {i, 3, 7}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`EulerianCycle[h[[i]]]; ], {i, 5}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"DeBruijnGraph\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = DeBruijnGraph[{0, 1}, 4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[states = FromCharacterCode \/@ (#1 + 48 & ) \/@ Strings[{0, 1}, 3]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[SetGraphOptions[t, Table[{{i}, VertexLabel -> states[[i]]}, {i, Length[states]}]], PlotRange -> {{-0.1, 1.2}, {-0.1, 1.2}}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EulerianQ[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[states[[EulerianCycle[t]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[DeBruijnGraph[{0, 1}, i]; ], {i, 3, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[DeBruijnGraph[2, i]; ], {i, 3, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"HamiltonianCycle\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[HamiltonianCycle[CompleteGraph[3, 3], All]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = RegularGraph[4, 7], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[HamiltonianCycle[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[HamiltonianCycle[AddEdges[GridGraph[5, 5], {{{1, 25}}}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[HamiltonianCycle[GridGraph[5, 5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = Table[GridGraph[i, i], {i, 3, 6}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[HamiltonianCycle[g[[i]]]; ], {i, 4}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = Table[DiscreteMath`OldCombinatorica`GridGraph[i, i], {i, 3, 6}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`HamiltonianCycle[h[[i]]]; ], {i, 4}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"SetEdgeWeights\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Edges[SetEdgeWeights[GridGraph[5, 5]], EdgeWeight]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Edges[SetEdgeWeights[GridGraph[5, 5], WeightingFunction -> RandomInteger, WeightRange -> {10, 20}], EdgeWeight]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Edges[SetEdgeWeights[GridGraph[5, 5], WeightingFunction -> Random, WeightRange -> {-10, 10}], EdgeWeight]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Edges[SetEdgeWeights[GridGraph[3, 3], WeightingFunction -> Euclidean], EdgeWeight]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Null]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[GetEdgeWeights[SetEdgeWeights[RandomGraph[10, 0.3], WeightingFunction -> Euclidean]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"SetVertexWeights\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[GetVertexWeights[SetVertexWeights[GridGraph[3, 3], Random, Integer, {10, 20}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[GetVertexWeights[SetVertexWeights[GridGraph[3, 3]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"GetEdgeWeights\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = SetEdgeWeights[GridGraph[5, 5], WeightingFunction -> RandomInteger, WeightRange -> {0, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[GetEdgeWeights[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"GetVertexWeights\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[GetVertexWeights[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = SetVertexWeights[g, Random, Integer, {100, 200}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[GetVertexWeights[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"CostOfPath\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = SetEdgeWeights[GridGraph[4, 4], WeightingFunction -> RandomInteger, WeightRange -> {1, 5}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[CostOfPath[g, {1, 2, 3, 4, 8, 12}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[CostOfPath[g, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"TravelingSalesman\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = SetEdgeWeights[Cycle[10], WeightingFunction -> RandomInteger, WeightRange -> {1, 3}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TravelingSalesman[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[GetEdgeWeights[g = SetEdgeWeights[CompleteGraph[4], WeightingFunction -> RandomInteger, WeightRange -> {1, 100}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TravelingSalesman[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[GetEdgeWeights[g = SetEdgeWeights[Wheel[6], WeightingFunction -> Euclidean]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[p = TravelingSalesman[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[CostOfPath[g, p]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[CostOfPath[g, {1, 2, 4, 3, 5, 6, 1}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[CostOfPath[g, {1, 2, 6, 3, 4, 5, 1}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = Table[SetEdgeWeights[CompleteGraph[i], WeightingFunction -> RandomInteger, WeightRange -> {1, 100}], {i, 5, 8}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[TravelingSalesman[g[[i]]]; ], {i, 4}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"TriangleInequalityQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[GetEdgeWeights[g = SetEdgeWeights[GridGraph[2, 2]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TriangleInequalityQ[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[GetEdgeWeights[g = SetEdgeWeights[CompleteGraph[5]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TriangleInequalityQ[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = SetGraphOptions[CompleteGraph[4], {{{{1, 2}, {2, 3}, {3, 4}, {1, 4}}, EdgeWeight -> 1}, {{{2, 4}, {1, 3}}, EdgeWeight -> 1.5}}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TriangleInequalityQ[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = SetGraphOptions[g, EdgeDirection -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TriangleInequalityQ[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"TravelingSalesmanBounds\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TravelingSalesmanBounds[Wheel[5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"TransitiveClosure\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g = SetGraphOptions[GridGraph[4, 4], EdgeDirection -> On], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Edges[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[gg = TransitiveClosure[g], Append[Edges[g], EdgeColor -> Red], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Edges[gg]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = DiscreteMath`OldCombinatorica`GridGraph[10, 10]; Timing[DiscreteMath`OldCombinatorica`TransitiveClosure[g]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[10, 10]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[TransitiveClosure[g]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"TransitiveQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g = SetGraphOptions[RandomGraph[10, 0.3], EdgeDirection -> On], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TransitiveQ[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TransitiveQ[TransitiveClosure[g]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TransitiveQ[SetGraphOptions[CompleteGraph[10], EdgeDirection -> On]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TransitiveQ[g = SetGraphOptions[CompleteGraph[3, 3, 3], EdgeDirection -> On]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"ReflexiveQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ReflexiveQ[g = CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = AddEdges[g, Table[{{i, i}}, {i, 10}]]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ReflexiveQ[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = DeleteEdges[g, {{1, 1}}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ReflexiveQ[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"AntiSymmetricQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g = SetGraphOptions[Wheel[20], EdgeDirection -> On]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[AntiSymmetricQ[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g = AddEdges[g, {{{2, 1}}}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[AntiSymmetricQ[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"PartialOrderQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[PartialOrderQ[g = GridGraph[3, 3]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = TransitiveClosure[g]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Edges[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[PartialOrderQ[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"TransitiveReduction\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[TransitiveReduction[g = SetGraphOptions[GridGraph[4, 4], EdgeDirection -> On]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g = TransitiveClosure[g]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[TransitiveReduction[g]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[s = MakeGraph[Subsets[4], Intersection[#2, #1] === #1 && #1 != #2 & ]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = HasseDiagram[s], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"TopologicalSort\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g = SetGraphOptions[GridGraph[5, 5], EdgeDirection -> On], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[HasseDiagram[g], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TopologicalSort[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g = AddEdges[DeleteEdges[g, {{9, 10}}], {{{10, 9}}}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TopologicalSort[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g = MakeGraph[Range[12], Mod[#2, #1] == 0 & ], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[HasseDiagram[g], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TopologicalSort[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"ChromaticPolynomial\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = CompleteGraph[5]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ChromaticPolynomial[g, z]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GraphUnion[10, CompleteGraph[1]]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ChromaticPolynomial[g, z]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ChromaticPolynomial[RandomTree[10], z]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = DeleteEdges[CompleteGraph[5], {{1, 2}}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ChromaticPolynomial[g, z]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ChromaticPolynomial[Cycle[5], z]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[{Timing[DiscreteMath`OldCombinatorica`ChromaticPolynomial[DiscreteMath`OldCombinatorica`Cycle[i], z]; ], Timing[ChromaticPolynomial[Cycle[i], z]; ]}, {i, 5, 10}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Expand[wheelpoly[z_] = ChromaticPolynomial[Wheel[5], z]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[wheelpoly[z], {z, 1, 7}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"ChromaticNumber\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ChromaticNumber[Cycle[7]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ChromaticNumber[CompleteGraph[4, 5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = GridGraph[5, 5]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[ChromaticNumber[g]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"TwoColoring\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TwoColoring[t = RandomTree[20]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[$RecursionLimit = 100000; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[TwoColoring[CompleteGraph[3, 3, 3]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = Table[DiscreteMath`OldCombinatorica`GridGraph[i, i], {i, 10, 30, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = Table[GridGraph[i, i], {i, 10, 30, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[{Timing[DiscreteMath`OldCombinatorica`TwoColoring[g[[i]]]; ], Timing[TwoColoring[h[[i]]]; ]}, {i, 3}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[MyTC[g_Graph] := (If[EvenQ[#1], 1, 2] & ) \/@ BreadthFirstTraversal[g, 1, Level]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[MyTC[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[MyTC[h[[i]]]; ], {i, 3}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"BipartiteQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[BipartiteQ[Wheel[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[BipartiteQ[Star[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[BipartiteQ[GridGraph[5, 5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[BipartiteQ[Cycle[5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"VertexColoring\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[VertexColoring[CompleteGraph[4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[VertexColoring[GridGraph[10, 10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[c = VertexColoring[g = Wheel[30]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[p = Table[Flatten[Position[c, i], 1], {i, Max[c]}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[Highlight[g, p]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = Table[DiscreteMath`OldCombinatorica`GridGraph[i, i], {i, 5, 30, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = Table[GridGraph[i, i], {i, 5, 30, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[{Timing[DiscreteMath`OldCombinatorica`VertexColoring[g[[i]]]; ], Timing[VertexColoring[h[[i]]]; ]}, {i, 3}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = ExactRandomGraph[30, 100]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[c = VertexColoring[g]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[p = Table[Flatten[Position[c, i], 1], {i, Max[c]}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[Highlight[g, p]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"EdgeColoring\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EdgeColoring[Wheel[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[c = EdgeColoring[GridGraph[5, 5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = LineGraph[GridGraph[5, 5]]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[p = Table[Flatten[Position[c, i], 1], {i, 4}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[Highlight[g, p], VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ep = (Edges[g = GridGraph[5, 5]][[#1]] & ) \/@ p]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[Highlight[g, ep]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[g = Table[GridGraph[i, i], {i, 10, 30, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[EdgeColoring[g[[i]]]; ], {i, 2}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[LineGraph[g[[i]]]; ], {i, 2}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[h = Table[DiscreteMath`OldCombinatorica`GridGraph[i, i], {i, 10, 30, 10}]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`EdgeColoring[h[[i]]]; ], {i, 2}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Table[Timing[DiscreteMath`OldCombinatorica`LineGraph[h[[i]]]; ], {i, 2}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"EdgeChromaticNumber\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[EdgeChromaticNumber[Star[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t = LineGraph[Wheel[10]]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ChromaticPolynomial[t, z]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"MaximumClique\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[MaximumClique[t]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[MaximumClique[Turan[6, 4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[MaximumClique[CompleteGraph[10]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[MaximumClique[t = RandomGraph[10, 0.5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[t, VertexNumber -> On]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[t = RandomGraph[20, 0.5]; ]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Timing[MaximumClique[t]; ]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"CliqueQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[CliqueQ[CompleteGraph[12], Range[12]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[CliqueQ[CompleteGraph[12], Range[5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[CliqueQ[RandomGraph[10, 0.5], Range[5]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"MinimumVertexCover\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"Highlight\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[Highlight[g = RandomGraph[10, 0.6], MinimumVertexCover[g], HighlightedVertexColors -> {Blue}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[Highlight[g = RandomGraph[14, 0.3], MinimumVertexCover[g], HighlightedVertexColors -> {Blue}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"VertexCoverQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[MinimumVertexCover[GridGraph[4, 4]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[c = {2, 4, 5, 7, 10, 12, 13, 15}]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[VertexCoverQ[GridGraph[4, 4], c]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[VertexCoverQ[GridGraph[4, 4], Complement[c, {2}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"MaximumIndependentSet\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[ShowGraph[Highlight[g = RandomGraph[10, 0.4], MaximumIndependentSet[g], HighlightedVertexColors -> {Purple}]]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[Information[\"IndependentSetQ\", LongForm -> False]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IndependentSetQ[CompleteGraph[3, 3], {1, 2, 3}]]"
+	},
+	{
+		"sec":"5. Properties of Graphs\n",
+		"in":"HoldComplete[IndependentSetQ[CompleteGraph[3, 3], {3, 4}]]"
+	}
+]

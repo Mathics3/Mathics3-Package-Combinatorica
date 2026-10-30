@@ -1,0 +1,27 @@
+{
+ "Chapter3": {
+  "145": "Transpose of deep lists: mathics-core PR #2090",
+  "146": "Transpose of deep lists: mathics-core PR #2090",
+  "148": "Transpose of deep lists: mathics-core PR #2090",
+  "149": "Transpose of deep lists: mathics-core PR #2090"
+ },
+ "Chapter5": {
+  "93": "Python recursion limit: mathics-core PR #2080",
+  "102": "passes with the open MATH-236 fixes (mathics-core PRs #2080, #2083-#2085, #2090, package PR #7), not yet on master",
+  "103": "passes with the open MATH-236 fixes (mathics-core PRs #2080, #2083-#2085, #2090, package PR #7), not yet on master",
+  "110": "passes with the open MATH-236 fixes (mathics-core PRs #2080, #2083-#2085, #2090, package PR #7), not yet on master",
+  "115": "passes with the open MATH-236 fixes (mathics-core PRs #2080, #2083-#2085, #2090, package PR #7), not yet on master",
+  "254": "Python recursion limit: mathics-core PR #2080",
+  "343": "Transpose of deep lists: mathics-core PR #2090",
+  "353": "passes with the open MATH-236 fixes (mathics-core PRs #2080, #2083-#2085, #2090, package PR #7), not yet on master",
+  "359": "passes with the open MATH-236 fixes (mathics-core PRs #2080, #2083-#2085, #2090, package PR #7), not yet on master",
+  "365": "Transpose of deep lists: mathics-core PR #2090",
+  "369": "Transpose of deep lists: mathics-core PR #2090",
+  "374": "passes with the open MATH-236 fixes (mathics-core PRs #2080, #2083-#2085, #2090, package PR #7), not yet on master",
+  "376": "passes with the open MATH-236 fixes (mathics-core PRs #2080, #2083-#2085, #2090, package PR #7), not yet on master",
+  "393": "Compile-style argument patterns: Mathics3-Package-Combinatorica PR #7",
+  "394": "Compile-style argument patterns: Mathics3-Package-Combinatorica PR #7",
+  "412": "Compile-style argument patterns: Mathics3-Package-Combinatorica PR #7",
+  "413": "Compile-style argument patterns: Mathics3-Package-Combinatorica PR #7"
+ }
+}

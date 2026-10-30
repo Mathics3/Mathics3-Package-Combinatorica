@@ -1,0 +1,1114 @@
+[
+ {
+  "i": 1,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g = CompleteGraph[4]]",
+  "mode": "check",
+  "secs": 0.036,
+  "expected": "Graph[{{{1,2}},{{1,3}},{{1,4}},{{2,3}},{{2,4}},{{3,4}}},{{{0,100000}},{{-100000,0}},{{0,-100000}},{{100000,0}}}]"
+ },
+ {
+  "i": 2,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g[[1]]]",
+  "mode": "check",
+  "secs": 0.036,
+  "expected": "{{{1,2}},{{1,3}},{{1,4}},{{2,3}},{{2,4}},{{3,4}}}"
+ },
+ {
+  "i": 3,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g[[2]]]",
+  "mode": "check",
+  "secs": 0.036,
+  "expected": "{{{0,100000}},{{-100000,0}},{{0,-100000}},{{100000,0}}}"
+ },
+ {
+  "i": 4,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g[[0]]]",
+  "mode": "check",
+  "secs": 0.036,
+  "expected": "Graph"
+ },
+ {
+  "i": 5,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g = SetGraphOptions[g, VertexColor -> Red, EdgeColor -> Blue]]",
+  "mode": "check",
+  "secs": 0.038,
+  "expected": "Graph[{{{1,2}},{{1,3}},{{1,4}},{{2,3}},{{2,4}},{{3,4}}},{{{0,100000}},{{-100000,0}},{{0,-100000}},{{100000,0}}},Rule[VertexColor,RGBColor[1,0,0]],Rule[EdgeColor,RGBColor[0,0,1]]]"
+ },
+ {
+  "i": 6,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[ShowGraph[g]]",
+  "mode": "check",
+  "secs": 0.525,
+  "expected": "<Graphics>"
+ },
+ {
+  "i": 7,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g = SetGraphOptions[g, {{{1, 2}, VertexStyle -> Disc[Large], VertexColor -> Green}}]]",
+  "mode": "check",
+  "secs": 0.083,
+  "expected": "Graph[{{{1,2},Rule[VertexStyle,Disc[Large]],Rule[VertexColor,RGBColor[0,1,0]]},{{1,3}},{{1,4}},{{2,3}},{{2,4}},{{3,4}}},{{{0,100000}},{{-100000,0}},{{0,-100000}},{{100000,0}}},Rule[VertexColor,RGBColor[1,0,0]],Rule[EdgeColor,RGBColor[0,0,1]]]"
+ },
+ {
+  "i": 8,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[ShowGraph[g, PlotRange -> Large[0.05]]]",
+  "mode": "check",
+  "secs": 0.535,
+  "expected": "<Graphics>"
+ },
+ {
+  "i": 9,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[Length[g]]",
+  "mode": "check",
+  "secs": 0.083,
+  "expected": "4"
+ },
+ {
+  "i": 10,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g[[1]]]",
+  "mode": "check",
+  "secs": 0.083,
+  "expected": "{{{1,2},Rule[VertexStyle,Disc[Large]],Rule[VertexColor,RGBColor[0,1,0]]},{{1,3}},{{1,4}},{{2,3}},{{2,4}},{{3,4}}}"
+ },
+ {
+  "i": 11,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g[[2]]]",
+  "mode": "check",
+  "secs": 0.083,
+  "expected": "{{{0,100000}},{{-100000,0}},{{0,-100000}},{{100000,0}}}"
+ },
+ {
+  "i": 12,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g[[3]]]",
+  "mode": "check",
+  "secs": 0.083,
+  "expected": "Rule[VertexColor,RGBColor[1,0,0]]"
+ },
+ {
+  "i": 13,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g[[4]]]",
+  "mode": "check",
+  "secs": 0.083,
+  "expected": "Rule[EdgeColor,RGBColor[0,0,1]]"
+ },
+ {
+  "i": 14,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g = DiscreteMath`OldCombinatorica`GridGraph[20, 20]; ]",
+  "mode": "check",
+  "secs": 0.004,
+  "expected": "Null"
+ },
+ {
+  "i": 15,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[ByteCount[g]]",
+  "mode": "run",
+  "secs": 0.004,
+  "reason": "timing"
+ },
+ {
+  "i": 16,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g = GridGraph[20, 20]; ByteCount[g]]",
+  "mode": "run",
+  "secs": 3.429,
+  "reason": "timing"
+ },
+ {
+  "i": 17,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[h = SetGraphOptions[g, VertexColor -> Red, EdgeColor -> Blue]; ShowGraph[h, Background -> Yellow]]",
+  "mode": "skip",
+  "secs": 120.009,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 18,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[ByteCount[h]]",
+  "mode": "skip",
+  "secs": 0.123,
+  "reason": "uses h, which skipped cell 17 assigns"
+ },
+ {
+  "i": 19,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g = DiscreteMath`OldCombinatorica`RandomGraph[100, 0.5]; ByteCount[g]]",
+  "mode": "run",
+  "secs": 3.429,
+  "reason": "timing"
+ },
+ {
+  "i": 20,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graph Data Structure",
+  "in": "HoldComplete[g = RandomGraph[100, 0.5]; ByteCount[g]]",
+  "mode": "skip",
+  "secs": 101.073,
+  "reason": "Mathics3 takes 101 s"
+ },
+ {
+  "i": 21,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[Information[\"DihedralGroup\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.009,
+  "reason": "usage text"
+ },
+ {
+  "i": 22,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[DihedralGroup[4]]",
+  "mode": "check",
+  "secs": 0.014,
+  "expected": "{{1,2,3,4},{4,1,2,3},{3,4,1,2},{2,3,4,1},{4,3,2,1},{3,2,1,4},{2,1,4,3},{1,4,3,2}}"
+ },
+ {
+  "i": 23,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[Information[\"SymmetricGroupIndex\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.007,
+  "reason": "usage text"
+ },
+ {
+  "i": 24,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[SymmetricGroupIndex[6, x]]",
+  "mode": "check",
+  "secs": 0.097,
+  "expected": "Plus[Times[Rational[1,720],Power[x[1],6]],Times[Rational[1,48],Power[x[1],4],x[2]],Times[Rational[1,16],Power[x[1],2],Power[x[2],2]],Times[Rational[1,48],Power[x[2],3]],Times[Rational[1,18],Power[x[1],3],x[3]],Times[Rational[1,6],x[1],x[2],x[3]],Times[Rational[1,18],Power[x[3],2]],Times[Rational[1,8],Power[x[1],2],x[4]],Times[Rational[1,8],x[2],x[4]],Times[Rational[1,5],x[1],x[5]],Times[Rational[1,6],x[6]]]"
+ },
+ {
+  "i": 25,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[Information[\"DihedralGroupIndex\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.008,
+  "reason": "usage text"
+ },
+ {
+  "i": 26,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[DihedralGroupIndex[10, y]]",
+  "mode": "check",
+  "secs": 0.346,
+  "expected": "Plus[Times[Rational[1,20],Power[y[1],10]],Times[Rational[1,4],Power[y[1],2],Power[y[2],4]],Times[Rational[3,10],Power[y[2],5]],Times[Rational[1,5],Power[y[5],2]],Times[Rational[1,5],y[10]]]"
+ },
+ {
+  "i": 27,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[Information[\"GraphPolynomial\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.009,
+  "reason": "usage text"
+ },
+ {
+  "i": 28,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[GraphPolynomial[6, x]]",
+  "mode": "check",
+  "secs": 0.459,
+  "expected": "Plus[1,x,Times[2,Power[x,2]],Times[5,Power[x,3]],Times[9,Power[x,4]],Times[15,Power[x,5]],Times[21,Power[x,6]],Times[24,Power[x,7]],Times[24,Power[x,8]],Times[21,Power[x,9]],Times[15,Power[x,10]],Times[9,Power[x,11]],Times[5,Power[x,12]],Times[2,Power[x,13]],Power[x,14],Power[x,15]]"
+ },
+ {
+  "i": 29,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[Information[\"NumberOfGraphs\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.008,
+  "reason": "usage text"
+ },
+ {
+  "i": 30,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[TableForm[Table[NumberOfGraphs[i], {i, 1, 15}]]]",
+  "mode": "skip",
+  "secs": 49.935,
+  "reason": "Mathics3 takes 50 s"
+ },
+ {
+  "i": 31,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[ShowGraphArray[ListGraphs[6, 3], Background -> LightBlue]]",
+  "mode": "skip",
+  "secs": 120.009,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 32,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[Information[\"ListNecklaces\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.008,
+  "reason": "usage text"
+ },
+ {
+  "i": 33,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[ListNecklaces[5, {r, r, b, b, y}, Dihedral]]",
+  "mode": "check",
+  "secs": 0.271,
+  "expected": "{{r,r,b,b,y},{b,b,r,y,r},{b,r,b,r,y},{b,r,r,b,y}}"
+ },
+ {
+  "i": 34,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[ListNecklaces[5, {r, r, b, b, y}, Cyclic]]",
+  "mode": "check",
+  "secs": 0.233,
+  "expected": "{{r,r,b,b,y},{b,b,r,r,y},{b,b,r,y,r},{b,r,b,r,y},{b,r,b,y,r},{b,r,r,b,y}}"
+ },
+ {
+  "i": 35,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[Information[\"NumberOfNecklaces\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.009,
+  "reason": "usage text"
+ },
+ {
+  "i": 36,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[TableForm[Table[NumberOfNecklaces[i, 2, Dihedral], {i, 10, 20}]]]",
+  "mode": "check",
+  "secs": 2.942,
+  "expected": "TableForm[{78,126,224,380,687,1224,2250,4112,7685,14310,27012}]"
+ },
+ {
+  "i": 37,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[Information[\"NecklacePolynomial\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.01,
+  "reason": "usage text"
+ },
+ {
+  "i": 38,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Polya Theory",
+  "in": "HoldComplete[NecklacePolynomial[10, {R, B, G}, Cyclic]]",
+  "mode": "check",
+  "secs": 0.199,
+  "expected": "Plus[Power[B,10],Times[Power[B,9],G],Times[5,Power[B,8],Power[G,2]],Times[12,Power[B,7],Power[G,3]],Times[22,Power[B,6],Power[G,4]],Times[26,Power[B,5],Power[G,5]],Times[22,Power[B,4],Power[G,6]],Times[12,Power[B,3],Power[G,7]],Times[5,Power[B,2],Power[G,8]],Times[B,Power[G,9]],Power[G,10],Times[Power[B,9],R],Times[9,Power[B,8],G,R],Times[36,Power[B,7],Power[G,2],R],Times[84,Power[B,6],Power[G,3],R],Times[126,Power[B,5],Power[G,4],R],Times[126,Power[B,4],Power[G,5],R],Times[84,Power[B,3],Power[G,6],R],Times[36,Power[B,2],Power[G,7],R],Times[9,B,Power[G,8],R],Times[Power[G,9],R],Times[5,Power[B,8],Power[R,2]],Times[36,Power[B,7],G,Power[R,2]],Times[128,Power[B,6],Power[G,2],Power[R,2]],Times[252,Power[B,5],Power[G,3],Power[R,2]],Times[318,Power[B,4],Power[G,4],Power[R,2]],Times[252,Power[B,3],Power[G,5],Power[R,2]],Times[128,Power[B,2],Power[G,6],Power[R,2]],Times[36,B,Power[G,7],Power[R,2]],Times[5,Power[G,8],Power[R,2]],Times[12,Power[B,7],Power[R,3]],Times[84,Power[B,6],G,Power[R,3]],Times[252,Power[B,5],Power[G,2],Power[R,3]],Times[420,Power[B,4],Power[G,3],Power[R,3]],Times[420,Power[B,3],Power[G,4],Power[R,3]],Times[252,Power[B,2],Power[G,5],Power[R,3]],Times[84,B,Power[G,6],Power[R,3]],Times[12,Power[G,7],Power[R,3]],Times[22,Power[B,6],Power[R,4]],Times[126,Power[B,5],G,Power[R,4]],Times[318,Power[B,4],Power[G,2],Power[R,4]],Times[420,Power[B,3],Power[G,3],Power[R,4]],Times[318,Power[B,2],Power[G,4],Power[R,4]],Times[126,B,Power[G,5],Power[R,4]],Times[22,Power[G,6],Power[R,4]],Times[26,Power[B,5],Power[R,5]],Times[126,Power[B,4],G,Power[R,5]],Times[252,Power[B,3],Power[G,2],Power[R,5]],Times[252,Power[B,2],Power[G,3],Power[R,5]],Times[126,B,Power[G,4],Power[R,5]],Times[26,Power[G,5],Power[R,5]],Times[22,Power[B,4],Power[R,6]],Times[84,Power[B,3],G,Power[R,6]],Times[128,Power[B,2],Power[G,2],Power[R,6]],Times[84,B,Power[G,3],Power[R,6]],Times[22,Power[G,4],Power[R,6]],Times[12,Power[B,3],Power[R,7]],Times[36,Power[B,2],G,Power[R,7]],Times[36,B,Power[G,2],Power[R,7]],Times[12,Power[G,3],Power[R,7]],Times[5,Power[B,2],Power[R,8]],Times[9,B,G,Power[R,8]],Times[5,Power[G,2],Power[R,8]],Times[B,Power[R,9]],Times[G,Power[R,9]],Power[R,10]]"
+ },
+ {
+  "i": 39,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[Information[\"SetPartitions\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.008,
+  "reason": "usage text"
+ },
+ {
+  "i": 40,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[SetPartitions[4]]",
+  "mode": "check",
+  "secs": 0.109,
+  "expected": "{{{1,2,3,4}},{{1},{2,3,4}},{{1,2},{3,4}},{{1,3,4},{2}},{{1,2,3},{4}},{{1,4},{2,3}},{{1,2,4},{3}},{{1,3},{2,4}},{{1},{2},{3,4}},{{1},{2,3},{4}},{{1},{2,4},{3}},{{1,2},{3},{4}},{{1,3},{2},{4}},{{1,4},{2},{3}},{{1},{2},{3},{4}}}"
+ },
+ {
+  "i": 41,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[Information[\"KSetPartitions\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.01,
+  "reason": "usage text"
+ },
+ {
+  "i": 42,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[KSetPartitions[5, 3]]",
+  "mode": "check",
+  "secs": 0.13,
+  "expected": "{{{1},{2},{3,4,5}},{{1},{2,3},{4,5}},{{1},{2,4,5},{3}},{{1},{2,3,4},{5}},{{1},{2,5},{3,4}},{{1},{2,3,5},{4}},{{1},{2,4},{3,5}},{{1,2},{3},{4,5}},{{1,3},{2},{4,5}},{{1,4,5},{2},{3}},{{1,2},{3,4},{5}},{{1,3,4},{2},{5}},{{1,5},{2},{3,4}},{{1,2},{3,5},{4}},{{1,3,5},{2},{4}},{{1,4},{2},{3,5}},{{1,2,3},{4},{5}},{{1,4},{2,3},{5}},{{1,5},{2,3},{4}},{{1,2,4},{3},{5}},{{1,3},{2,4},{5}},{{1,5},{2,4},{3}},{{1,2,5},{3},{4}},{{1,3},{2,5},{4}},{{1,4},{2,5},{3}}}"
+ },
+ {
+  "i": 43,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[Information[\"RankSetPartition\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.008,
+  "reason": "usage text"
+ },
+ {
+  "i": 44,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[RankSetPartition[{{1, 2}, {3, 5}, {4}}]]",
+  "mode": "check",
+  "secs": 0.077,
+  "expected": "29"
+ },
+ {
+  "i": 45,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[Information[\"UnrankSetPartition\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.008,
+  "reason": "usage text"
+ },
+ {
+  "i": 46,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[UnrankSetPartition[%, 5]]",
+  "mode": "run",
+  "secs": 0.005,
+  "reason": "differs from WMA"
+ },
+ {
+  "i": 47,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[Information[\"RandomSetPartition\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.008,
+  "reason": "usage text"
+ },
+ {
+  "i": 48,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[RandomSetPartition[10]]",
+  "mode": "run",
+  "secs": 0.239,
+  "reason": "random"
+ },
+ {
+  "i": 49,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[Information[\"RandomKSetPartition\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.007,
+  "reason": "usage text"
+ },
+ {
+  "i": 50,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[RandomKSetPartition[10, 4]]",
+  "mode": "run",
+  "secs": 0.132,
+  "reason": "random"
+ },
+ {
+  "i": 51,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[Information[\"BellB\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.007,
+  "reason": "usage text"
+ },
+ {
+  "i": 52,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[BellB[300]]",
+  "mode": "skip",
+  "secs": 120.002,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 53,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[l52 = (StringJoin[ToString /@ #1[[1]]] & ) /@ (sp52 = KSetPartitions[5, 2]); , Null, ShowGraph[g = SetVertexLabels[MakeGraph[sp52, MemberQ[{1, 4}, Sum[Abs[Position[#1, i][[1,1]] - Position[#2, i][[1,1]]], {i, 5}]] & , Type -> Undirected], l52], PlotRange -> Large[0.2]]]",
+  "mode": "skip",
+  "secs": 5.37,
+  "reason": "Mathics3 takes 5 s"
+ },
+ {
+  "i": 54,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[ShowGraph[Highlight[g, {Partition[HamiltonianCycle[g], 2, 1]}, {Red}], PlotRange -> Large[0.1]]]",
+  "mode": "skip",
+  "secs": 15.29,
+  "reason": "Mathics3 takes 15 s"
+ },
+ {
+  "i": 55,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[Length[HamiltonianCycle[g, All]]]",
+  "mode": "skip",
+  "secs": 121.475,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 56,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[StirlingSecond[100, 50]]",
+  "mode": "check",
+  "secs": 0.061,
+  "expected": "430983237009366340421514301547258695943520289614340613912441741131280319058853783145598261659992013900"
+ },
+ {
+  "i": 57,
+  "section": "Old Combinatorica vs New Combinatorica / Additional topics / Set Partitions",
+  "in": "HoldComplete[Table[Timing[StirlingS2[100*i, 50*i]; ]/Timing[StirlingSecond[100*i, 50*i]; ], {i, 2, 7}]]",
+  "mode": "run",
+  "secs": 2.55,
+  "reason": "random"
+ },
+ {
+  "i": 58,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graphics",
+  "in": "HoldComplete[c = VertexColoring[g = Wheel[20]]]",
+  "mode": "check",
+  "secs": 0.682,
+  "expected": "{1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,4,3}"
+ },
+ {
+  "i": 59,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graphics",
+  "in": "HoldComplete[ShowGraph[Highlight[g, Table[Flatten[Position[c, i]], {i, Max[c]}]]]]",
+  "mode": "check",
+  "secs": 3.624,
+  "expected": "<Graphics>"
+ },
+ {
+  "i": 60,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graphics",
+  "in": "HoldComplete[g = GraphProduct[GridGraph[2, 2], Cycle[5]]; , Null, ShowGraph[g, VertexColor -> LightBlue, EdgeColor -> Yellow, Background -> Black]]",
+  "mode": "check",
+  "secs": 3.252,
+  "expected": "<Graphics>"
+ },
+ {
+  "i": 61,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graphics",
+  "in": "HoldComplete[g = GridGraph[3, 3]; , Null, ShowGraph[g, VertexStyle -> Disc[Large], VertexNumber -> Center, VertexNumberColor -> Yellow, Background -> Yellow]]",
+  "mode": "check",
+  "secs": 3.252,
+  "expected": "<Graphics>"
+ },
+ {
+  "i": 62,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graphics",
+  "in": "HoldComplete[g = InduceSubgraph[GridGraph[10, 10], RandomSubset[Range[100]]]; , Null, m = BipartiteMatching[g]]",
+  "mode": "skip",
+  "secs": 121.376,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 63,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graphics",
+  "in": "HoldComplete[ShowGraph[Highlight[g, {m}, {Red}], Background -> LightBlue]]",
+  "mode": "skip",
+  "secs": 0.116,
+  "reason": "uses g, which skipped cell 62 assigns"
+ },
+ {
+  "i": 64,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graphics",
+  "in": "HoldComplete[ShowGraph[g = Hypercube[5], VertexColor -> Red]]",
+  "mode": "skip",
+  "secs": 6.59,
+  "reason": "Mathics3 takes 7 s"
+ },
+ {
+  "i": 65,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graphics",
+  "in": "HoldComplete[ShowGraph[g, VertexColor -> Red, PlotRange -> Zoom[{1, 2, 3, 4}]]]",
+  "mode": "skip",
+  "secs": 5.842,
+  "reason": "Mathics3 takes 6 s"
+ },
+ {
+  "i": 66,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graphics",
+  "in": "HoldComplete[ShowGraphArray[Partition[l = Union[(CirculantGraph[9, #1] & ) /@ Subsets[8]], 4, 4]]]",
+  "mode": "skip",
+  "secs": 36.031,
+  "reason": "Mathics3 takes 36 s"
+ },
+ {
+  "i": 67,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graphics",
+  "in": "HoldComplete[g = Star[7]; ShowGraph[g, VertexNumber -> On]]",
+  "mode": "skip",
+  "secs": 0.66,
+  "reason": "uses g, which skipped cell 64 assigns"
+ },
+ {
+  "i": 68,
+  "section": "Old Combinatorica vs New Combinatorica / Better Graphics",
+  "in": "HoldComplete[ShowGraph[AddEdges[g, {{1, 7}, {1, 1}, {6, 7}, {7, 6}}]]]",
+  "mode": "skip",
+  "secs": 1.131,
+  "reason": "uses g, which skipped cell 67 assigns"
+ },
+ {
+  "i": 69,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[{Timing[DiscreteMath`OldCombinatorica`Path[300]; ], Timing[Path[300]; ]}]",
+  "mode": "run",
+  "secs": 0.266,
+  "reason": "random"
+ },
+ {
+  "i": 70,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[{Timing[DiscreteMath`OldCombinatorica`RandomTree[200]; ], Timing[RandomTree[200]; ]}]",
+  "mode": "skip",
+  "secs": 11.238,
+  "reason": "Mathics3 takes 11 s"
+ },
+ {
+  "i": 71,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[{Timing[DiscreteMath`OldCombinatorica`GridGraph[30, 30]; ], Timing[GridGraph[30, 30]; ]}]",
+  "mode": "run",
+  "secs": 4.699,
+  "reason": "random"
+ },
+ {
+  "i": 72,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[g = DiscreteMath`OldCombinatorica`GridGraph[30, 30]; Timing[DiscreteMath`OldCombinatorica`ToAdjacencyLists[g]; ]]",
+  "mode": "skip",
+  "secs": 0.006,
+  "reason": "uses g, which skipped cell 67 assigns"
+ },
+ {
+  "i": 73,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[g = GridGraph[30, 30]; Timing[ToAdjacencyLists[g]; ]]",
+  "mode": "skip",
+  "secs": 12.675,
+  "reason": "Mathics3 takes 13 s"
+ },
+ {
+  "i": 74,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[g = SetEdgeWeights[GridGraph[30, 30]]; Timing[MinimumSpanningTree[g]; ]]",
+  "mode": "skip",
+  "secs": 120.002,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 75,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[g = DiscreteMath`OldCombinatorica`GridGraph[20, 20]; Timing[DiscreteMath`OldCombinatorica`MinimumSpanningTree[g]; ]]",
+  "mode": "skip",
+  "secs": 0.006,
+  "reason": "uses g, which skipped cell 74 assigns"
+ },
+ {
+  "i": 76,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[g = GridGraph[100, 100]; h = InduceSubgraph[g, RandomSubset[Range[10000]]]; ]",
+  "mode": "skip",
+  "secs": 120.002,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 77,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[{V[h], M[h]}]",
+  "mode": "skip",
+  "secs": 0.006,
+  "reason": "uses h, which skipped cell 76 assigns"
+ },
+ {
+  "i": 78,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[ShowGraph[h, VertexStyle -> Disc[0]]]",
+  "mode": "skip",
+  "secs": 120.004,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 79,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[Timing[c = ConnectedComponents[h]; ]]",
+  "mode": "skip",
+  "secs": 3.561,
+  "reason": "Mathics3: aborted"
+ },
+ {
+  "i": 80,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[Length[c]]",
+  "mode": "skip",
+  "secs": 0.004,
+  "reason": "uses c, which skipped cell 79 assigns"
+ },
+ {
+  "i": 81,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[g = DiscreteMath`OldCombinatorica`RandomGraph[100, 0.3]; Timing[DiscreteMath`OldCombinatorica`LineGraph[g]; ]]",
+  "mode": "skip",
+  "secs": 0.007,
+  "reason": "uses g, which skipped cell 76 assigns"
+ },
+ {
+  "i": 82,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[g = RandomGraph[100, 0.3]; Timing[LineGraph[g]; ]]",
+  "mode": "skip",
+  "secs": 120.006,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 83,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[g = DiscreteMath`OldCombinatorica`Wheel[200]; Timing[DiscreteMath`OldCombinatorica`VertexColoring[g]; ]]",
+  "mode": "skip",
+  "secs": 0.007,
+  "reason": "uses g, which skipped cell 82 assigns"
+ },
+ {
+  "i": 84,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[g = Wheel[200]; Timing[VertexColoring[g]; ]]",
+  "mode": "skip",
+  "secs": 33.109,
+  "reason": "Mathics3 takes 33 s"
+ },
+ {
+  "i": 85,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[Timing[DiscreteMath`OldCombinatorica`LexicographicPermutations[Range[8]]; ]]",
+  "mode": "run",
+  "secs": 0.006,
+  "reason": "timing"
+ },
+ {
+  "i": 86,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[Timing[LexicographicPermutations[8]; ]]",
+  "mode": "skip",
+  "secs": 120.002,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 87,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[p = DiscreteMath`Permutations`RandomPermutation[1000]; Timing[DiscreteMath`Permutations`ToCycles[p]; ]]",
+  "mode": "run",
+  "secs": 0.006,
+  "reason": "timing"
+ },
+ {
+  "i": 88,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[p = RandomPermutation[1000]; Timing[ToCycles[p]; ]]",
+  "mode": "skip",
+  "secs": 13.731,
+  "reason": "Mathics3 takes 14 s"
+ },
+ {
+  "i": 89,
+  "section": "Old Combinatorica vs New Combinatorica / Improvement in Run Times",
+  "in": "HoldComplete[p = RandomPermutation[5000]; {Timing[Signature[p]; ], Timing[SignaturePermutation[p]; ]}]",
+  "mode": "skip",
+  "secs": 120.002,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 90,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[Information[\"AddEdges\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.021,
+  "reason": "usage text"
+ },
+ {
+  "i": 91,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[g = Wheel[10]; ShowGraph[g, VertexNumber -> On]]",
+  "mode": "skip",
+  "secs": 1.369,
+  "reason": "uses g, which skipped cell 84 assigns"
+ },
+ {
+  "i": 92,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[ShowGraph[g = AddEdges[g, {{{2, 10}, EdgeColor -> Red, EdgeStyle -> Fat}}], VertexNumber -> On]]",
+  "mode": "skip",
+  "secs": 1.616,
+  "reason": "uses g, which skipped cell 91 assigns"
+ },
+ {
+  "i": 93,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[ShowGraph[g = AddEdges[g, {3, 1}], VertexNumber -> On]]",
+  "mode": "skip",
+  "secs": 1.648,
+  "reason": "uses g, which skipped cell 92 assigns"
+ },
+ {
+  "i": 94,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[Information[\"BreadthFirstTraversal\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.02,
+  "reason": "usage text"
+ },
+ {
+  "i": 95,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[Information[\"DiscreteMath`OldCombinatorica`BreadthFirstTraversal\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.014,
+  "reason": "usage text"
+ },
+ {
+  "i": 96,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[g = GridGraph[5, 5]; ]",
+  "mode": "check",
+  "secs": 0.27,
+  "expected": "Null"
+ },
+ {
+  "i": 97,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[BreadthFirstTraversal[g, 1]]",
+  "mode": "check",
+  "secs": 0.344,
+  "expected": "{1,2,4,7,11,3,5,8,12,16,6,9,13,17,20,10,14,18,21,23,15,19,22,24,25}"
+ },
+ {
+  "i": 98,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[e = BreadthFirstTraversal[g, 1, Edge]]",
+  "mode": "check",
+  "secs": 0.448,
+  "expected": "{{1,2},{1,6},{2,3},{2,7},{6,11},{3,4},{3,8},{7,12},{11,16},{4,5},{4,9},{8,13},{12,17},{16,21},{5,10},{9,14},{13,18},{17,22},{10,15},{14,19},{18,23},{15,20},{19,24},{20,25}}"
+ },
+ {
+  "i": 99,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[ShowGraph[Highlight[g, {e}, {HotPink}]]]",
+  "mode": "check",
+  "secs": 0.448,
+  "expected": "ShowGraph[Highlight[Graph[{{{1,2}},{{2,3}},{{3,4}},{{4,5}},{{6,7}},{{7,8}},{{8,9}},{{9,10}},{{11,12}},{{12,13}},{{13,14}},{{14,15}},{{16,17}},{{17,18}},{{18,19}},{{19,20}},{{21,22}},{{22,23}},{{23,24}},{{24,25}},{{1,6}},{{2,7}},{{3,8}},{{4,9}},{{5,10}},{{6,11}},{{7,12}},{{8,13}},{{9,14}},{{10,15}},{{11,16}},{{12,17}},{{13,18}},{{14,19}},{{15,20}},{{16,21}},{{17,22}},{{18,23}},{{19,24}},{{20,25}}},{{{100000,100000}},{{200000,100000}},{{300000,100000}},{{400000,100000}},{{500000,100000}},{{100000,200000}},{{200000,200000}},{{300000,200000}},{{400000,200000}},{{500000,200000}},{{100000,300000}},{{200000,300000}},{{300000,300000}},{{400000,300000}},{{500000,300000}},{{100000,400000}},{{200000,400000}},{{300000,400000}},{{400000,400000}},{{500000,400000}},{{100000,500000}},{{200000,500000}},{{300000,500000}},{{400000,500000}},{{500000,500000}}}],{{{1,2},{1,6},{2,3},{2,7},{6,11},{3,4},{3,8},{7,12},{11,16},{4,5},{4,9},{8,13},{12,17},{16,21},{5,10},{9,14},{13,18},{17,22},{10,15},{14,19},{18,23},{15,20},{19,24},{20,25}}},{HotPink}]]"
+ },
+ {
+  "i": 100,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[ShowGraphArray[{g, BreadthFirstTraversal[g, 1, Tree]}]]",
+  "mode": "run",
+  "secs": 0.65,
+  "reason": "differs from WMA"
+ },
+ {
+  "i": 101,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[BreadthFirstTraversal[g, 1, Level]]",
+  "mode": "check",
+  "secs": 0.335,
+  "expected": "{0,1,2,3,4,1,2,3,4,5,2,3,4,5,6,3,4,5,6,7,4,5,6,7,8}"
+ },
+ {
+  "i": 102,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[Information[\"CompleteGraph\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.019,
+  "reason": "usage text"
+ },
+ {
+  "i": 103,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[ShowGraph[CompleteGraph[5, Type -> Directed]]]",
+  "mode": "check",
+  "secs": 1.245,
+  "expected": "<Graphics>"
+ },
+ {
+  "i": 104,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[SetOptions[CompleteGraph, Type -> Directed]]",
+  "mode": "check",
+  "secs": 0.006,
+  "expected": "{Rule[Type,Directed]}"
+ },
+ {
+  "i": 105,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[ShowGraph[CompleteGraph[5]]]",
+  "mode": "check",
+  "secs": 1.267,
+  "expected": "<Graphics>"
+ },
+ {
+  "i": 106,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[g = AddEdges[Star[5], {{1, 5}, {2, 2}}]]",
+  "mode": "check",
+  "secs": 0.055,
+  "expected": "Graph[{{{1,5}},{{2,5}},{{3,5}},{{4,5}},{{1,5}},{{2,2}}},{{{0,100000}},{{-100000,0}},{{0,-100000}},{{100000,0}},{{0,0}}}]"
+ },
+ {
+  "i": 107,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[ShowGraph[g]]",
+  "mode": "check",
+  "secs": 0.739,
+  "expected": "<Graphics>"
+ },
+ {
+  "i": 108,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[ToAdjacencyLists[g]]",
+  "mode": "check",
+  "secs": 0.055,
+  "expected": "{{5,5},{2,5},{5},{5},{1,1,2,3,4}}"
+ },
+ {
+  "i": 109,
+  "section": "Old Combinatorica vs New Combinatorica / Better Functionality",
+  "in": "HoldComplete[ToAdjacencyLists[g, Type -> Simple]]",
+  "mode": "check",
+  "secs": 0.056,
+  "expected": "{{5},{5},{5},{5},{1,2,3,4}}"
+ },
+ {
+  "i": 110,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[Information[\"GridGraph\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.015,
+  "reason": "usage text"
+ },
+ {
+  "i": 111,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[ShowGraph[GridGraph[3, 4, 5]]]",
+  "mode": "skip",
+  "secs": 14.753,
+  "reason": "Mathics3 takes 15 s"
+ },
+ {
+  "i": 112,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[Information[\"ShuffleExchangeGraph\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.02,
+  "reason": "usage text"
+ },
+ {
+  "i": 113,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[ShowGraph[ShuffleExchangeGraph[3]]]",
+  "mode": "check",
+  "secs": 1.276,
+  "expected": "<Graphics>"
+ },
+ {
+  "i": 114,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[Information[\"ButterflyGraph\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.019,
+  "reason": "usage text"
+ },
+ {
+  "i": 115,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[ShowGraph[ButterflyGraph[3]]]",
+  "mode": "skip",
+  "secs": 8.73,
+  "reason": "Mathics3 takes 9 s"
+ },
+ {
+  "i": 116,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[Information[\"InversionPoset\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.018,
+  "reason": "usage text"
+ },
+ {
+  "i": 117,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[ShowGraph[InversionPoset[4]]]",
+  "mode": "skip",
+  "secs": 70.533,
+  "reason": "Mathics3 takes 71 s"
+ },
+ {
+  "i": 118,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[Information[\"BooleanAlgebra\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.022,
+  "reason": "usage text"
+ },
+ {
+  "i": 119,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[ShowGraph[BooleanAlgebra[4]]]",
+  "mode": "skip",
+  "secs": 21.702,
+  "reason": "Mathics3 takes 22 s"
+ },
+ {
+  "i": 120,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[Information[\"CageGraph\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.019,
+  "reason": "usage text"
+ },
+ {
+  "i": 121,
+  "section": "Old Combinatorica vs New Combinatorica / New Graph Instances and Classes",
+  "in": "HoldComplete[ShowGraphArray[{Table[CageGraph[r], {r, 3, 5}], Table[CageGraph[r], {r, 6, 8}]}]]",
+  "mode": "run",
+  "secs": 0.774,
+  "reason": "differs from WMA"
+ },
+ {
+  "i": 122,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[Information[\"SetEdgeWeights\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.021,
+  "reason": "usage text"
+ },
+ {
+  "i": 123,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[g = SetEdgeWeights[Wheel[10], WeightingFunction -> RandomInteger, WeightRange -> {3, 5}]; GetEdgeWeights[g]]",
+  "mode": "run",
+  "secs": 0.629,
+  "reason": "random"
+ },
+ {
+  "i": 124,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[Options[SetEdgeWeights]]",
+  "mode": "check",
+  "secs": 0.005,
+  "expected": "{Rule[WeightingFunction,Random],Rule[WeightRange,{0,1}]}"
+ },
+ {
+  "i": 125,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[Information[\"SetOptions\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.02,
+  "reason": "usage text"
+ },
+ {
+  "i": 126,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[SetOptions[SetEdgeWeights, WeightingFunction -> RandomInteger, WeightRange -> {0, 1}]]",
+  "mode": "check",
+  "secs": 0.006,
+  "expected": "{Rule[WeightingFunction,RandomInteger],Rule[WeightRange,{0,1}]}"
+ },
+ {
+  "i": 127,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[g = SetEdgeWeights[Wheel[10]]; GetEdgeWeights[g]]",
+  "mode": "run",
+  "secs": 0.629,
+  "reason": "random"
+ },
+ {
+  "i": 128,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[Information[\"BellmanFord\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.02,
+  "reason": "usage text"
+ },
+ {
+  "i": 129,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[g = AddEdges[Cycle[10, Type -> Directed], {{4, 1}, {6, 1}, {9, 3}}]]",
+  "mode": "check",
+  "secs": 0.102,
+  "expected": "Graph[{{{1,2}},{{2,3}},{{3,4}},{{4,5}},{{5,6}},{{6,7}},{{7,8}},{{8,9}},{{9,10}},{{10,1}},{{4,1}},{{6,1}},{{9,3}}},{{{80902,58779}},{{30902,95106}},{{-30902,95106}},{{-80902,58779}},{{-100000,0}},{{-80902,-58779}},{{-30902,-95106}},{{30902,-95106}},{{80902,-58779}},{{100000,0}}},Rule[EdgeDirection,True]]"
+ },
+ {
+  "i": 130,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[ShowGraph[g, VertexNumber -> On]]",
+  "mode": "check",
+  "secs": 1.065,
+  "expected": "<Graphics>"
+ },
+ {
+  "i": 131,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[g = SetEdgeWeights[g, WeightingFunction -> RandomInteger, WeightRange -> {-4, 5}]]",
+  "mode": "run",
+  "secs": 0.343,
+  "reason": "random"
+ },
+ {
+  "i": 132,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[Edges[g, EdgeWeight]]",
+  "mode": "run",
+  "secs": 0.343,
+  "reason": "random"
+ },
+ {
+  "i": 133,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[BellmanFord[g, 1]]",
+  "mode": "run",
+  "secs": 3.214,
+  "reason": "random"
+ },
+ {
+  "i": 134,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[Dijkstra[g, 1]]",
+  "mode": "run",
+  "secs": 0.343,
+  "reason": "random"
+ },
+ {
+  "i": 135,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[Information[\"TreeIsomorphismQ\", LongForm -> False]]",
+  "mode": "skip",
+  "secs": 0.018,
+  "reason": "usage text"
+ },
+ {
+  "i": 136,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[g = RandomTree[40]; h = PermuteSubgraph[g, RandomPermutation[40]]]",
+  "mode": "run",
+  "secs": 1.918,
+  "reason": "random"
+ },
+ {
+  "i": 137,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[TreeIsomorphismQ[g, h]]",
+  "mode": "skip",
+  "secs": 8.787,
+  "reason": "Mathics3 takes 9 s"
+ },
+ {
+  "i": 138,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[IsomorphicQ[g, h]]",
+  "mode": "skip",
+  "secs": 120.003,
+  "reason": "Mathics3: timeout"
+ },
+ {
+  "i": 139,
+  "section": "Old Combinatorica vs New Combinatorica / Miscellaneous New Functions",
+  "in": "HoldComplete[{Timing[TreeIsomorphismQ[g, h]; ], Timing[IsomorphicQ[g, h]; ]}]",
+  "mode": "skip",
+  "secs": 120.004,
+  "reason": "Mathics3: timeout"
+ }
+]
