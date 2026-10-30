@@ -1611,7 +1611,7 @@ AllPairsShortestPath[g_Graph] :=
 (*
 DP1 = Compile[{{p, _Real, 2}, {m, _Integer}},
  *)
-DP1[p_?NumberQ, m_?IntegerQ] :=
+DP1[p_List, m_?IntegerQ] :=
         Module[{np = p, k, n = Length[p]},
                Do[np = Table[If[(np[[i, k]] == 1.0*m) || (np[[k, j]] == 1.0*m),
                                 np[[i,j]], Min[np[[i,k]]+ np[[k,j]], np[[i,j]]]
@@ -1636,7 +1636,7 @@ AllPairsShortestPath[g_Graph, Parent] :=
 (*
 DP2 =Compile[{{p, _Real, 2}, {q, _Integer, 2}, {m, _Real}},
  *)
-DP2[p_?NumberQ, q_?IntegerQ, m_?NumberQ] :=
+DP2[p_List, q_List, m_?NumberQ] :=
         Module[{np = p, nq = q, k = 0, n = Length[p]},
                Do[
                   Do[If[(np[[i, k]] != m*1.0) && (np[[k, j]] != m*1.0),
@@ -1827,7 +1827,7 @@ BellmanFord[g_Graph, s_Integer?Positive] :=
 BF = Compile[{{n, _Integer}, {s, _Integer}, {e1, _Integer, 2},
               {w1, _Real, 1}, {e2, _Integer, 2}, {w2, _Real, 1}},
 *)
-BF[n_?IntegerQ, s_?IntegerQ, e1_?IntegerQ, w1_?NumberQ, e2_?IntegerQ, w2_?NumberQ] :=
+BF[n_?IntegerQ, s_?IntegerQ, e1_List, w1_List, e2_List, w2_List] :=
              Module[{d, dist, parent = Range[n],
                      m = (Length[e1] + Length[e2])*Max[w1, w2] + 1},
                      dist = Table[m, {n}]; dist[[s]] = 0;
@@ -4151,12 +4151,12 @@ LexicographicPermutations[1] := {{1}}
 LexicographicPermutations[n_Integer?Positive] := LP[n]
 LexicographicPermutations[l_List] := Permute[l, LexicographicPermutations[Length[l]] ]
 (*LP = Compile[{{n, _Integer}},*)
-LP[n_?Integer] :=
-             Module[{l = Range[n], i, j, t},
-                    NestList[(i = n-1; While[ #[[i]] > #[[i+1]], i--];
-                              j = n; While[ #[[j]] < #[[i]], j--];
-                              t = #[[i]]; #[[i]] = #[[j]]; #[[j]] = t;
-                              Join[ Take[#,i], Reverse[Drop[#,i]] ])&,
+LP[n_Integer] :=
+             Module[{l = Range[n], i, j, t, p},
+                    NestList[(p = #; i = n-1; While[ p[[i]] > p[[i+1]], i--];
+                              j = n; While[ p[[j]] < p[[i]], j--];
+                              t = p[[i]]; p[[i]] = p[[j]]; p[[j]] = t;
+                              Join[ Take[p,i], Reverse[Drop[p,i]] ])&,
                               l, n!-1
                     ]
              ]
@@ -4679,7 +4679,7 @@ NextComposition[l_List] :=
 
 NextComposition[l_List] := NC[l]
 (*NC = Compile[{{l, _Integer, 1}},*)
-NC[l_?Integer] :=
+NC[l_List] :=
              Module[{n = Apply[Plus, l], nl = l, t = Length[l]},
                     While[l[[t]] == 0, t--];
                     nl[[t-1]]++;
@@ -4697,7 +4697,7 @@ NextGrayCodeSubset[l_List, s_List] :=
 (*
 NKS = Compile[{{n, _Integer}, {ss, _Integer, 1}},
  *)
-NKS[n_?IntegerQ, ss_?Integer] :=
+NKS[n_?IntegerQ, ss_List] :=
               Module[{h = Length[ss], x = n},
                      While[x === ss[[h]], h--; x--];
                      Join[Take[ss, h - 1], Range[ss[[h]]+1, ss[[h]]+Length[ss]-h+1]]
@@ -4821,7 +4821,7 @@ NormalizeVertices[v:{{_?NumericQ, _?NumericQ}...}] :=
 NormalizeVertices[g_Graph] :=
         ChangeVertices[g, NormalizeVertices[Vertices[g]]]
 (*NthPair = Compile[{{n, _Integer}},*)
-NthPair[n_?Integer] :=
+NthPair[n_Integer] :=
              Module[{j}, j = Ceiling[(1 + Sqrt[1 + 8n])/2]; {Round[n - (j-1)(j-2)/2], j}]
 (*          ] *)
 NthPermutation[r_Integer, l_List] := UnrankPermutation[r, l]
@@ -5228,7 +5228,7 @@ RGFs[1] := {{1}}
 RGFs[n_Integer?Positive] := RGFs1[n]
 
 (* RGFs1 = Compile[{{n, _Integer}}, *)
-RGFs1[n_?Integer] :=
+RGFs1[n_Integer] :=
                Module[{r = Table[1, {n}], c = Prepend[Table[2, {n - 1}], 1], i},
                       Transpose[
                          NestList[(i = n;
@@ -6533,7 +6533,7 @@ TransitiveClosure[g_Graph] :=
         ]
 
 (*TC = Compile[{{e, _Integer, 2}},*)
-TC[e_?Integer] :=
+TC[e_List] :=
              Module[{ne = e, n = Length[e], i, j, k},
                     Do[If[ne[[j, i]] != 0,
                           Do[If[ne[[i, k]] != 0, ne[[j, k]] = 1], {k, n}]
@@ -6560,7 +6560,7 @@ TransitiveReduction[g_Graph] :=
 	]
 
 (* TR = Compile[{{closure, _Integer, 2}}, *)
-TR[closure_?Integer] :=
+TR[closure_List] :=
         Module[{reduction = closure, n = Length[closure], i, j, k},
                Do[
                   If[reduction[[i,j]]!=0 && reduction[[j,k]]!=0 &&
@@ -6573,7 +6573,7 @@ TR[closure_?Integer] :=
         ]
 (*     ] *)
 (* TRAcyclic = Compile[{{closure, _Integer, 2}}, *)
-TRAcyclic[closure_?Integer] :=
+TRAcyclic[closure_List] :=
                Module[{n = Length[closure], reduction = closure, i, j, k},
                       Do[
                          If[closure[[i,j]]!=0 && closure[[j,k]]!=0 &&
