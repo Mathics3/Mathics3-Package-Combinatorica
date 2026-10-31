@@ -1,6 +1,6 @@
 """Drive run_mathics.py over one notebook's cells with a watchdog.
 
-usage: drive_mathics.py package.m cells.json out.jsonl timeout
+usage: drive_mathics.py package.wl cells.json out.jsonl timeout
 
 If a cell runs longer than 2*timeout+30 s (the in-process alarm did not
 stop it) the process is killed, the cell is recorded as "hang", and the

@@ -64,7 +64,7 @@ incidental, or consequential damages.
 		Replaced K with CompleteGraph because K is now the
 			default generic name for the summation index in
 			symbolic sum.
-		Added CombinatorialFunctions.m and Permutations.m to
+		Added CombinatorialFunctions.wl and Permutations.wl to
 			BeginPackage, and commented out CatalanNumber,
 			PermutationQ, ToCycles, FromCycles, and
 			RandomPermutation so there would be no shadowing of

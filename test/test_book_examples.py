@@ -28,7 +28,7 @@ import pytest
 from mathics.core.interrupt import TimeoutInterrupt
 
 combinatorica_file = osp.normpath(
-    osp.join(osp.dirname(__file__), "..", "Combinatorica", "CombinatoricaV201.m")
+    osp.join(osp.dirname(__file__), "..", "Combinatorica", "CombinatoricaV201.wl")
 )
 data_dir = osp.join(osp.dirname(__file__), "data", "book")
 NOTEBOOKS = ["Chapter3", "Chapter4", "Chapter5", "newFeatures", "tutorial"]
