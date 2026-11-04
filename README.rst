@@ -4,7 +4,7 @@ Here we have all the programs from the two books:
 by Steven S. Skiena, Addison-Wesley Publishing Co., Advanced Book Program,
 350 Bridge Parkway, Redwood City CA 94065.  ISBN 0-201-50943-1.
 
-This is the older two books and we have V0.9 code for that as ``CombinatoricaV0.9.m``
+This is the older two books and we have V0.9 code for that as ``CombinatoricaV0.9.wl``
 
 The revised edition of this is:
 
@@ -12,7 +12,7 @@ The revised edition of this is:
 Mathematica*, by Sriram V. Pemmaraju and Steven S. Skiena, Cambridge
 University Press, 2003.
 
-We have V.2.0 or that as ``CombinatoricaV201.m``
+We have V.2.0 or that as ``CombinatoricaV201.wl``
 
 To run from inside Mathics3::
 

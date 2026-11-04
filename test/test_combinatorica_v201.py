@@ -12,7 +12,7 @@ _initialized: bool = False
 combinatorica_file = osp.normpath(
     osp.join(osp.dirname(__file__),
              "..", "Combinatorica",
-             "CombinatoricaV201.m")
+             "CombinatoricaV201.wl")
 )
 
 

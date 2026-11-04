@@ -1,7 +1,7 @@
 """Run notebook input cells under Mathics3 with a Combinatorica package loaded,
 appending one JSON line per cell.
 
-usage: run_mathics.py package.m cells.json out.jsonl timeout start
+usage: run_mathics.py package.wl cells.json out.jsonl timeout start
 
 Each cell is evaluated with the session's own timeout, which stops it
 between evaluation steps (status "timeout"); SIGALRM, 30 s later, is only
