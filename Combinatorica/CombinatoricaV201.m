@@ -5890,32 +5890,43 @@ SetGraphOptions[l_List, {}] := l
 
 SetGraphOptions[l_List, {}, _] := l
 
+(* The group of options for each vertex or edge is looked up in a table
+   (the DownValues of a local symbol), built once, rather than with a
+   Position over all the groups for every vertex or edge, which costs the
+   square of their number. Groups are entered last to first, so that a key
+   in several groups gets the first one, as Position[...][[1, 1]] gave. *)
 SetGraphOptions[vl_List, ol : {{_Integer.., __?OptionQ}..}] :=
-        Module[{o=Transpose[ol /. {x__Integer, y__?OptionQ} :> {{x}, {y}}], p},
-               Table[p = Position[o[[1]], i];
-                     If[p == {},
+        Module[{o=Transpose[ol /. {x__Integer, y__?OptionQ} :> {{x}, {y}}], group, p, r},
+               Do[Scan[(group[#] = j) &, o[[1, j]]], {j, Length[o[[1]]], 1, -1}];
+               r = Table[p = group[i];
+                     If[!IntegerQ[p],
                         vl[[i]],
-                        Prepend[Merge[Rest[vl[[i]]], o[[2, p[[1, 1]] ]] ],
+                        Prepend[Merge[Rest[vl[[i]]], o[[2, p]] ],
                                 First[ vl[[i]] ]
                         ]
                      ],
                      {i, Length[vl]}
-               ]
+               ];
+               Clear[group];
+               r
         ]
 
 SetGraphOptions[el_List, ol_List, All] :=
         Module[{o=Transpose[ol /. {x : {_Integer, _Integer}.., y__?OptionQ} :>
                                   {{x}, {y}}
-                  ], p},
-               Table[p = Position[o[[1]], First[ el[[i]] ] ];
-                     If[p == {},
+                  ], group, p, r},
+               Do[Scan[(group[#] = j) &, o[[1, j]]], {j, Length[o[[1]]], 1, -1}];
+               r = Table[p = group[First[ el[[i]] ]];
+                     If[!IntegerQ[p],
                         el[[i]],
-                        Prepend[Merge[Rest[el[[i]]], o[[2, p[[1, 1]]  ]]  ],
+                        Prepend[Merge[Rest[el[[i]]], o[[2, p]]  ],
                                 First[ el[[ i ]] ]
                         ]
                      ],
                      {i, Length[el]}
-               ]
+               ];
+               Clear[group];
+               r
         ]
 
 SetGraphOptions[el_List, ol_List, One] :=
