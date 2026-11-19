@@ -3,7 +3,11 @@
 {H`inf, H`outf, H`seed, H`tmo, H`start} = Rest[$ScriptCommandLine];
 {H`seed, H`tmo, H`start} = ToExpression[{H`seed, H`tmo, H`start}];
 Off[General::compat, General::shdw, SetDelayed::write, Set::write, SetDelayed::wrsym];
+(* WMA's own Combinatorica`: not this repository's Combinatorica/ directory,
+   which "." on $Path finds when the script runs from the repository root. *)
+$Path = Select[$Path, # =!= "." && # =!= Directory[] &];
 Needs["Combinatorica`"];
+If[!MemberQ[$Packages, "Combinatorica`"], Print["Combinatorica` did not load"]; Exit[1]];
 On[SetDelayed::write, Set::write, SetDelayed::wrsym];
 SeedRandom[H`seed];
 H`canon[r_] := Which[
