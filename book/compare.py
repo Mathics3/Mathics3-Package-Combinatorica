@@ -7,13 +7,21 @@ MATHICS_DIR holds NAME.jsonl. Prints per-notebook counts and writes
 the per-cell verdicts to OUT.json.
 
 Verdicts:
-  skip     an Information[...] cell (usage text, not a computation), or a
-           cell that could not be parsed into an input
+  skip     an Information[...] cell (usage text, not a computation), a
+           cell that could not be parsed into an input, or a failing cell
+           that uses a symbol whose assigning cell could not be replayed
+           after a restart ("skip-after-hang")
   pass     same output (or a random cell) and no messages WMA lacks
   wrong    different output
   msg      right output but messages WMA does not give
   error    crash, hang, timeout or abort (e.g. $RecursionLimit) in Mathics3
   wma-bad  WMA itself crashed or timed out; not counted
+
+Cells that time something or measure memory (Timing, AbsoluteTiming,
+ByteCount, ...) are compared by shape only: every number is replaced by N,
+in both WMA runs and in Mathics3, before the outputs are compared. A cell is
+"random" when the two WMA runs differ; for these cells that too is decided
+on the shape, so a different timing alone does not make a cell random.
 """
 
 import json
@@ -21,6 +29,9 @@ import os
 import re
 import sys
 from collections import Counter
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from make_tests import symbols  # noqa: E402
 
 NOTEBOOKS = ["Chapter3", "Chapter4", "Chapter5", "newFeatures", "tutorial"]
 MSG_RE = re.compile(r"(\$?\w+)::(\w+)")
@@ -76,11 +87,21 @@ def load(path):
     return {r["i"]: r for r in map(json.loads, open(path))}
 
 
-def verdict(w1, w2, m):
+def verdict(w1, w2, m, ms):
     v, why = verdict1(w1, w2, m)
-    if v in ("wrong", "msg", "error") and m.get("replayed_after_restart") is False:
-        # Some definitions of earlier cells could not be redone after a restart.
-        why = (why + " after-restart").strip()
+    if v in ("wrong", "msg", "error"):
+        lost = m.get("replay_lost") or []
+        lost_syms = set()
+        for j in lost:
+            if j in ms:
+                lost_syms |= symbols(ms[j]["in"])[0]
+        used = symbols(m["in"])[1]
+        if used & lost_syms:
+            # What it builds on could not be redone after a restart: the
+            # failure says nothing about this cell.
+            return "skip", ("skip-after-hang " + v + " " + why).strip()
+        if m.get("replayed_after_restart") is False:  # older runs
+            why = (why + " after-restart").strip()
     return v, why
 
 
@@ -93,13 +114,15 @@ def verdict1(w1, w2, m):
     if w1 is None or w1["status"] in ("crash", "timeout"):
         return "wma-bad", ""
     if m["status"] == "crash" and m["secs"] >= 0.98 * m.get("tmo", 120):
-        # The per-cell alarm interrupted a step: a timeout, not a crash.
+        # Older runs: the per-cell alarm interrupted a step. The harness now
+        # records this itself as "timeout" with "crash_at_timeout".
         return "error", "timeout"
     if m["status"] in ("crash", "hang", "timeout", "aborted"):
         return "error", m["status"]
-    random = w2 is not None and w1["out"] != w2["out"]
     timed = bool(TIMING_RE.search(m["in"]))
-    same = (shape if timed else norm)(w1["out"]) == (shape if timed else norm)(m["out"])
+    key = shape if timed else norm
+    random = w2 is not None and key(w1["out"]) != key(w2["out"])
+    same = key(w1["out"]) == key(m["out"])
     if not random and not same:
         return "wrong", "timing-shape" if timed else ""
     extra = msg_names(m["msgs"]) - msg_names(w1["msgs"]) - (msg_names(w2["msgs"]) if w2 else set())
@@ -122,7 +145,7 @@ def main():
         cnt = Counter()
         secs = 0.0
         for i, m in sorted(ms.items()):
-            v, why = verdict(w1.get(i), w2.get(i), m)
+            v, why = verdict(w1.get(i), w2.get(i), m, ms)
             cnt[v] += 1
             secs += m.get("secs") or 0
             allrecs.append({
