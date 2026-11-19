@@ -10,7 +10,8 @@ Verdicts:
   skip     an Information[...] cell (usage text, not a computation), a
            cell that could not be parsed into an input, or a failing cell
            that uses a symbol whose assigning cell could not be replayed
-           after a restart ("skip-after-hang")
+           after a restart ("skip-after-hang"), or a failing cell whose %
+           refers to a skipped cell ("uses-skipped-out")
   pass     same output (or a random cell) and no messages WMA lacks
   wrong    different output
   msg      right output but messages WMA does not give
@@ -31,7 +32,7 @@ import sys
 from collections import Counter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from make_tests import symbols  # noqa: E402
+from make_tests import STRING_RE, symbols  # noqa: E402
 
 NOTEBOOKS = ["Chapter3", "Chapter4", "Chapter5", "newFeatures", "tutorial"]
 MSG_RE = re.compile(r"(\$?\w+)::(\w+)")
@@ -144,8 +145,13 @@ def main():
             continue
         cnt = Counter()
         secs = 0.0
+        prev = None
         for i, m in sorted(ms.items()):
             v, why = verdict(w1.get(i), w2.get(i), m, ms)
+            if v != "pass" and "%" in STRING_RE.sub('""', m["in"]) and prev == "skip":
+                # It uses the value of a cell that is not compared (usage text).
+                v, why = "skip", "uses-skipped-out"
+            prev = v
             cnt[v] += 1
             secs += m.get("secs") or 0
             allrecs.append({
