@@ -19,7 +19,8 @@ Verdicts:
   wma-bad  WMA itself crashed or timed out; not counted
 
 Cells that time something or measure memory (Timing, AbsoluteTiming,
-ByteCount, ...) are compared by shape only: every number is replaced by N,
+ByteCount, ...), and cells that use a symbol such a cell assigned (rt in
+ListPlot[First /@ rt]), are compared by shape only: every number is replaced by N,
 in both WMA runs and in Mathics3, before the outputs are compared. A cell is
 "random" when the two WMA runs differ; for these cells that too is decided
 on the shape, so a different timing alone does not make a cell random.
@@ -78,6 +79,39 @@ def shape(s: str) -> str:
     return NUMBER_RE.sub("N", norm(s))
 
 
+def statements(text: str):
+    """The top-level statements of a cell: split at ; and , outside brackets."""
+    text = STRING_RE.sub('""', text)
+    if text.startswith("HoldComplete[") and text.endswith("]"):
+        text = text[len("HoldComplete[") : -1]
+    out, depth, cur = [], 0, ""
+    for c in text:
+        if c in "[{(":
+            depth += 1
+        elif c in "]})":
+            depth -= 1
+        if c in ";," and depth == 0:
+            out.append(cur)
+            cur = ""
+        else:
+            cur += c
+    return out + [cur]
+
+
+ASSIGN_TOP_RE = re.compile(r"^\s*([A-Za-z$][A-Za-z0-9$]*)\s*=(?!=)")
+
+
+def timing_symbols(text: str):
+    """The symbols a cell sets to timings: rt in rt = Table[Timing[...], ...],
+    not c in Timing[c = ConnectedComponents[s]; ]."""
+    return {
+        m.group(1)
+        for st in statements(text)
+        for m in [ASSIGN_TOP_RE.match(st)]
+        if m and TIMING_RE.search(st[m.end():])
+    }
+
+
 def msg_names(msgs):
     return {m.group(0) for x in msgs for m in [MSG_RE.search(x)] if m}
 
@@ -88,8 +122,8 @@ def load(path):
     return {r["i"]: r for r in map(json.loads, open(path))}
 
 
-def verdict(w1, w2, m, ms):
-    v, why = verdict1(w1, w2, m)
+def verdict(w1, w2, m, ms, timed=False):
+    v, why = verdict1(w1, w2, m, timed)
     if v in ("wrong", "msg", "error"):
         lost = m.get("replay_lost") or []
         lost_syms = set()
@@ -106,7 +140,7 @@ def verdict(w1, w2, m, ms):
     return v, why
 
 
-def verdict1(w1, w2, m):
+def verdict1(w1, w2, m, timed=False):
     if "Information[" in m["in"]:
         return "skip", ""
     if m["in"].startswith("PARSEFAIL:"):
@@ -120,7 +154,7 @@ def verdict1(w1, w2, m):
         return "error", "timeout"
     if m["status"] in ("crash", "hang", "timeout", "aborted"):
         return "error", m["status"]
-    timed = bool(TIMING_RE.search(m["in"]))
+    timed = timed or bool(TIMING_RE.search(m["in"]))
     key = shape if timed else norm
     random = w2 is not None and key(w1["out"]) != key(w2["out"])
     same = key(w1["out"]) == key(m["out"])
@@ -146,8 +180,12 @@ def main():
         cnt = Counter()
         secs = 0.0
         prev = None
+        timed_syms = set()  # symbols holding timings, e.g. rt in ListPlot[First /@ rt]
         for i, m in sorted(ms.items()):
-            v, why = verdict(w1.get(i), w2.get(i), m, ms)
+            sets, uses = symbols(m["in"])
+            timed = bool(TIMING_RE.search(m["in"])) or bool(uses & timed_syms)
+            timed_syms = (timed_syms - sets) | timing_symbols(m["in"])
+            v, why = verdict(w1.get(i), w2.get(i), m, ms, timed)
             if v != "pass" and "%" in STRING_RE.sub('""', m["in"]) and prev == "skip":
                 # It uses the value of a cell that is not compared (usage text).
                 v, why = "skip", "uses-skipped-out"
