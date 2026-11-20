@@ -3,7 +3,11 @@
 {H`inf, H`outf, H`seed, H`tmo, H`start} = Rest[$ScriptCommandLine];
 {H`seed, H`tmo, H`start} = ToExpression[{H`seed, H`tmo, H`start}];
 Off[General::compat, General::shdw, SetDelayed::write, Set::write, SetDelayed::wrsym];
+(* WMA's own Combinatorica`: not this repository's Combinatorica/ directory,
+   which "." on $Path finds when the script runs from the repository root. *)
+$Path = Select[$Path, # =!= "." && # =!= Directory[] &];
 Needs["Combinatorica`"];
+If[!MemberQ[$Packages, "Combinatorica`"], Print["Combinatorica` did not load"]; Exit[1]];
 On[SetDelayed::write, Set::write, SetDelayed::wrsym];
 SeedRandom[H`seed];
 H`canon[r_] := Which[
@@ -17,8 +21,12 @@ Do[
   Module[{d, c = H`cells[[H`i]], held},
    WriteString[$Output, "start ", H`i, "\n"];
    held = ToExpression[c["in"], InputForm, Hold];
-   (* A cell may hold several expressions: all are evaluated, the last is the result. *)
-   d = EvaluationData[TimeConstrained[Last[List @@ First[held]], H`tmo, $TimedOut]];
+   (* As in a notebook, and as run_mathics.py does it: a cell holding several
+      expressions is one CompoundExpression, it is input $Line = i, and Out[i]
+      is its value, so % and %% work. Only the last two Out are kept. *)
+   $Line = H`i;
+   d = EvaluationData[TimeConstrained[CompoundExpression @@ First[held], H`tmo, $TimedOut]];
+   Unprotect[Out]; Out[H`i] = d["Result"]; Quiet[Out[H`i - 2] =.]; Protect[Out];
    WriteString[H`str, ExportString[<|"i" -> H`i, "sec" -> c["sec"], "in" -> c["in"],
       "out" -> ToString[H`canon[d["Result"]]],
       "msgs" -> (ToString[#, InputForm] & /@ d["Messages"]),

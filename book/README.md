@@ -21,9 +21,31 @@ notebooks of its examples. This directory turns them into the tests in
 The results come from these harnesses:
 
 - `run_wma.sh OUTDIR TIMEOUT`: runs every cell under `wolframscript`, using `run_wma.wls` and `drive_wma.py`.
-- `run.sh OUTDIR TIMEOUT`: runs every cell under Mathics3, using `run_mathics.py` and `drive_mathics.py`.
-  Each cell gets the time limit. After a hang the process restarts and replays the earlier cells.
+- `run.sh OUTDIR TIMEOUT [NOTEBOOK...]`: runs every cell under Mathics3, using `run_mathics.py` and
+  `drive_mathics.py`. `PKG=file.wl` loads another copy of the package.
 - `compare.py WMA_DIR MATHICS_DIR [OUT.json]`: the share of cells that give WMA's result, per notebook.
+
+Both harnesses evaluate a cell the same way, as a notebook would:
+
+- A cell holding several expressions (`HoldComplete[e1, e2, ...]`) is one `CompoundExpression`.
+- Cell *i* is input `$Line = i`, and `Out[i]` is its value, so `%` and `%%` refer to the earlier cells.
+- Each cell gets the time limit. When the interrupt at the limit breaks the evaluation instead of
+  stopping it, the cell is still a `timeout` (with `crash_at_timeout`), not a crash.
+
+When a Mathics3 cell hangs or crashes the process, the watchdog restarts it at the next cell. The new
+process first replays the earlier cells that finished: every one that assigns something, whatever
+its time, and the others that took at most `REPLAY_SECS` (20 s). A replayed cell that does not finish
+again is listed in `replay_lost`. `compare.py` does not count a failure of a later cell that uses what
+such a cell assigns (`skip-after-hang`).
+
+`compare.py` compares cells that time things or measure memory (`Timing`, `AbsoluteTiming`,
+`ByteCount`, ...) by shape only, with every number replaced; whether such a cell is random is
+decided on the shape too.
+
+The usual check after a fix in Mathics3 or the package (on a runner, it takes hours):
+
+    bash book/run.sh /tmp/book 120
+    python3 book/compare.py book/wma /tmp/book
 
 To refresh the tests after Mathics3 or the package changes:
 
